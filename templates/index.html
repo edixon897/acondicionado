@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <section>
+        <div class="login">
+            <div class="logo">
+                <figure>
+                    <img src="{{ url_for('static', filename='img/logoCutipiles.png') }}" alt="">
+                </figure>
+            </div>
+            <div class="titulo">
+                <h1>Inicio de sesión</h1>
+            </div>
+            <form action="/login" method="post">
+                <div class="campos">
+                
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña">
+                </div>
+                <button type="submit" class="boton-ingresar">Ingresar</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

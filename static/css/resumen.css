@@ -1,0 +1,816 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+    color: #592B03;
+}
+
+section {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.contenedor {
+    display: flex;      
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#menu-icon {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: auto; 
+}
+
+.menu, .nombre-soft, .logo-empresa {
+    margin-bottom: 5px;
+}
+
+.menu-options {
+    display: none;
+}
+/* h3{
+    margin-left: 20px
+} */
+
+.menu-options .menu-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(183, 178, 178, 0.2);
+    z-index: 2;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.menu-options .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.menu-options .nombre-usuario,
+.menu-options .pgn_inicio,
+.menu-options .Buscar_tarejta,
+.menu-options .cambiar_contraseña,
+.menu-options .cerrar_sesion {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-options figure {
+    margin: 0;
+    color: #007BFF;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-options figure img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.menu-options a {
+    text-decoration: none;
+    color: #592B03;
+    font-size: 18px;
+}
+
+.menu-options a:hover {
+    color: #336aff; /* Cambia esto al color que desees para el hover */
+}
+
+/* Estilo para pantallas mayores a 768px */
+@media (min-width: 768px) {
+    .contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .menu {
+        max-width: 15%;
+    }
+
+    .nombre-soft {
+        width: 30%;
+        text-align: center;
+    }
+
+    .nombre-soft h2 {
+        font-size: 1em;
+    }
+
+    .logo-empresa {
+        width: 25%;
+        text-align: right;
+    }
+
+    .menu img {
+        max-width: 25%;
+        min-width: 25%;
+    }
+
+    .logo-empresa img {
+        max-width: 25%;
+        min-width: 25%;
+    }
+
+    .menu-options .menu-content {
+        width: 20%;
+    }
+
+    .menu-options .nombre-usuario,
+    .menu-options .pgn_inicio,
+    .menu-options .Buscar_tarejta,
+    .menu-options .cambiar_contraseña,
+    .menu-options .cerrar_sesion {
+        margin-bottom: 15px;
+    }
+
+    .menu-options figure {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu-options a {
+        font-size: 16px;
+    }
+
+    .menu-options .close-btn {
+        font-size: 60px;
+    }
+}
+
+/* Estilos para la versión móvil */
+@media (max-width: 767px) {
+    .contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .nombre-soft {
+        width: 25%;
+        text-align: center;
+    }
+
+    .nombre-soft h2 {
+        font-size: 1.1em;
+    }
+
+    .logo-empresa {
+        text-align: right;
+    }
+
+    .menu, .nombre-soft, .logo-empresa {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .menu img {
+        margin: 0;
+        max-width: 15%;
+        min-width: 25%;
+    }
+
+    .logo-empresa img {
+        margin: 0;
+        max-width: 50%;
+        min-width: 25%;
+    }
+
+    .menu-options .menu-content {
+        width: 60%;
+    }
+
+    .menu-options .nombre-usuario,
+    .menu-options .pgn_inicio,
+    .menu-options .Buscar_tarejta,
+    .menu-options .cambiar_contraseña,
+    .menu-options .cerrar_sesion {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .menu-options figure {
+        margin: 0;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-options figure img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .menu-options a {
+        text-decoration: none;
+        color: #401F02;
+        font-size: 18px;
+    }
+
+    .menu-options .close-btn {
+        font-size: 50px;
+        cursor: pointer;
+    }
+}
+
+/* Estilos para la versión de móviles medianos */
+@media (max-width: 480px) {
+    .menu img {
+        max-width: 45%;
+        min-width: 30%;
+    }
+
+    .menu #usuario, #pgn-inicio, #buscar-tarea, #cambiar-contraseña, #cerrar-sesion {
+        max-width: 100%;
+        min-width: 30%;
+    }
+
+    .logo-empresa img {
+        max-width: 100%;
+        min-width: 30%;
+    }
+
+    .nombre-soft h2 {
+        font-size: 0.9em;
+    }
+}
+
+/* Estilos para la versión de móviles pequeños */
+@media (max-width: 320px) {
+    .menu img, .logo-empresa img {
+        max-width: 35%;
+        min-width: 35%;
+    }
+
+    .nombre-soft h2 {
+        font-size: 0.8em;
+    }
+}
+
+/* Estilos para pantallas muy grandes */
+@media (min-width: 1541px) {
+    .contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .menu {
+        max-width: 15%;
+    }
+
+    .nombre-soft {
+        width: 30%;
+        text-align: center;
+    }
+
+    .nombre-soft h2 {
+        font-size: 1.2em;
+    }
+
+    .logo-empresa {
+        width: 20%;
+        text-align: right;
+    }
+}
+
+
+/* Estilos del contenido de los filtros de búsqueda */
+#caja-contenido {
+    height: 90vh;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;     /* Centrar verticalmente */
+}
+
+.caja-contenedor {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 85vh; /* Ajustado para que encaje mejor */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #592B03; /* Añadir un borde suave para resaltar */
+    border-radius: 10px; /* Redondear las esquinas */
+}
+
+.filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px; /* Espacio entre los filtros y la tabla */
+}
+
+.filtro .buscador, .filtro .color, .filtro .calibre, .cliente, .sesion, .tipo {
+    position: relative;
+    flex: 1 1 48%;
+}
+
+.filtro h5, h5, .tipo h5 {
+    margin: 0 0 5px 0;
+}
+
+.filtro input[type="search"], .filtro select, .sesion select, .tipo select {
+    width: 100%;
+    padding: 8px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.filtro select, .sesion select, .tipo select {
+    padding-left: 5px;
+}
+
+.filtro figure, .tipo figure {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    margin: 0;
+}
+    
+.filtro figure img, .sesion figure img, .tipo figure img {
+    max-width: 20px;
+    max-height: 20px;
+    margin: 0;
+}
+
+/* Estilos para la versión de escritorio */
+@media (min-width: 768px) {
+    .filtro {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        justify-content: space-between; /* Distribuir espacio entre los elementos */
+        align-items: center; /* Alinear verticalmente */
+    }
+
+    .filtro .buscador.buscador-productos {
+        flex: 1.5; /* Reducir el tamaño del buscador de productos */
+        min-width: 250px; /* Ancho mínimo */
+        position: relative; /* Necesario para el posicionamiento de los íconos */
+    }
+
+    .filtro .buscador input[type="search"] {
+        width: 30%; /* Ocupa todo el ancho disponible */
+        height: 60px; /* Ajustar la altura */
+        font-size: 16px; /* Ajustar el tamaño de la fuente */
+        padding-left: 40px; /* Espacio para el icono */
+        box-sizing: border-box; /* Asegurar que el padding no afecte el tamaño total */
+    }
+
+    .filtro .buscador figure {
+        left: 10px;
+    }
+
+    .filtro .color figure {
+        left: 20px;
+        top: 60%;
+    }
+
+    .filtro .color, 
+    .filtro .calibre, 
+    .cliente, 
+    .sesion, 
+    .tipo {
+        flex: 1; /* Ocupa el mismo espacio para que se alineen */
+        position: relative; /* Necesario para el posicionamiento de los íconos */
+        min-width: 150px; /* Ancho mínimo */
+    }
+
+    .filtro .color input[type="search"], 
+    .filtro .calibre input[type="search"] {
+        height: 35px; /* Ajustar la altura */
+        padding-left: 35px; /* Espacio para el icono */
+        font-size: 14px; /* Ajustar el tamaño de la fuente */
+    }
+
+    .cliente select, 
+    .sesion select, 
+    .tipo select {
+        height: 35px; /* Ajustar la altura */
+        font-size: 14px; /* Ajustar el tamaño de la fuente */
+    }
+
+    .filtro .color figure, 
+    .filtro .calibre figure, 
+    .cliente figure, 
+    .sesion figure, 
+    .tipo figure {
+        left: 10px;
+        top: 72%;
+    }
+
+    h5 {
+        font-size: 14px; /* Ajustar el tamaño del texto del encabezado */
+        margin-bottom: 5px; /* Reducir el margen inferior */
+    }
+
+    .cliente, .sesion, .tipo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .filtro input[type="search"], 
+    .filtro select, 
+    .sesion select, 
+    .tipo select {
+        border: 1px solid #401F02;
+        border-radius: 4px;
+    }
+}
+
+/* Asegurar que los elementos contenedores tengan posición relativa */
+.filtro .buscador, .filtro .color, .filtro .calibre, .cliente, .sesion, .tipo {
+    position: relative;
+}
+
+/* Estilos para móviles */
+@media (max-width: 767px) {
+    .filtro {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .filtro .buscador {
+        height: 40px;
+        flex: 1 1 100%;
+        margin-bottom: 5px;
+    }
+
+    .sesion, .cliente {
+        flex: 1 1 48%;
+        margin-top: -17px; /* Ajustar el margen superior para acercarlos a los elementos superiores */
+    }
+
+    .tipo {
+        width: 80%;
+        margin: 10px auto; /* Centrar horizontalmente y margen superior e inferior */
+        max-width: 217px; /* Establecer un ancho máximo */
+    }
+
+    .filtro .color, .filtro .calibre {
+        margin: 0;
+        height: 80px;
+        flex: 1 1 48%;
+        padding: 0;
+        margin-bottom: -7px;
+        
+    }
+
+    .filtro .buscador input[type="search"] {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid #401F02;
+    }
+
+    .filtro .color input[type="search"], .filtro .calibre input[type="search"], .cliente select, .sesion select, .tipo select {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid #401F02;
+    }
+
+    .filtro select {
+        font-size: 14px; /* Ajustar el tamaño de fuente de las opciones */
+        padding: 10px 5px; /* Ajustar el padding de las opciones */
+    }
+
+    .filtro select option {
+        font-size: 14px; /* Ajustar el tamaño de fuente de las opciones */
+        padding: 5px; /* Ajustar el padding de las opciones */
+    }
+}
+
+select {
+    max-height: 150px; /* Ajusta la altura máxima del contenedor desplegable */
+    overflow-y: auto;  /* Añade un scroll si hay demasiadas opciones */
+}
+
+/* Breakpoint intermedio para pantallas más pequeñas */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .filtro {
+        flex-wrap: wrap;
+    }
+
+    .filtro .buscador, .filtro .color, .filtro .calibre, .cliente, .sesion, .tipo {
+        flex: 1 1 48%;
+    }
+
+    .filtro .buscador.buscador-productos {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+}
+
+/* Estilos específicos para la tabla */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+
+
+/* Añadir este estilo para asegurar que las opciones no se agranden en dispositivos móviles */
+select option {
+    font-size: 14px; /* Ajusta el tamaño de fuente de las opciones */
+    padding: 5px; /* Ajusta el padding de las opciones */
+    background-color: white; /* Asegurar que el fondo sea blanco */
+    color: black; /* Asegurar que el texto sea negro */
+}
+
+
+
+
+
+
+
+/* Tabla */
+
+.tabla_contenido {
+    width: 100%;
+    height: 70%;
+    border: 1px solid#f1efed;
+    overflow-x: auto;
+}
+
+.ver-mas, .mas, .ver-mas-cell {
+    display: none;
+}
+
+#tabla_productos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabla_productos th,
+#tabla_productos td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* #tabla_productos tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
+
+#tabla_productos tr:hover {
+    background-color: #ddd;
+}
+
+#tabla_productos th {
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+    #tabla_productos th,
+    #tabla_productos td {
+        display: none;
+    }
+    #tabla_productos th:nth-child(1),
+    #tabla_productos td:nth-child(1),
+    #tabla_productos th:nth-child(2),
+    #tabla_productos td:nth-child(2),
+    #tabla_productos th:nth-child(3),
+    #tabla_productos td:nth-child(3),
+    #tabla_productos th:nth-child(4),
+    #tabla_productos td:nth-child(4) {
+        display: table-cell;
+        font-size: 0.7em;
+    }
+    #tabla_productos th.extra,
+    #tabla_productos td.extra {
+        display: none;
+    }
+    #tabla_productos tbody tr {
+        position: relative;
+    }
+    #tabla_productos td:nth-child(4),
+    #tabla_productos th:nth-child(4) {
+        padding: 0; /* Remove padding to save space */
+        width: 30px; /* Ensure minimal width */
+        text-align: center; /* Center align the icon */
+    }
+    .ver-mas {
+        padding: 0px;
+        display: inline-block;
+        width: 20px; /* Adjusted width */
+        height: 20px; /* Ensure the icon has a fixed size */
+        vertical-align: middle; /* Center align vertically */
+        cursor: pointer;
+    }
+    #tabla_productos tbody tr.expanded .extra {
+        display: table-cell;
+        font-size: 0.8em;
+    }
+    .ver-mas img{
+        color: blue;
+    }
+  
+}
+
+/* Modal styles */
+/* Modal styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Ensure the modal looks good on mobile */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 80%;
+        height: 50%;
+        max-height: 80%;
+        overflow-y: auto;
+    }
+    .modal-body p {
+        font-size: 0.9em;
+    }
+}
+
+/* Pagination styles */
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.results-count {
+    font-size: 14px;
+    margin-right: auto;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginacion button {
+    background: #007BFF;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+.paginacion button img {
+    width: 16px;
+    height: 16px;
+}
+
+.paginacion button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.paginacion span {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+    .pagination-container {
+
+        align-items: flex-start;
+    }
+
+    .results-count {
+        margin-bottom: 10px;
+    }
+
+    .paginacion {
+        justify-content: flex-start;
+    }
+}
+
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    .tabla_contenido {
+        width: 100%;
+        height: 55;
+    }
+   
+  }
+

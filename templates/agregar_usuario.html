@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/contraseña.css') }}">
+    <link rel="website icon" type="png" href="/static/img/nueva-cuenta.png">
+</head>
+<body>
+    <section>
+        <div class="contenedor">
+            <div class="menu">
+                <figure>
+                    <img src="{{ url_for('static', filename='/img//menunuevo.jpg') }}" alt="Menu" onclick="toggleMenu()">
+                </figure>
+                <div class="menu-options" id="menu-options">
+                    <div class="menu-content">
+                        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                        <div class="nombre-usuario">
+                            <figure>
+                                <img id="usuario" src="{{ url_for('static', filename='/img/perfil.png') }}" alt="User">
+                            </figure>
+                            <h3 class="usuario">{{ username | capitalize }}</h3>
+                        </div>
+    
+                        <div class="pgn_inicio">
+                            <figure>
+                                <img id="pgn-inicio" src="{{ url_for('static', filename='/img/hogar.png') }}" alt="Home">
+                            </figure>
+                            <a href="{{ url_for('inicio') }}">Inicio</a>
+                        </div>
+    
+                        <div class="Buscar_tarejta">
+                            <figure>
+                                <img id="buscar-tarea" src="{{ url_for('static', filename='img/expediente.png') }}" alt="Search">
+                            </figure>
+                            <a href="{{ url_for('familia') }}">Buscar por tarjeta</a>
+                        </div>
+    
+                        <div class="cambiar_contraseña">
+                            <figure>
+                                <img id="cambiar-contraseña" src="{{ url_for('static', filename='img/seguro.png') }}" alt="Cambio de contraseña">
+                            </figure>
+                            <a href="{{ url_for('cambiar_contraseña') }}">Cambio de contraseña</a>
+
+                        </div>
+
+                        {% if rol == 'administrador' %}
+                            <div class="cerrar_sesion">
+                                <figure>
+                                    <img id="cerrar-sesion" src="{{ url_for('static', filename='img/nueva-cuenta.png') }}" alt="Logout">
+                                </figure>
+                                <a href="{{ url_for('agregarUsuario') }}">Agregar usuario</a>
+                            </div>
+                        {% endif %}
+
+
+                        <div class="cerrar_sesion">
+                            <figure>
+                                <img id="cerrar-sesion" src="{{ url_for('static', filename='img/resumen.png') }}" alt="Logout">
+                            </figure>
+                            <a href="{{ url_for('resumen') }}">Buscar por color</a>
+                        </div>
+    
+                        <div class="cerrar_sesion">
+                            <figure>
+                                <img id="cerrar-sesion" src="{{ url_for('static', filename='img/cerrar-sesion.png') }}" alt="Logout">
+                            </figure>
+                            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nombre-soft">
+                <h2 id="nombre">Acondicionado Soft</h2>
+            </div>
+            <div class="logo-empresa">
+                <figure id="logo-emp">
+                    <img class="imagen-logo" src="{{ url_for('static', filename='img/logoCutipiles.png') }}" alt="Logo de la empresa">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="cambio_contraseña ">
+            <div class="cambia_contraseña">
+                <div class="titulo">
+                    <h1>Agregar Usuario</h1>
+                </div>
+                <form action="/agregarUsuario" method="post">
+                    <div class="campos">
+                        <div class="input-container">
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido">
+                        </div>
+                        <div class="input-container">
+                            <input type="password" id="contraseña2" name="contraseña2" placeholder="Ingrese su contraseña" oninput="toggleEyeIcon('contraseña2', 'eye2')">
+                            <span id="eye2" class="toggle-password" onclick="togglePassword('contraseña2')" style="display: none;">&#128065;</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" id="contraseña3" name="contraseña3" placeholder="Repetir contraseña" oninput="toggleEyeIcon('contraseña3', 'eye3')">
+                            <span id="eye3" class="toggle-password" onclick="togglePassword('contraseña3')" style="display: none;">&#128065;</span>
+                        </div>
+                    </div>
+                    <button class="boton-ingresar">Guardar usuario</button>
+                </form>
+            </div>
+            
+    </section>
+
+    <script src="/static/javascript/manu.js"></script>
+    <script src="/static/javascript/ojo_contrasena.js"></script>
+</body>
+</html>

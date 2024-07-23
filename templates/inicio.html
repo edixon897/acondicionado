@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de inicio</title>
+    <link rel="stylesheet" href="/static/inicio.css">
+    <link rel="website icon" type="png" href="/static/img/hogar.png">
+</head>
+<body>
+    <section>
+        <div class="contenedor">
+            <div class="menu">
+                <figure>
+                   
+                    <img id="menu-icono" src="{{ url_for('static', filename='/img//menunuevo.jpg') }}" alt="Menu" onclick="toggleMenu()">
+                </figure>
+                <div class="menu-options" id="menu-options">
+                    <div class="menu-content">
+                        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                        <div class="nombre-usuario">
+                            <figure>
+                                <img id="usuario" src="{{ url_for('static', filename='/img/perfil.png') }}" alt="User">
+                            </figure>
+                            <h3 class="usuario">{{ username | capitalize }}</h3>
+                        </div>
+    
+                        <div class="pgn_inicio">
+                            <figure>
+                                <img id="pgn-inicio" src="{{ url_for('static', filename='/img/hogar.png') }}" alt="Home">
+                            </figure>
+                            <a href="{{ url_for('inicio') }}">Inicio</a>
+                        </div>
+    
+                        <div class="Buscar_tarejta">
+                            <figure>
+                                <img id="buscar-tarea" src="{{ url_for('static', filename='img/expediente.png') }}" alt="Search">
+                            </figure>
+                            <a href="{{ url_for('familia') }}">Buscar por tarjeta</a>
+                        </div>
+    
+                        <div class="cambiar_contraseña">
+                            <figure>
+                                <img id="cambiar-contraseña" src="{{ url_for('static', filename='img/seguro.png') }}" alt="Cambio de contraseña">
+                            </figure>
+                            <a href="{{ url_for('cambiar_contraseña') }}">Cambio de contraseña</a>
+                        </div>
+
+                        {% if rol == 'administrador' %}
+                            <div class="cerrar_sesion">
+                                <figure>
+                                    <img id="cerrar-sesion" src="{{ url_for('static', filename='img/nueva-cuenta.png') }}" alt="Logout">
+                                </figure>
+                                <a href="{{ url_for('agregarUsuario') }}">Agregar usuario</a>
+                            </div>
+                        {% endif %}
+
+                        <div class="cerrar_sesion">
+                            <figure>
+                                <img id="cerrar-sesion" src="{{ url_for('static', filename='img/resumen.png') }}" alt="Logout">
+                            </figure>
+                            <a href="{{ url_for('resumen') }}">Buscar por color</a>
+                        </div>
+                        
+    
+                        <div class="cerrar_sesion">
+                            <figure>
+                                <img id="cerrar-sesion" src="{{ url_for('static', filename='img/cerrar-sesion.png') }}" alt="Logout">
+                            </figure>
+                            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+                        </div>                                 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nombre-soft">
+                <h2 id="nombre">Acondicionado Soft</h2>
+            </div>
+            <div class="logo-empresa">
+                <figure id="logo-emp">
+                    <img class="imagen-logo" src="{{ url_for('static', filename='img/logoCutipiles.png') }}" alt="Logo de la empresa">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section id="caja-contenido">
+        <div class="caja-contenedor">
+            
+            <div class="filtro">
+                <div class="buscador buscador-productos">
+                    <figure>
+                        <img src="/static/img/lupa.png" alt="Buscar">
+                    </figure>
+                    <input type="search" name="buscador" id="buscador" placeholder="Ingresar nombre del producto" autocomplete="off">
+                    <div id="suggestions" class="suggestions">
+                        {% set productos = dato | map(attribute=1) | select | list %}
+                        {% set unique_producto = productos | unique %}
+                        {% for producto in unique_producto %}
+                            <div class="suggestion-item">{{ producto }}</div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="color buscador-color">
+                    <h5>Color (Opcional)</h5>
+                    <figure>
+                        <img src="/static/img/lupa.png" alt="Buscar color">
+                    </figure>
+                    <input type="search" name="buscador-color" id="buscador-color" placeholder="Ingrese el color">
+                    <div id="suggestion" class="suggestion">
+                        {% set colores = dato | map(attribute=2) | select | list %}
+                        {% set unique_color = colores | unique %}
+                        {% for color in unique_color %}  
+                                <div class="suggestion-itemm">{{ color }}</div>
+                        {% endfor %}
+                     </div>
+                </div>
+
+                <div class="calibre">
+                    <h5>Calibre (Opcional)</h5>
+                    <figure>
+                        <img src="/static/img/lupa.png" alt="Buscar calibre">
+                    </figure>
+                    <input type="search" name="buscador-calibre" id="buscador-calibre" placeholder="Ingrese el calibre">
+                    <div id="suggestio" class="suggestio">
+                        {% set calibres = dato | map(attribute=8) | select | list %}
+                        {% set unique_calibres = calibres | unique %}
+                        {% for calibre in unique_calibres %}
+                            <div class="suggestion-ite">{{ calibre }}</div>
+                        {% endfor %}
+                     </div>
+                </div>
+            
+                <div class="cliente">
+                    <h5>Cliente (Opcional)</h5>
+                    <select name="seleccion-cliente" id="seleccion-cliente">
+                        <option value="">Seleccionar cliente</option>
+                        {% set clientes = dato | map(attribute=9) | select | list %}
+                        {% set unique_clientes = clientes | unique %}
+                        {% for cliente in unique_clientes %}
+                            <option value="{{ cliente }}">{{ cliente }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="sesion">
+                    <h5>Sección (Opcional)</h5>
+                    <select name="seleccion-sesion" id="seleccion-sesion">
+                        <option value="">Seleccionar sesión</option>
+                        {% set sesiones = dato | map(attribute=3) | select | list %}
+                        {% set unique_sesiones = sesiones | unique %}
+                        {% for sesion in unique_sesiones %}
+                            <option value="{{ sesion }}">{{ sesion }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="tipo">
+                    <h5>Tipo producción (Opcional)</h5>
+                    <select name="tipo-producto" id="tipo-producto">
+                        <option value="">Seleccionar tipo producción</option>
+                        {% set tipos = dato | map(attribute=4) | select | list %}
+                        {% set unique_tipos = tipos | unique %}
+                        {% for tipo in unique_tipos %}
+                            <option value="{{ tipo }}">{{ tipo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            
+
+            <div class="tabla_contenido">
+                <table id="tabla_productos">
+                    <thead>
+                        <tr>
+                            <th>Tarjeta</th>
+                            <th>Nombre de producto</th>
+                            <th>Sección</th>
+                            <th class="mas"></th>
+                            <th>Color</th>
+                            <th>Calibre</th>
+                            <th>Tip. Produ</th>
+                            <th>Familia</th>
+                            <th>Fecha</th>
+                            <th>Hojas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datos-tabla">
+                        {% for i in dato %}
+                        <tr>
+                            <td>{{ i[0] }}</td>
+                            <td>{{ i[1] }} </td>
+                            <td>{{ i[3] }}</td>
+                            <td class="ver-mas-cell">
+                                <button class="ver-mas-btn">
+                                    <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
+                                </button>
+                             </td>
+                            <td data-label="color">{{ i[2] }}</td>
+                            <td data-label="Calibre">{{ i[8] }}</td>
+                            <td data-label="Tip. Produ">{{ i[4] }}</td>
+                            <td data-label="Familia">{{ i[5] }}</td>
+                            <td data-label="Fecha">{{ i[6] }}</td>
+                            <td data-label="Hojas">{{ i[7] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <div class="results-count"> </div>
+                <div class="paginacion">
+                    <button id="anterior"><img class="img-hacia-atras" src="/static/img/atras.png" alt="Atrás"></button>
+                    <span id="pagina-actual"></span>
+                    <button id="siguiente"><img class="img-hacia-adelante" src="/static/img/hacia-adelante.png" alt="Adelante"></button>
+                </div>
+            </div>
+            
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Detalles de Producto</h2>
+                    <div class="modal-body" id="modal-body">
+                        
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+    </section>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const buscadorInput = document.getElementById('buscador');
+    const suggestionsBox = document.getElementById('suggestions');
+
+    buscadorInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        let items = suggestionsBox.querySelectorAll('.suggestion-item');
+        
+        let hasSuggestions = false;
+        items.forEach(item => {
+            if (item.textContent.toLowerCase().includes(searchTerm)) {
+                item.style.display = 'block';
+                hasSuggestions = true;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        suggestionsBox.style.display = hasSuggestions ? 'block' : 'none';
+    });
+
+    suggestionsBox.addEventListener('click', function(event) {
+        if (event.target.classList.contains('suggestion-item')) {
+            buscadorInput.value = event.target.textContent;
+            suggestionsBox.style.display = 'none';
+            searchItems(); // Llama a la función de búsqueda que ya tienes definida
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.buscador') && event.target !== buscadorInput) {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+
+    // Función de búsqueda de ejemplo
+    function searchItems() {
+        const searchValue = buscadorInput.value;
+        console.log('Buscar con:', searchValue);
+        // Aquí puedes agregar la lógica para filtrar y mostrar los resultados de la búsqueda
+    }
+});
+
+
+        /* buscar cafe */
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const buscardorcolor = document.getElementById('buscador-color');
+            const suggestionsB = document.getElementById('suggestion');
+
+            buscardorcolor.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let items = suggestionsB.querySelectorAll('.suggestion-itemm');
+                
+                items.forEach(item => {
+                    if (item.textContent.toLowerCase().includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                suggestionsB.style.display = searchTerm ? 'block' : 'none';
+            });
+
+            suggestionsB.addEventListener('click', function(event) {
+                if (event.target.classList.contains('suggestion-itemm')) {
+                    buscardorcolor.value = event.target.textContent;
+                    suggestionsB.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.buscador-color')) {
+                    suggestionsB.style.display = 'none';
+                }
+            });
+        });
+
+        /* calibre */
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const buscardorcalibre = document.getElementById('buscador-calibre');
+            const suggestions = document.getElementById('suggestio');
+
+            buscardorcalibre.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let items = suggestions.querySelectorAll('.suggestion-ite');
+                
+                items.forEach(item => {
+                    if (item.textContent.toLowerCase().includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                suggestions.style.display = searchTerm ? 'block' : 'none';
+            });
+
+            suggestions.addEventListener('click', function(event) {
+                if (event.target.classList.contains('suggestion-ite')) {
+                    buscardorcalibre.value = event.target.textContent;
+                    suggestions.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.buscador-calibre')) {
+                    suggestions.style.display = 'none';
+                }
+            });
+        });
+    
+    
+
+
+    
+    </script>
+
+
+
+  <script src="/static/javascript/manu.js"></script>
+  <script src="/static/javascript/menejo_Tabla.js"></script>
+</body>
+</html>

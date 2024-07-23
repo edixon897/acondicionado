@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .logout-link {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+        .active {
+            color: green;
+        }
+        .inactive {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Panel de Administrador</h2>
+    
+    {% if sesiones_activas %}
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>IP</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sesion in sesiones_activas %}
+                    <tr>
+                        <td>{{ sesion.username }}</td>
+                        <td>{{ sesion.ip_address }}</td>
+                        <td class="{% if sesion.estado == 'Activo' %}active{% else %}inactive{% endif %}">
+                            {{ sesion.estado }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p>No hay sesiones activas.</p>
+    {% endif %}
+
+    
+    <p><a href="{{ url_for('inicio') }}">Volver al inicio</a></p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Función para actualizar la lista de sesiones activas
+            function actualizarSesionesActivas() {
+                $.ajax({
+                    url: "{{ url_for('administrador') }}",
+                    type: 'GET',
+                    success: function(response) {
+                        $('#sesiones-activas').html(response);
+                    },
+                    error: function(error) {
+                        console.log('error en consala '+error);
+                    }
+                });
+            }
+
+            // Actualizar sesiones activas cada 10 segundos
+            setInterval(actualizarSesionesActivas, 10000); // Actualizar cada 10 segundos
+        });
+    </script>
+</body>
+</html>

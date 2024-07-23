@@ -1,0 +1,162 @@
+/* style.css */
+
+/* Estilo general del cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Estilo para la sección principal que contiene el formulario de login */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e9e9e9;
+    /* padding: 20px; */
+}
+
+/* Estilo para el contenedor del login */
+.login {
+    background-color: #ffffff;
+    padding: 95px 20px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    overflow: hidden; /* Asegurar que los elementos no se salgan del contenedor */
+}
+
+/* Estilo para el contenedor del logo */
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio inferior entre el logo y el siguiente elemento */
+}
+
+.logo figure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 160px; /* Ajustar según sea necesario */
+    height: auto;
+    margin: 0 auto;
+}
+/* Estilo para el contenedor del título */
+.titulo {
+    margin-bottom: 20px;
+}
+
+/* Estilo para el título */
+.titulo h1 {
+    font-size: 30px;
+    color:#592B03;
+    margin: 0;
+}
+
+/* Estilo para el contenedor de los campos del formulario */
+.campos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para los campos de entrada (input) */
+.campos input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #592B03;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón de ingresar */
+.boton-ingresar {
+    width: 50%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón de ingresar al pasar el cursor por encima */
+.boton-ingresar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para los párrafos */
+p {
+    margin: 1em auto 2em;
+}
+
+/* Estilos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+    .titulo h1 {
+        font-size: 28px;
+    }
+    
+    .campos input {
+        width: 100%;
+    }
+    
+    .boton-ingresar {
+        width: 50%;
+    }
+    
+    .login {
+        padding: 80px 10px;
+    }
+
+    .logo figure {
+        width: 100%;
+        max-width: 200px; /* Limitar el ancho máximo del logo para pantallas más pequeñas */
+        transform: scale(1.1); /* Ajustar el tamaño del logo */
+    }
+}
+
+/* Estilos para pantallas con un ancho máximo de 480px */
+@media (max-width: 480px) {
+    .titulo h1 {
+        font-size: 24px;
+    }
+    
+    .campos input {
+        width: 100%;
+    }
+    
+    .boton-ingresar {
+        width: 50%;
+    }
+    
+    .login {
+        padding: 35px 23px 106px;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 160px; /* Ajustar según sea necesario */
+        height: auto;
+        margin: 0 auto;
+    }
+}
