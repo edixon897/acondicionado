@@ -585,9 +585,10 @@ select option {
 #tabla_productos th,
 #tabla_productos td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 9px;
     text-align: left;
 }
+
 
 /* #tabla_productos tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -605,6 +606,7 @@ select option {
     #tabla_productos th,
     #tabla_productos td {
         display: none;
+        
     }
     #tabla_productos th:nth-child(1),
     #tabla_productos td:nth-child(1),
