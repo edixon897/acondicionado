@@ -1,3 +1,4 @@
+from flask import jsonify
 from app import app, session, flash, redirect, url_for, request,  check_password_hash, render_template, logged_in_ips
 from route.seguridad import login_required, obtener_direccion_ip
 
@@ -23,28 +24,30 @@ def logout():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        nombre = request.form['nombre']
-        contraseña = request.form['contraseña']
+        nombre = request.form.get('nombre')
+        contraseña = request.form.get('contraseña')
 
-        conn = mydb.connect()
+        mydb.connect()
         cursor = mydb.cursor()
-        cursor.execute(f"SELECT nombre, contrasena, rol FROM usuario WHERE nombre = '{nombre}' and contrasena = '{contraseña}'")
+
+        cursor.execute("SELECT nombre, contrasena, rol FROM usuario WHERE nombre = %s AND contrasena = %s", (nombre, contraseña))
         user = cursor.fetchone()
         cursor.close()
+        mydb.close()
 
         if user:
             session['logged_in'] = True
             session['username'] = nombre
-            session['rol'] = user[2]  # Obtener el rol del usuario desde la base de datos
-            logged_in_ips[nombre] = obtener_direccion_ip()  # Registrar la IP del usuario
+            session['rol'] = user[2]  
+            logged_in_ips[nombre] = obtener_direccion_ip()  
 
             if user[2] == 'administrador':
                 flash('Inicio de sesión exitoso como administrador', 'success')
-                return redirect(url_for('inicio'))
+                return jsonify({"success": True, "message": "Inicio de sesión exitoso como administrador", "redirect_url": url_for('inicio')})
             else:
                 flash('Inicio de sesión exitoso', 'success')
-                return redirect(url_for('inicio'))
+                return jsonify({"success": True, "message": "Inicio de sesión exitoso", "redirect_url": url_for('inicio')})
         else:
-            flash('Nombre de usuario o contraseña incorrectos', 'danger')
+            return jsonify({"success": False, "error": "Nombre de usuario o contraseña incorrectos."})
 
     return render_template('index.html')

@@ -6,18 +6,17 @@ from route.seguridad import login_required
 from conexion import mydb
 
 
-
 @app.route('/inicio')
 @login_required
 def inicio():
     data = []
     try:
+        # Conectar a la base de datos
         mydb.connect()
         cursor = mydb.cursor()
-        
-      
 
-        sql = f"""
+        # Consultar datos de la base de datos
+        sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, familia, fecha, hojas, calibre, cliente
             FROM recepcion_eco
             ORDER BY `color` DESC
@@ -25,7 +24,37 @@ def inicio():
 
         cursor.execute(sql)
         data = cursor.fetchall()
-        print('datos mysql:  ',   data)
+
+        # Agrupar productos por color y calcular el total de hojas
+        datos_agrupados = []
+        total_hojas_por_color = {}
+        color_actual = None
+
+        for producto in data:
+            color = producto[2]
+            hojas = producto[7]
+
+            if color_actual is None:
+                color_actual = color
+
+            if color != color_actual:
+                # Añadir una fila para mostrar el total de hojas para el color anterior
+                total_row = (None, None, color_actual, None, None, None, None, total_hojas_por_color[color_actual], None, None)
+                datos_agrupados.append(total_row)
+                
+                # Reiniciar el conteo para el nuevo color
+                color_actual = color
+
+            if color not in total_hojas_por_color:
+                total_hojas_por_color[color] = 0
+            total_hojas_por_color[color] += hojas
+
+            datos_agrupados.append(producto)
+
+        # Añadir la última fila de total para el último color
+        if color_actual is not None:
+            total_row = (None, None, color_actual, None, None, None, None, total_hojas_por_color[color_actual], None, None)
+            datos_agrupados.append(total_row)
 
     except Exception as e:
         print(f"Error al obtener los datos de la base de datos: {e}")
@@ -33,7 +62,8 @@ def inicio():
         cursor.close()
         mydb.close()
 
-    return render_template('inicio.html', username=session['username'], rol=session['rol'], dato=data)
+    # Pasar datos agrupados a la plantilla
+    return render_template('inicio.html', username=session['username'], rol=session['rol'], dato=datos_agrupados)
 
 
 

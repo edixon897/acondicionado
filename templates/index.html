@@ -11,21 +11,22 @@
         <div class="login">
             <div class="logo">
                 <figure>
-                    <img src="{{ url_for('static', filename='img/logoCutipiles.png') }}" alt="">
+                    <img src="{{ url_for('static', filename='img/logoCutipiles.png') }}" alt="Logo">
                 </figure>
             </div>
             <div class="titulo">
                 <h1>Inicio de sesión</h1>
             </div>
-            <form action="/login" method="post">
+            <form id="loginForm">
                 <div class="campos">
-                
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
-                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña">
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
                 </div>
                 <button type="submit" class="boton-ingresar">Ingresar</button>
+                <div id="mensaje" class="error-mensaje"></div>
             </form>
         </div>
     </section>
+    <script src="/static/javascript/login.js"></script>
 </body>
 </html>

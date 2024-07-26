@@ -95,6 +95,13 @@
                         <img src="/static/img/lupa.png" alt="Buscar">
                     </figure>
                     <input type="search" name="buscador" id="buscador" placeholder="Ingresar el color">
+                    <div id="suggestions" class="suggestions">
+                        {% set color = colores | map(attribute=0) | select | list %}
+                        {% set unique_producto = color | unique %}
+                        {% for color in unique_producto %}
+                            <div class="suggestion-item">{{ color }}</div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
 
@@ -108,17 +115,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>NEGRO</td>
-                            <td>RECEPCION COB</td>
-                            <td data-label="Hojas">100</td>
-                        </tr>
-                        <tr>
-                            <td>CAFE</td>
-                            <td>RECEPCION COB</td>
-                            
-                            <td data-label="Hojas">150</td>
-                        </tr>
+                        {% for datos in colores %}
+                            <tr>
+                                <td>{{ datos[0] }}</td>
+                                <td>{{ datos[1] }}</td>
+                                <td data-label="Hojas">{{ datos[2] }}</td>
+                            </tr>   
+                        {% endfor %}
                       
                     </tbody>
                 </table>
@@ -145,7 +148,7 @@
            
         </div>
     </section>
-
+    <script src="/static/javascript/buscarColor.js"></script>
     <script src="/static/javascript/manu.js"></script>
     <script src="/static/javascript/menejo_Tabla.js"></script>
 </body>

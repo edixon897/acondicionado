@@ -160,3 +160,15 @@ p {
         margin: 0 auto;
     }
 }
+
+
+
+.error-mensaje {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+}
+
+.success {
+    color: green;
+}

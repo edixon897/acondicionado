@@ -814,3 +814,28 @@ th, td {
    
   }
 
+  .suggestions, .suggestion, .suggestio {
+    display: none;
+    border: 1px solid #ccc;
+    max-height: none;
+    overflow-y: auto;
+    position: absolute;
+    background: white;
+    z-index: 1000;
+    width: calc(100% - 2px);
+    font-size: 11px;
+}
+.suggestion-item {
+    padding: 5px;
+    cursor: pointer;
+} 
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+button{
+    background-color: none;     
+    border: none;
+    
+
+}

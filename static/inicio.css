@@ -4,7 +4,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #F2F2F2;
-    color: #592B03;
+    color: #603107;
 }
 
 section {
@@ -309,8 +309,8 @@ section {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2); 
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 10px;
+    gap: 0px;
+    padding: 5px;
     box-sizing: border-box;
     border: 2px solid #592B03; /* Añadir un borde suave para resaltar */
     border-radius: 10px; /* Redondear las esquinas */
@@ -458,7 +458,7 @@ section {
     }
 
     .filtro .buscador {
-        height: 40px;
+        height: 35px;
         flex: 1 1 100%;
         margin-bottom: 5px;
     }
@@ -495,23 +495,23 @@ section {
         border: 1px solid #401F02;
     }
 
-    .filtro select {
-        font-size: 14px; /* Ajustar el tamaño de fuente de las opciones */
-        padding: 10px 5px; /* Ajustar el padding de las opciones */
-    }
+    
 
     .filtro select option {
-        font-size: 14px; /* Ajustar el tamaño de fuente de las opciones */
-        padding: 5px; /* Ajustar el padding de las opciones */
+        font-size: 14px; 
+        padding: 5px; 
     }
 }
 
 select {
-    max-height: 150px; /* Ajusta la altura máxima del contenedor desplegable */
-    overflow-y: auto;  /* Añade un scroll si hay demasiadas opciones */
+    max-height: 150px; 
+    overflow-y: auto;  
 }
 
-/* Breakpoint intermedio para pantallas más pequeñas */
+
+
+
+
 @media (max-width: 1200px) and (min-width: 768px) {
     .filtro {
         flex-wrap: wrap;
@@ -834,3 +834,9 @@ th, td {
     background-color: #f0f0f0;
 }
 
+button{
+    background-color: none;     
+    border: none;
+    
+
+}
