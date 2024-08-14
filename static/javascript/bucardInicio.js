@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Obtener los valores de búsqueda
         let nameValue = document.getElementById('buscador').value;
         let colorValue = document.getElementById('buscador-color').value;
-        let caliberValue = document.getElementById('buscador-calibre').value;
+       
         let clientValue = document.getElementById('seleccion-cliente').value;
         let sessionValue = document.getElementById('seleccion-sesion').value;
         let tipoProdValue = document.getElementById('tipo-producto').value;
 
         // Comprobar si todos los valores están vacíos
-        if (!nameValue && !colorValue && !caliberValue && !clientValue && !sessionValue && !tipoProdValue) {
+        if (!nameValue && !colorValue  && !clientValue && !sessionValue && !tipoProdValue) {
             tableBody.innerHTML = originalTableContent;
             attachEventListeners();
             location.reload();
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let formData = new FormData();
         formData.append('name', nameValue);
         formData.append('color', colorValue);
-        formData.append('caliber', caliberValue);
         formData.append('client', clientValue);
         formData.append('session', sessionValue);
         formData.append('tipo_prod', tipoProdValue);
@@ -124,7 +123,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Add event listeners to trigger search only when there is input or change
     document.getElementById('buscador').addEventListener('input', () => searchItems(currentPage));
     document.getElementById('buscador-color').addEventListener('input', () => searchItems(currentPage));
-    document.getElementById('buscador-calibre').addEventListener('input', () => searchItems(currentPage));
     document.getElementById('seleccion-cliente').addEventListener('change', () => searchItems(currentPage));
     document.getElementById('seleccion-sesion').addEventListener('change', () => searchItems(currentPage));
     document.getElementById('tipo-producto').addEventListener('change', () => searchItems(currentPage));

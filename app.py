@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
-from flask_session import Session
+
 import functools
 
 
@@ -9,7 +9,7 @@ import functools
 app = Flask(__name__)
 app.secret_key = 'yerqrgerywefgredgetrrhgohohtg' 
 app.config['SESSION_TYPE'] = 'filesystem'
-Session(app)
+
 
 logged_in_ips = {}
 

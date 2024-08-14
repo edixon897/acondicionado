@@ -376,7 +376,7 @@ section {
 
     .filtro .buscador input[type="search"] {
         width: 100%; /* Ocupa todo el ancho disponible */
-        height: 60px; /* Ajustar la altura */
+        height: 50px; /* Ajustar la altura */
         font-size: 16px; /* Ajustar el tamaño de la fuente */
         padding-left: 40px; /* Espacio para el icono */
         box-sizing: border-box; /* Asegurar que el padding no afecte el tamaño total */
@@ -440,7 +440,7 @@ section {
     .sesion select, 
     .tipo select {
         border: 1px solid #401F02;
-        border-radius: 4px;
+        border-radius: 10px;
     }
 }
 
@@ -454,7 +454,7 @@ section {
     .filtro {
         display: flex;
         flex-wrap: wrap;
-        gap: 2px;
+        /* gap: 2px; */
     }
 
     .filtro .buscador {
@@ -465,18 +465,18 @@ section {
 
     .sesion, .cliente {
         flex: 1 1 48%;
-        margin-top: -17px; /* Ajustar el margen superior para acercarlos a los elementos superiores */
+       /*  margin-top: -17px;  */
     }
 
     .tipo {
         width: 80%;
-        margin: 10px auto; /* Centrar horizontalmente y margen superior e inferior */
+        /* margin: 10px auto; */
         max-width: 217px; /* Establecer un ancho máximo */
     }
 
     .filtro .color, .filtro .calibre {
         margin: 0;
-        height: 80px;
+        height: 74px;
         flex: 1 1 48%;
         padding: 0;
         margin-bottom: -7px;
@@ -487,12 +487,14 @@ section {
         width: 100%;
         margin: 0 auto;
         border: 1px solid #401F02;
+        border-radius: 10px;
     }
 
     .filtro .color input[type="search"], .filtro .calibre input[type="search"], .cliente select, .sesion select, .tipo select {
         width: 100%;
         margin: 0 auto;
         border: 1px solid #401F02;
+        border-radius: 10px;
     }
 
     

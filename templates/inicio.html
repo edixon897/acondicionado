@@ -117,20 +117,6 @@
                      </div>
                 </div>
 
-                <div class="calibre">
-                    <h5>Calibre (Opcional)</h5>
-                    <figure>
-                        <img src="/static/img/lupa.png" alt="Buscar calibre">
-                    </figure>
-                    <input type="search" name="buscador-calibre" id="buscador-calibre" placeholder="Ingrese el calibre">
-                    <div id="suggestio" class="suggestio">
-                        {% set calibres = dato | map(attribute=8) | select | list %}
-                        {% set unique_calibres = calibres | unique %}
-                        {% for calibre in unique_calibres %}
-                            <div class="suggestion-ite">{{ calibre }}</div>
-                        {% endfor %}
-                     </div>
-                </div>
             
                 <div class="cliente">
                     <h5>Cliente (Opcional)</h5>
@@ -159,7 +145,7 @@
                 <div class="tipo">
                     <h5>Tipo producción (Opcional)</h5>
                     <select name="tipo-producto" id="tipo-producto">
-                        <option value="">Seleccionar tipo producción</option>
+                        <option value="">Selec tipo producción</option>
                         {% set tipos = dato | map(attribute=4) | select | list %}
                         {% set unique_tipos = tipos | unique %}
                         {% for tipo in unique_tipos %}
