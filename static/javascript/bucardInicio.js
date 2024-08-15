@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (!nameValue && !colorValue  && !clientValue && !sessionValue && !tipoProdValue) {
             tableBody.innerHTML = originalTableContent;
             attachEventListeners();
-            location.reload();
+            /* location.reload(); */
             return;
         }
 
@@ -58,17 +58,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let row = document.createElement('tr');
             row.innerHTML = `
                 <td>${item[0]}</td>
-                <td>${item[1]} </td>
+                <td>${item[1]}, ${item[2]}, ${item[8]}</td>
                 <td>${item[3]}</td>
                  <td class="ver-mas-cell">
                     <button class="ver-mas-btn">
                         <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
                     </button>
                  </td>
-                <td data-label="color">${item[2]}</td>
-                <td data-label="Calibre">${item[8]}</td>
                 <td data-label="Tip. Produ">${item[4]}</td>
-                <td data-label="Familia">${item[5]}</td>
+                <td data-label="tipo_produccion">${item[5]}</td>
+                <td data-label="cliente">${item[9]}</td>
                 <td data-label="Fecha">${formattedDate}</td>
                 <td data-label="Hojas">${item[7]}</td>
             `;
@@ -92,12 +91,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <p><strong>Tarjeta:</strong> ${rowData[0]}</p>
                     <p><strong>Nombre de producto:</strong> ${rowData[1]}</p>
                     <p><strong>Sección:</strong> ${rowData[2]}</p>
-                    <p><strong>Color:</strong> ${rowData[4]}</p>
-                    <p><strong>Calibre:</strong> ${rowData[5]}</p>
-                    <p><strong>Tip. Produ:</strong> ${rowData[6]}</p>
-                    <p><strong>Familia:</strong> ${rowData[7]}</p>
-                    <p><strong>Fecha:</strong> ${rowData[8]}</p>
-                    <p><strong>Hojas:</strong> ${rowData[9]}</p>
+                    <p><strong>Tip. Produ:</strong> ${rowData[4]}</p>
+                    <p><strong>tipo_produccion:</strong> ${rowData[5]}</p>
+                    <p><strong>Cliente:</strong> ${rowData[9]}</p>
+                    <p><strong>Fecha:</strong> ${rowData[7]}</p>
+                    <p><strong>Hojas:</strong> ${rowData[8]}</p>
                 `;
 
                 // Mostrar el modal
@@ -216,35 +214,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const buscardorcalibre = document.getElementById('buscador-calibre');
-            const suggestions = document.getElementById('suggestio');
-
-            buscardorcalibre.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                let items = suggestions.querySelectorAll('.suggestion-ite');
-                
-                items.forEach(item => {
-                    if (item.textContent.toLowerCase().includes(searchTerm)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-
-                suggestions.style.display = searchTerm ? 'block' : 'none';
-            });
-
-            suggestions.addEventListener('click', function(event) {
-                if (event.target.classList.contains('suggestion-ite')) {
-                    buscardorcalibre.value = event.target.textContent;
-                    suggestions.style.display = 'none';
-                }
-            });
-
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.buscador-calibre')) {
-                    suggestions.style.display = 'none';
-                }
-            });
-        });

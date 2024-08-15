@@ -17,9 +17,9 @@ def inicio():
 
         # Consultar datos de la base de datos
         sql = """
-            SELECT tarjeta, nombre, color, seccion, tip_prod, familia, fecha, hojas, calibre, cliente
+            SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
             FROM recepcion_eco
-            ORDER BY `color` DESC
+            ORDER BY `color` DESC 
         """
 
         cursor.execute(sql)
@@ -81,7 +81,7 @@ def filtrar_busqueda():
     per_page = int(request.form.get('per_page', 10))
     
     query = """
-        SELECT tarjeta, nombre, color, seccion, tip_prod, familia, fecha, hojas, calibre, cliente
+        SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
         FROM recepcion_eco WHERE 1=1
     """
     filters = []

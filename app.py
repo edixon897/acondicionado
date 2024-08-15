@@ -21,6 +21,7 @@ from route.cambiarContra import cambiar_contraseña
 from route.familia import familia
 from route.inicio import inicio
 from route.resumen import resumen
+from route.conexion_arc import insert_data
 
 
 

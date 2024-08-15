@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -165,10 +165,11 @@
                                 <th>Nombre de producto</th>
                                 <th>Sección</th>
                                 <th class="mas"></th>
-                                <th>Color</th>
-                                <th>Calibre</th>
+                                <!-- <th>Color</th>
+                                <th>Calibre</th> -->
                                 <th>Tip. Produ</th>
-                                <th>Familia</th>
+                                <th>Tipo de Produccion</th>
+                                <th>Cliente</th>
                                 <th>Fecha</th>
                                 <th>Hojas</th>
                             </tr>
@@ -184,17 +185,18 @@
                                     <!-- Fila de producto normal -->
                                     <tr>
                                         <td>{{ producto[0] }}</td>
-                                        <td>{{ producto[1] }}</td>
+                                        <td>{{ producto[1] }},  {{ producto[2] }},  {{ producto[8] }}</td>
                                         <td>{{ producto[3] }}</td>
                                         <td class="ver-mas-cell">
                                             <button class="ver-mas-btn">
                                                 <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
                                             </button>
                                         </td>
-                                        <td data-label="color">{{ producto[2] }}</td>
-                                        <td data-label="Calibre">{{ producto[8] }}</td>
+                                        <!-- <td data-label="color">{{ producto[2] }}</td>
+                                        <td data-label="Calibre">{{ producto[8] }}</td> -->
                                         <td data-label="Tip. Produ">{{ producto[4] }}</td>
-                                        <td data-label="Familia">{{ producto[5] }}</td>
+                                        <td data-label="tipo_produccion">{{ producto[5] }}</td>
+                                        <td data-label="cliente">{{ producto[9] }}</td>
                                         <td data-label="Fecha">{{ producto[6] }}</td>
                                         <td data-label="Hojas">{{ producto[7] }}</td>
                                     </tr>
