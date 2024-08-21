@@ -19,11 +19,16 @@ def inicio():
         sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
             FROM recepcion_eco
-            ORDER BY `color` DESC 
+            ORDER BY FIELD(LEFT(seccion, 1), 'A',  'R', 'P', 'C', 'M', 'T'),
+            seccion,
+            FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
+            nombre,
+            FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
+            color;   
         """
 
         cursor.execute(sql)
-        data = cursor.fetchall()
+        data = cursor.fetchall()    
 
         # Agrupar productos por color y calcular el total de hojas
         datos_agrupados = []
@@ -110,7 +115,7 @@ def filtrar_busqueda():
     filters.extend([per_page, offset])
     
     try:
-        conn = mydb.connect()
+        mydb.connect()
         cursor = mydb.cursor()
         cursor.execute(query, filters)
         results = cursor.fetchall()
