@@ -182,6 +182,10 @@
                                         <td colspan="9">Total de hojas {{ producto[2] | capitalize }} {{ producto[7] }}   </td>
                                     </tr>
                                 {% else %}
+                                {% if producto[0] is none %}
+                                    <tr class="total-row">
+                                        
+                                    </tr>
                                     <!-- Fila de producto normal -->
                                     <tr>
                                         <td>{{ producto[0] }}</td>

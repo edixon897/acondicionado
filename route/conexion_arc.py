@@ -33,7 +33,7 @@ def insert_data(df, batch_size=100):
             print(f'Datos de registro (lote {start // batch_size + 1}): {values}')
             mydb.commit()
             print(f'Lote {start // batch_size + 1} insertado con éxito')
-            time.sleep(1)  
+            time.sleep(4)  
         cursor.close()
         mydb.close()
         print("Todos los datos insertados con éxito")
@@ -59,7 +59,7 @@ def process_file(file_path):
         print(f"Error al procesar el archivo: {e}")
 
 
-file_path = r'\\192.168.0.114\D\compartidos\plsaldo.prn'  # Ruta completa del archivo
+file_path = r'\\192.168.0.114\D\compartidos\plsaldo.prn'  
 
 # Verificar si el archivo existe
 if not os.path.exists(file_path):
