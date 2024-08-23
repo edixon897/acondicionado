@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let currentPage = 1;
-    let perPage = 10;
+    let perPage = 10000;
 
     const modal = document.getElementById('modal');
     const modalContent = document.getElementById('modal-body');

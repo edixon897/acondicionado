@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const rowsPerPage = 10;
+/* document.addEventListener("DOMContentLoaded", function () {
+    const rowsPerPage = 11;
     let currentPage = 1;
 
     const table = document.querySelector("#tabla_productos tbody");
     const rows = Array.from(table.querySelectorAll("tr"));
-    const totalRows = rows.length;
+    const totalRows = {total_rows};
     const totalPages = Math.ceil(totalRows / rowsPerPage);
 
     const resultsCountContainer = document.querySelector(".results-count");
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePaginationButtons();
 });
 
-
+ */
 
 /*   document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('theme-toggle');

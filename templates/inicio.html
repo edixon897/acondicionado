@@ -6,6 +6,17 @@
     <title>Página de inicio</title>
     <link rel="stylesheet" href="/static/inicio.css">
     <link rel="website icon" type="png" href="/static/img/hogar.png">
+    <style>
+       /* Fijar el encabezado de la tabla */
+#tabla_productos thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Fondo del encabezado, cambiar según sea necesario */
+    z-index: 10; /* Asegura que el encabezado esté por encima del contenido */
+}
+
+    
+    </style>
 </head>
 <body>
     <section>
@@ -93,7 +104,7 @@
                     </figure>
                     <input type="search" name="buscador" id="buscador" placeholder="Ingresar nombre del producto" autocomplete="off">
                     <div id="suggestions" class="suggestions">
-                        {% set productos = dato | map(attribute=1) | select | list %}
+                        {% set productos = busqu | map(attribute=1) | select | list %}
                         {% set unique_producto = productos | unique %}
                         {% for producto in unique_producto %}
                             <div class="suggestion-item">{{ producto }}</div>
@@ -109,7 +120,7 @@
                     </figure>
                     <input type="search" name="buscador-color" id="buscador-color" placeholder="Ingrese el color">
                     <div id="suggestion" class="suggestion">
-                        {% set colores = dato | map(attribute=2) | select | list %}
+                        {% set colores = busqu | map(attribute=2) | select | list %}
                         {% set unique_color = colores | unique %}
                         {% for color in unique_color %}  
                                 <div class="suggestion-itemm">{{ color }}</div>
@@ -122,7 +133,7 @@
                     <h5>Cliente (Opcional)</h5>
                     <select name="seleccion-cliente" id="seleccion-cliente">
                         <option value="">Seleccionar cliente</option>
-                        {% set clientes = dato | map(attribute=9) | select | list %}
+                        {% set clientes = busqu | map(attribute=9) | select | list %}
                         {% set unique_clientes = clientes | unique %}
                         {% for cliente in unique_clientes %}
                             <option value="{{ cliente }}">{{ cliente }}</option>
@@ -134,7 +145,7 @@
                     <h5>Sección (Opcional)</h5>
                     <select name="seleccion-sesion" id="seleccion-sesion">
                         <option value="">Seleccionar sesión</option>
-                        {% set sesiones = dato | map(attribute=3) | select | list %}
+                        {% set sesiones = busqu | map(attribute=3) | select | list %}
                         {% set unique_sesiones = sesiones | unique %}
                         {% for sesion in unique_sesiones %}
                             <option value="{{ sesion }}">{{ sesion }}</option>
@@ -146,7 +157,7 @@
                     <h5>Tipo producción (Opcional)</h5>
                     <select name="tipo-producto" id="tipo-producto">
                         <option value="">Selec tipo producción</option>
-                        {% set tipos = dato | map(attribute=4) | select | list %}
+                        {% set tipos = busqu | map(attribute=4) | select | list %}
                         {% set unique_tipos = tipos | unique %}
                         {% for tipo in unique_tipos %}
                             <option value="{{ tipo }}">{{ tipo }}</option>
@@ -177,27 +188,33 @@
                         <tbody id="datos-tabla">
                             {% for producto in dato %}
                                 {% if producto[0] is none %}
-                                    <!-- Fila de total de hojas para un color -->
-                                    <tr class="total-row">
-                                        <td colspan="9">Total de hojas {{ producto[2] | capitalize }} {{ producto[7] }}   </td>
-                                    </tr>
+                                    {% if producto[1] is not none %}
+                                        <!-- Fila de total de hojas por producto y color -->
+                                        <tr class="total-row">
+                                            <td colspan="9">{{ producto[1] }}: {{ producto[7] }}</td>
+                                        </tr>
+                                    {% elif producto[2] is not none and producto[3] is none %}
+                                        <!-- Fila de total de hojas por color -->
+                                        <tr class="total-row">
+                                            <td colspan="9"> {{ producto[2] | capitalize }}: {{ producto[7] }}</td>
+                                        </tr>
+                                    {% elif producto[3] is not none and producto[2] is none %}
+                                        <!-- Fila de total de hojas por sección -->
+                                        <tr class="total-row">
+                                            <td colspan="9">{{ producto[3] }}: {{ producto[7] }}</td>
+                                        </tr>
+                                    {% endif %}
                                 {% else %}
-                                {% if producto[0] is none %}
-                                    <tr class="total-row">
-                                        
-                                    </tr>
                                     <!-- Fila de producto normal -->
                                     <tr>
                                         <td>{{ producto[0] }}</td>
-                                        <td>{{ producto[1] }},  {{ producto[2] }},  {{ producto[8] }}</td>
+                                        <td>{{ producto[1] }}, {{ producto[2] }}, {{ producto[8] }}</td>
                                         <td>{{ producto[3] }}</td>
                                         <td class="ver-mas-cell">
                                             <button class="ver-mas-btn">
                                                 <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
                                             </button>
                                         </td>
-                                        <!-- <td data-label="color">{{ producto[2] }}</td>
-                                        <td data-label="Calibre">{{ producto[8] }}</td> -->
                                         <td data-label="Tip. Produ">{{ producto[4] }}</td>
                                         <td data-label="tipo_produccion">{{ producto[5] }}</td>
                                         <td data-label="cliente">{{ producto[9] }}</td>
@@ -205,18 +222,22 @@
                                         <td data-label="Hojas">{{ producto[7] }}</td>
                                     </tr>
                                 {% endif %}
-                            {% endfor %}                       
+                            {% endfor %}
                         </tbody>
+                        
+                        
                     </table>
                 </div>
-            <div class="pagination-container">
-                <div class="results-count"> </div>
+           <!--  <div class="pagination-container">
+                <div class="results-count">
+                    Total resultados: {{ total_rows }}
+                </div>
                 <div class="paginacion">
                     <button id="anterior"><img class="img-hacia-atras" src="/static/img/atras.png" alt="Atrás"></button>
                     <span id="pagina-actual"></span>
                     <button id="siguiente"><img class="img-hacia-adelante" src="/static/img/hacia-adelante.png" alt="Adelante"></button>
                 </div>
-            </div>
+            </div> -->
             
             <div id="modal" class="modal">
                 <div class="modal-content">

@@ -570,7 +570,7 @@ select option {
 
 .tabla_contenido {
     width: 100%;
-    height: 65%;
+    /* height: 65%; */
     border: 1px solid#f1efed;
     overflow-x: auto;
 }
