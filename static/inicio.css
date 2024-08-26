@@ -4,7 +4,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #F2F2F2;
-    color: #603107;
+    /* color: #603107; */
 }
 
 section {
@@ -23,7 +23,7 @@ section {
 }
 
 #menu-icon {
-    width: 50px; /* Ajusta el tamaño según sea necesario */
+    width: 50px; 
     height: auto; 
 }
 
@@ -294,7 +294,7 @@ section {
 
 /* Estilos del contenido de los filtros de búsqueda */
 #caja-contenido {
-    height: 90vh;
+    /* height: 90vh; */
     padding: 10px;
     box-sizing: border-box;
     display: flex;
@@ -637,9 +637,9 @@ select option {
     .ver-mas {
         padding: 0px;
         display: inline-block;
-        width: 20px; /* Adjusted width */
-        height: 20px; /* Ensure the icon has a fixed size */
-        vertical-align: middle; /* Center align vertically */
+        width: 20px; 
+        height: 20px; 
+        vertical-align: middle; 
         cursor: pointer;
     }
     #tabla_productos tbody tr.expanded .extra {
@@ -652,12 +652,11 @@ select option {
   
 }
 
-/* Modal styles */
-/* Modal styles */
+
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 100; 
     left: 0;
     top: 0;
     width: 100%;

@@ -24,7 +24,7 @@ def inicio():
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
-            color;   
+            color;    
         """
 
         cursor.execute(sql)
@@ -145,7 +145,8 @@ def filtrar_busqueda():
         nombre,
         FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
         color,
-        FIELD(seccion, 'ACABADOS', 'ACONDICIONADO', 'REBAJADO', 'PELAMBRE', 'CURTIDO', 'MATERIAL PRIMA', 'TENIDO')
+        FIELD(seccion, 'ACABADOS', 'ACONDICIONADO', 'REBAJADO', 'PELAMBRE', 'CURTIDO', 'MATERIAL PRIMA', 'TENIDO'),
+        seccion
         
         LIMIT %s OFFSET %s
 

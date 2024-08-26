@@ -191,7 +191,7 @@
                                     {% if producto[1] is not none %}
                                         <!-- Fila de total de hojas por producto y color -->
                                         <tr class="total-row">
-                                            <td colspan="9">{{ producto[1] }}: {{ producto[7] }}</td>
+                                            <td style=" color: rgba(0, 4, 255, 0.651);" colspan="9">{{ producto[1] }}: {{ producto[7] }}</td>
                                         </tr>
                                     {% elif producto[2] is not none and producto[3] is none %}
                                         <!-- Fila de total de hojas por color -->
@@ -222,7 +222,7 @@
                                         <td data-label="Hojas">{{ producto[7] }}</td>
                                     </tr>
                                 {% endif %}
-                            {% endfor %}
+                            {% endfor %}    
                         </tbody>
                         
                         

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', (event) => {
     let currentPage = 1;
     let perPage = 10000;
@@ -8,23 +7,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const closeModal = document.querySelector('#modal .close');
 
     // Guardar el contenido original de la tabla
-    const tableBody = document.querySelector('#tabla_productos tbody');
+    const tableBody = document.querySelector('#datos-tabla');
     const originalTableContent = tableBody.innerHTML;
 
     async function searchItems(page = 1) {
         // Obtener los valores de búsqueda
         let nameValue = document.getElementById('buscador').value;
         let colorValue = document.getElementById('buscador-color').value;
-       
         let clientValue = document.getElementById('seleccion-cliente').value;
         let sessionValue = document.getElementById('seleccion-sesion').value;
         let tipoProdValue = document.getElementById('tipo-producto').value;
 
         // Comprobar si todos los valores están vacíos
-        if (!nameValue && !colorValue  && !clientValue && !sessionValue && !tipoProdValue) {
+        if (!nameValue && !colorValue && !clientValue && !sessionValue && !tipoProdValue) {
             tableBody.innerHTML = originalTableContent;
             attachEventListeners();
-            /* location.reload(); */
             return;
         }
 
@@ -51,32 +48,50 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         let data = result.data;
 
-        tableBody.innerHTML = ''; 
+        tableBody.innerHTML = '';
 
         data.forEach(item => {
-            let formattedDate = new Date(item[6]).toISOString().split('T')[0];
             let row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item[0]}</td>
-                <td>${item[1]}, ${item[2]}, ${item[8]}</td>
-                <td>${item[3]}</td>
-                 <td class="ver-mas-cell">
-                    <button class="ver-mas-btn">
-                        <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
-                    </button>
-                 </td>
-                <td data-label="Tip. Produ">${item[4]}</td>
-                <td data-label="tipo_produccion">${item[5]}</td>
-                <td data-label="cliente">${item[9]}</td>
-                <td data-label="Fecha">${formattedDate}</td>
-                <td data-label="Hojas">${item[7]}</td>
-            `;
+
+            if (item[0] === null) {
+                if (item[1] !== null) {
+                    // Fila de total de hojas por producto y color
+                    row.classList.add('total-row');
+                    row.innerHTML = `<td colspan="8">${item[1]}</td><td>${item[7]}</td>`;
+                } else if (item[2] !== null && item[3] === null) {
+                    // Fila de total de hojas por color
+                    row.classList.add('total-row');
+                    row.innerHTML = `<td colspan="8">${item[2]}</td><td>${item[7]}</td>`;
+                } else if (item[3] !== null && item[2] === null) {
+                    // Fila de total de hojas por sección
+                    row.classList.add('total-row');
+                    row.innerHTML = `<td colspan="8">${item[3]}</td><td>${item[7]}</td>`;
+                }
+            } else {
+                // Fila de producto normal
+                let formattedDate = new Date(item[6]).toISOString().split('T')[0];
+                row.innerHTML = `
+                    <td>${item[0]}</td>
+                    <td>${item[1]}, ${item[2]}, ${item[8]}</td>
+                    <td>${item[3]}</td>
+                    <td class="ver-mas-cell">
+                        <button class="ver-mas-btn">
+                            <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
+                        </button>
+                    </td>
+                    <td data-label="Tip. Produ">${item[4]}</td>
+                    <td data-label="tipo_produccion">${item[5]}</td>
+                    <td data-label="cliente">${item[9]}</td>
+                    <td data-label="Fecha">${formattedDate}</td>
+                    <td data-label="Hojas">${item[7]}</td>
+                `;
+            }
+
             tableBody.appendChild(row);
         });
 
         attachEventListeners();
     }
-
 
     function attachEventListeners() {
         console.log('Asignando event listeners a los botones "ver más"');
@@ -93,7 +108,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <p><strong>Sección:</strong> ${rowData[2]}</p>
                     <p><strong>Tip. Produ:</strong> ${rowData[4]}</p>
                     <p><strong>tipo_produccion:</strong> ${rowData[5]}</p>
-                    <p><strong>Cliente:</strong> ${rowData[9]}</p>
+                    <p><strong>Cliente:</strong> ${rowData[6]}</p>
                     <p><strong>Fecha:</strong> ${rowData[7]}</p>
                     <p><strong>Hojas:</strong> ${rowData[8]}</p>
                 `;
@@ -116,8 +131,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    
-
     // Add event listeners to trigger search only when there is input or change
     document.getElementById('buscador').addEventListener('input', () => searchItems(currentPage));
     document.getElementById('buscador-color').addEventListener('input', () => searchItems(currentPage));
@@ -125,12 +138,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('seleccion-sesion').addEventListener('change', () => searchItems(currentPage));
     document.getElementById('tipo-producto').addEventListener('change', () => searchItems(currentPage));
 
-    
-
-    
     attachEventListeners();
 });
-
 
 
 
