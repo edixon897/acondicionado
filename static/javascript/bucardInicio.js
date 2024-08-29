@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let formattedDate = new Date(item[6]).toISOString().split('T')[0];
                 row.innerHTML = `
                     <td>${item[0]}</td>
-                    <td>${item[1]}, ${item[2]}, ${item[8]}</td>
+                    <td>${item[1]} ${item[2]} ${item[8]}</td>
                     <td>${item[3]}</td>
                     <td class="ver-mas-cell">
                         <button class="ver-mas-btn">
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (event.target.classList.contains('suggestion-item')) {
                 buscadorInput.value = event.target.textContent;
                 suggestionsBox.style.display = 'none';
-                searchItems(); // Llama a la función de búsqueda que ya tienes definida
+                searchItems(); 
             }
         });
 

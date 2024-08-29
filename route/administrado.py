@@ -53,7 +53,7 @@ def administrador():
 def actualizar_sesiones_activas():
     sesiones_activas = obtener_sesiones_activas()
 
-    return render_template('_sesiones_activas.html', sesiones_activas=sesiones_activas)
+    return redirect('administrador', sesiones_activas=sesiones_activas)
 
 
 

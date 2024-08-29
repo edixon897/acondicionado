@@ -30,7 +30,7 @@ def login():
         mydb.connect()
         cursor = mydb.cursor()
 
-        cursor.execute("SELECT nombre, contrasena, rol FROM usuario WHERE nombre = %s AND contrasena = %s AND estado = %s", (nombre, contraseña, 'Activo'))
+        cursor.execute("SELECT nombre, contrasena, rol, estado FROM usuario WHERE nombre = %s AND contrasena = %s AND estado = %s", (nombre, contraseña, 'Activo'))
         user = cursor.fetchone()
         cursor.close()
         mydb.close()
@@ -38,13 +38,17 @@ def login():
         if user:
             session['logged_in'] = True
             session['username'] = nombre
-            session['rol'] = user[2]  
+            session['rol'] = user[2]
+            session['estado'] = user[3]
+
             logged_in_ips[nombre] = obtener_direccion_ip()  
 
             if user[2] == 'administrador':
                 flash('Inicio de sesión exitoso como administrador', 'success')
                 return jsonify({"success": True, "message": "Inicio de sesión exitoso como administrador", "redirect_url": url_for('inicio')})
-            else:
+            elif user[3] == 'Inactivo':
+                return jsonify({"success": False, "message": "Tu usuario no esta activo, comunicate con aministracion"})
+            else:       
                 flash('Inicio de sesión exitoso', 'success')
                 return jsonify({"success": True, "message": "Inicio de sesión exitoso", "redirect_url": url_for('inicio')})
         else:

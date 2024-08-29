@@ -195,7 +195,7 @@
                                         <tr class="total-row">
                                             <td style=" color: rgba(0, 4, 255, 0.651);" colspan="9">{{ producto[1] }}: {{ producto[7] }}</td>
                                         </tr>
-                                    {% elif producto[2] is not none and producto[3] is none %}
+                                    {% elif producto[3] is none %}
                                         <!-- Fila de total de hojas por color -->
                                         <tr class="total-row">
                                             <td colspan="9"> {{ producto[2] | capitalize }}: {{ producto[7] }}</td>
@@ -203,7 +203,7 @@
                                     {% elif producto[3] is not none and producto[2] is none %}
                                         <!-- Fila de total de hojas por sección -->
                                         <tr class="total-row">
-                                            <td colspan="9">{{ producto[3] }}: {{ producto[7] }}</td>
+                                            <td colspan="9">{{ producto[3] }}: <tr></tr> {{ producto[7] }}</td>
                                         </tr>
                                     {% endif %}
                                 {% else %}
@@ -211,7 +211,7 @@
                                     <tr>
                                         
                                         <td>{{ producto[0] }}</td>
-                                        <td>{{ producto[1] }}, {{ producto[2] }}, {{ producto[8] }}</td>
+                                        <td>{{ producto[1] }} {{ producto[2] }} {{ producto[8] }}</td>
                                         <td>{{ producto[3] }}</td>
                                         <td class="ver-mas-cell">
                                             <button class="ver-mas-btn">
