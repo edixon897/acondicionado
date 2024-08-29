@@ -10,7 +10,7 @@ def agregarUsuario():
         apellido = request.form['apellido']
         contraseña = request.form['contraseña2']
         repetir_nueva_contraseña = request.form['contraseña3']
-        rol = request.form.get('rol')  # Asegúrate de que el rol esté en el formulario
+        rol = request.form.get('rol')  
 
         if contraseña != repetir_nueva_contraseña:
             flash('La nueva contraseña y la confirmación no coinciden', 'danger')
@@ -19,7 +19,7 @@ def agregarUsuario():
 
         mydb.connect()
         cursor = mydb.cursor()
-        cursor.execute(f"INSERT INTO `usuario`(`nombre`, `apellido`, `contrasena`, `rol`) VALUES  ('{nombre}', '{apellido}','{contraseña}', 'administrador')")
+        cursor.execute(f"INSERT INTO `usuario`(`nombre`, `apellido`, `contrasena`, `rol`, `estado`) VALUES  ('{nombre}', '{apellido}','{contraseña}', 'usuario', 'Activo')")
         mydb.commit()
         cursor.close()
         mydb.close()

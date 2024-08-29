@@ -1,18 +1,328 @@
-/* Estilos generales */
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+    color: #592B03;
 }
 
-.table-container {
-    max-width: 800px;
-    margin: 20px auto;
+section {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.contenedor {
+    display: flex;      
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#menu-icon {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: auto; 
+}
+
+.menu, .nombre-soft, .logo-empresa {
+    margin-bottom: 5px;
+}
+
+.menu-options {
+    display: none;
+}
+
+.menu-options .menu-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    overflow-x: auto; /* Para permitir desplazamiento horizontal en pantallas pequeñas */
+    box-shadow: 0 8px 16px rgba(183, 178, 178, 0.2);
+    z-index: 2;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.menu-options .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.menu-options .nombre-usuario,
+.menu-options .pgn_inicio,
+.menu-options .Buscar_tarejta,
+.menu-options .cambiar_contraseña,
+.menu-options .cerrar_sesion {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-options figure {
+    margin: 0;
+    color: #007BFF;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-options figure img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.menu-options a {
+    text-decoration: none;
+    color: #592B03;
+    font-size: 18px;
+}
+
+.menu-options a:hover {
+    color: #336aff; /* Cambia esto al color que desees para el hover */
+}
+
+/* Estilo para pantallas mayores a 768px */
+@media (min-width: 768px) {
+    .contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .menu {
+        max-width: 15%;
+    }
+
+    .nombre-soft {
+        width: 30%;
+        text-align: center;
+    }
+
+    .nombre-soft h2 {
+        font-size: 1em;
+    }
+
+    .logo-empresa {
+        width: 25%;
+        text-align: right;
+    }
+
+    .menu img {
+        max-width: 25%;
+        min-width: 25%;
+    }
+
+    .logo-empresa img {
+        max-width: 25%;
+        min-width: 25%;
+    }
+
+    .menu-options .menu-content {
+        width: 20%;
+    }
+
+    .menu-options .nombre-usuario,
+    .menu-options .pgn_inicio,
+    .menu-options .Buscar_tarejta,
+    .menu-options .cambiar_contraseña,
+    .menu-options .cerrar_sesion {
+        margin-bottom: 15px;
+    }
+
+    .menu-options figure {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu-options a {
+        font-size: 16px;
+    }
+
+    .menu-options .close-btn {
+        font-size: 60px;
+    }
+}
+
+/* Estilos para la versión móvil */
+@media (max-width: 767px) {
+    .contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .nombre-soft {
+        width: 25%;
+        text-align: center;
+    }
+
+    .nombre-soft h2 {
+        font-size: 1.1em;
+    }
+
+    .logo-empresa {
+        text-align: right;
+    }
+
+    .menu, .nombre-soft, .logo-empresa {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .menu img {
+        margin: 0;
+        max-width: 15%;
+        min-width: 25%;
+    }
+
+    .logo-empresa img {
+        margin: 0;
+        max-width: 50%;
+        min-width: 25%;
+    }
+
+    .menu-options .menu-content {
+        width: 60%;
+    }
+
+    .menu-options .nombre-usuario,
+    .menu-options .pgn_inicio,
+    .menu-options .Buscar_tarejta,
+    .menu-options .cambiar_contraseña,
+    .menu-options .cerrar_sesion {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .menu-options figure {
+        margin: 0;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-options figure img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .menu-options a {
+        text-decoration: none;
+        color: #401F02;
+        font-size: 18px;
+    }
+
+    .menu-options .close-btn {
+        font-size: 50px;
+        cursor: pointer;
+    }
+}
+
+/* Estilos para la versión de móviles medianos */
+@media (max-width: 480px) {
+    .menu img {
+        max-width: 45%;
+        min-width: 30%;
+    }
+
+    .menu #usuario, #pgn-inicio, #buscar-tarea, #cambiar-contraseña, #cerrar-sesion {
+        max-width: 100%;
+        min-width: 30%;
+    }
+
+    .logo-empresa img {
+        max-width: 100%;
+        min-width: 30%;
+    }
+
+    .nombre-soft h2 {
+        font-size: 0.9em;
+    }
+}
+
+/* Estilos para la versión de móviles pequeños */
+@media (max-width: 320px) {
+    .menu img, .logo-empresa img {
+        max-width: 35%;
+        min-width: 35%;
+    }
+
+    .nombre-soft h2 {
+        font-size: 0.8em;
+    }
+}
+
+/* Estilos para pantallas muy grandes */
+@media (min-width: 1541px) {
+    .contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .menu {
+        max-width: 15%;
+    }
+
+    .nombre-soft {
+        width: 30%;
+        text-align: center;
+    }
+
+    .nombre-soft h2 {
+        font-size: 1.2em;
+    }
+
+    .logo-empresa {
+        width: 20%;
+        text-align: right;
+    }
+}
+
+
+/* .table-container {
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+.logout-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.logout-link:hover {
+    text-decoration: underline;
+}
+.active {
+    color: green;
+}
+.Desconectado {
+    color: red;
+} */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
 }
 
 table {
@@ -20,27 +330,36 @@ table {
     border-collapse: collapse;
 }
 
-table th, table td {
-    padding: 12px;
+th, td {
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-table th {
-    background-color: #f2f2f2;
+.btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-table td a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    background-color: #f0f0f0;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
 }
 
-table td a:hover {
-    background-color: #e0e0e0;
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+    .btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
 }

@@ -63,14 +63,16 @@
                                 </figure>
                                 <a href="{{ url_for('agregarUsuario') }}">Agregar usuario</a>
                             </div>
+
+                            <div class="cerrar_sesion">
+                                <figure>
+                                    <img id="cerrar-sesion" src="{{ url_for('static', filename='img/resumen.png') }}" alt="Logout">
+                                </figure>
+                                <a href="{{ url_for('administrador') }}">Usuarios</a>
+                            </div>
                         {% endif %}
 
-                        <div class="cerrar_sesion">
-                            <figure>
-                                <img id="cerrar-sesion" src="{{ url_for('static', filename='img/resumen.png') }}" alt="Logout">
-                            </figure>
-                            <a href="{{ url_for('resumen') }}">Buscar por color</a>
-                        </div>
+                        
                         
     
                         <div class="cerrar_sesion">
@@ -207,6 +209,7 @@
                                 {% else %}
                                     <!-- Fila de producto normal -->
                                     <tr>
+                                        
                                         <td>{{ producto[0] }}</td>
                                         <td>{{ producto[1] }}, {{ producto[2] }}, {{ producto[8] }}</td>
                                         <td>{{ producto[3] }}</td>

@@ -46,7 +46,7 @@ section {
     height: 100%;
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(183, 178, 178, 0.2);
-    z-index: 2;
+    z-index: 100;
     padding: 20px;
     overflow-y: auto;
 }

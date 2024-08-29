@@ -53,15 +53,14 @@
                                 </figure>
                                 <a href="{{ url_for('agregarUsuario') }}">Agregar usuario</a>
                             </div>
+
+                            <div class="cerrar_sesion">
+                                <figure>
+                                    <img id="cerrar-sesion" src="{{ url_for('static', filename='img/resumen.png') }}" alt="Logout">
+                                </figure>
+                                <a href="{{ url_for('administrador') }}">Usuarios</a>
+                            </div>
                         {% endif %}
-
-
-                        <div class="cerrar_sesion">
-                            <figure>
-                                <img id="cerrar-sesion" src="{{ url_for('static', filename='img/resumen.png') }}" alt="Logout">
-                            </figure>
-                            <a href="{{ url_for('resumen') }}">Buscar por color</a>
-                        </div>
     
                         <div class="cerrar_sesion">
                             <figure>

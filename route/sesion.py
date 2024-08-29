@@ -30,7 +30,7 @@ def login():
         mydb.connect()
         cursor = mydb.cursor()
 
-        cursor.execute("SELECT nombre, contrasena, rol FROM usuario WHERE nombre = %s AND contrasena = %s", (nombre, contraseña))
+        cursor.execute("SELECT nombre, contrasena, rol FROM usuario WHERE nombre = %s AND contrasena = %s AND estado = %s", (nombre, contraseña, 'Activo'))
         user = cursor.fetchone()
         cursor.close()
         mydb.close()

@@ -6,19 +6,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const modalContent = document.getElementById('modal-body');
     const closeModal = document.querySelector('#modal .close');
 
-    // Guardar el contenido original de la tabla
     const tableBody = document.querySelector('#datos-tabla');
     const originalTableContent = tableBody.innerHTML;
 
     async function searchItems(page = 1) {
-        // Obtener los valores de búsqueda
         let nameValue = document.getElementById('buscador').value;
         let colorValue = document.getElementById('buscador-color').value;
         let clientValue = document.getElementById('seleccion-cliente').value;
         let sessionValue = document.getElementById('seleccion-sesion').value;
         let tipoProdValue = document.getElementById('tipo-producto').value;
 
-        // Comprobar si todos los valores están vacíos
         if (!nameValue && !colorValue && !clientValue && !sessionValue && !tipoProdValue) {
             tableBody.innerHTML = originalTableContent;
             attachEventListeners();
@@ -39,6 +36,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             body: formData
         });
 
+        // Verificación de errores en la respuesta
+        if (!response.ok) {
+            console.error(`Error: ${response.status} ${response.statusText}`);
+            return;
+        }
+
         let result = await response.json();
 
         if (result.error) {
@@ -55,20 +58,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (item[0] === null) {
                 if (item[1] !== null) {
-                    // Fila de total de hojas por producto y color
                     row.classList.add('total-row');
-                    row.innerHTML = `<td colspan="8">${item[1]}</td><td>${item[7]}</td>`;
+                    row.innerHTML = `<td colspan="9">${item[1]}: ${item[7]}</td>`;
                 } else if (item[2] !== null && item[3] === null) {
-                    // Fila de total de hojas por color
                     row.classList.add('total-row');
-                    row.innerHTML = `<td colspan="8">${item[2]}</td><td>${item[7]}</td>`;
+                    row.innerHTML = `<td colspan="9">${item[2]}: ${item[7]}</td>`;
                 } else if (item[3] !== null && item[2] === null) {
-                    // Fila de total de hojas por sección
                     row.classList.add('total-row');
-                    row.innerHTML = `<td colspan="8">${item[3]}</td><td>${item[7]}</td>`;
+                    row.innerHTML = `<td colspan="9">${item[3]}: ${item[7]}</td>`;
                 }
             } else {
-                // Fila de producto normal
                 let formattedDate = new Date(item[6]).toISOString().split('T')[0];
                 row.innerHTML = `
                     <td>${item[0]}</td>
@@ -94,14 +93,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function attachEventListeners() {
-        console.log('Asignando event listeners a los botones "ver más"');
         document.querySelectorAll('.ver-mas-btn').forEach((button) => {
             button.addEventListener('click', (event) => {
-                // Obtener los datos de la fila clickeada
                 const row = event.target.closest('tr');
                 const rowData = Array.from(row.children).map(cell => cell.textContent.trim());
 
-                // Rellenar el modal con los datos de la fila
                 modalContent.innerHTML = `
                     <p><strong>Tarjeta:</strong> ${rowData[0]}</p>
                     <p><strong>Nombre de producto:</strong> ${rowData[1]}</p>
@@ -113,25 +109,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <p><strong>Hojas:</strong> ${rowData[8]}</p>
                 `;
 
-                // Mostrar el modal
                 modal.style.display = 'block';
             });
         });
     }
 
-    // Cerrar el modal cuando se hace click en la "X"
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 
-    // Cerrar el modal cuando se hace click fuera del contenido del modal
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
 
-    // Add event listeners to trigger search only when there is input or change
     document.getElementById('buscador').addEventListener('input', () => searchItems(currentPage));
     document.getElementById('buscador-color').addEventListener('input', () => searchItems(currentPage));
     document.getElementById('seleccion-cliente').addEventListener('change', () => searchItems(currentPage));
@@ -140,6 +132,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     attachEventListeners();
 });
+
 
 
 
