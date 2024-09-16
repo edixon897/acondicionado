@@ -24,7 +24,7 @@ def inicio():
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
-            color;    
+            color LIMIT 50;    
         """
 
         cursor.execute(sql)
@@ -169,55 +169,65 @@ def filtrar_busqueda():
 
         # Procesar los resultados para agregar totales de hojas por color, producto y sección
         datos_agrupados = []
-        total_hojas_por_color_y_producto = {}
+        total_hojas_por_nombre_color = {}
+        total_hojas_por_color = {}
+        total_hojas_por_nombre = {}
         total_hojas_por_seccion = {}
-        color_actual = None
-        seccion_actual = None
+        seccion_actual, color_actual, nombre_actual = None, None, None
 
         for producto in results:
-            color = producto[2]
-            seccion = producto[3]
-            nombre = producto[1]
-            hojas = producto[7]
-
-            # Agrupación por color y producto
-            clave_color_producto = (nombre, color)
-            if color_actual is None:
-                color_actual = color
-            if color != color_actual:
-                for (nombre_prod, color_prod), total_hojas in total_hojas_por_color_y_producto.items():
-                    total_row = (None, f"Total de hojas de {nombre_prod} color {color_prod}", None, None, None, None, None, total_hojas, None, None)
-                    datos_agrupados.append(total_row)
-                total_hojas_por_color_y_producto = {}
-                color_actual = color
-
-            if clave_color_producto not in total_hojas_por_color_y_producto:
-                total_hojas_por_color_y_producto[clave_color_producto] = 0
-            total_hojas_por_color_y_producto[clave_color_producto] += hojas
+            tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente = producto
 
             # Agrupación por sección
-            if seccion_actual is None:
-                seccion_actual = seccion
             if seccion != seccion_actual:
-                if seccion_actual in total_hojas_por_seccion:
-                    total_row = (None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, None, total_hojas_por_seccion[seccion_actual], None, None)
-                    datos_agrupados.append(total_row)
+                if seccion_actual is not None:
+                    # Añadir fila de total por sección
+                    datos_agrupados.append((None, None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, total_hojas_por_seccion[seccion_actual], None, None))
                 seccion_actual = seccion
-            if seccion not in total_hojas_por_seccion:
                 total_hojas_por_seccion[seccion] = 0
+
             total_hojas_por_seccion[seccion] += hojas
 
+            # Agrupación por color dentro de la sección
+            if color != color_actual:
+                if color_actual is not None:
+                    # Añadir fila de total por color
+                    datos_agrupados.append((None, None, f"Total de hojas color {color_actual}", None, None, None, None, total_hojas_por_color[color_actual], None, None))
+                color_actual = color
+                total_hojas_por_color[color] = 0
+
+            total_hojas_por_color[color] += hojas
+
+            # Agrupación por nombre dentro de la sección
+            if nombre != nombre_actual:
+                if nombre_actual is not None:
+                    # Añadir fila de total por nombre
+                    datos_agrupados.append((None, f"Total de hojas de {nombre_actual}", None, None, None, None, None, total_hojas_por_nombre[nombre_actual], None, None))
+                nombre_actual = nombre
+                total_hojas_por_nombre[nombre] = 0
+
+            total_hojas_por_nombre[nombre] += hojas
+
+            # Agrupación por nombre y color
+            clave_nombre_color = (nombre, color)
+            if clave_nombre_color not in total_hojas_por_nombre_color:
+                total_hojas_por_nombre_color[clave_nombre_color] = 0
+            total_hojas_por_nombre_color[clave_nombre_color] += hojas
+
+            # Añadir el producto al grupo
             datos_agrupados.append(producto)
 
-        # Agregar totales restantes por color y producto
-        for (nombre_prod, color_prod), total_hojas in total_hojas_por_color_y_producto.items():
-            total_row = (None, f"Total de hojas de {nombre_prod} color {color_prod}", None, None, None, None, None, total_hojas, None, None)
-            datos_agrupados.append(total_row)
+        # Añadir los últimos totales pendientes
+        if seccion_actual:
+            datos_agrupados.append((None, None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, total_hojas_por_seccion[seccion_actual], None, None))
+        if color_actual:
+            datos_agrupados.append((None, None, f"Total de hojas color {color_actual}", None, None, None, None, total_hojas_por_color[color_actual], None, None))
+        if nombre_actual:
+            datos_agrupados.append((None, f"Total de hojas de {nombre_actual}", None, None, None, None, None, total_hojas_por_nombre[nombre_actual], None, None))
 
-        # Agregar total restante por sección
-        if seccion_actual is not None and seccion_actual in total_hojas_por_seccion:
-            total_row = (None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, None, total_hojas_por_seccion[seccion_actual], None, None)
-            datos_agrupados.append(total_row)
+        # Añadir los totales por nombre y color
+        for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
+            datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
 
         return jsonify({'data': datos_agrupados})
 

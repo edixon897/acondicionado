@@ -187,7 +187,8 @@
                                 <th>Hojas</th>
                             </tr>
                         </thead>
-                        <tbody id="datos-tabla">
+                        
+                        <tbody id="datos-tabla">                            
                             {% for producto in dato %}
                                 {% if producto[0] is none %}
                                     {% if producto[1] is not none %}
@@ -198,7 +199,7 @@
                                     {% elif producto[2] is not none %}
                                         <!-- Fila de total de hojas por color -->
                                         <tr class="total-row">
-                                            <td colspan="9">{{ producto[2] | capitalize }}: {{ producto[7] }}</td>
+                                            <td style="color: rgba(0, 0, 0, 0.651);" colspan="9">{{ producto[2] | capitalize }}: {{ producto[7] }}</td>
                                         </tr>
                                     {% elif producto[3] is not none %}
                                         <!-- Fila de total de hojas por sección -->
@@ -217,19 +218,21 @@
                                         <td>{{ producto[0] }}</td>
                                         <td>{{ producto[1] }} {{ producto[2] }} {{ producto[8] }}</td>
                                         <td>{{ producto[3] }}</td>
-                                        <td class="ver-mas-cell">
-                                            <button class="ver-mas-btn">
-                                                <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
-                                            </button>
-                                        </td>
+                                        
                                         <td data-label="Tip. Produ">{{ producto[4] }}</td>
                                         <td data-label="tipo_produccion">{{ producto[5] }}</td>
                                         <td data-label="cliente">{{ producto[9] }}</td>
                                         <td data-label="Fecha">{{ producto[6] }}</td>
                                         <td data-label="Hojas">{{ producto[7] }}</td>
+                                        <td class="ver-mas-cell">
+                                            <button class="ver-mas-btn">
+                                                <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
+                                            </button>
+                                        </td>
                                     </tr>
                                 {% endif %}
                             {% endfor %}
+                            
                         </tbody>
                         
                          

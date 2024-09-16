@@ -529,7 +529,7 @@ select {
     }
 }
 
-/* Estilos específicos para la tabla */
+
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -552,7 +552,6 @@ table th {
 
 
 
-/* Añadir este estilo para asegurar que las opciones no se agranden en dispositivos móviles */
 select option {
     font-size: 14px; 
     padding: 5px; 
@@ -616,8 +615,10 @@ select option {
     #tabla_productos td:nth-child(2),
     #tabla_productos th:nth-child(3),
     #tabla_productos td:nth-child(3),
-    #tabla_productos th:nth-child(4),
-    #tabla_productos td:nth-child(4)
+    #tabla_productos th:nth-child(9),
+    #tabla_productos td:nth-child(9),
+    #tabla_productos th:nth-child(9),
+    #tabla_productos td:nth-child(8)
      {
         display: table-cell;
         font-size: 0.7em;
@@ -629,8 +630,8 @@ select option {
     #tabla_productos tbody tr {
         position: relative;
     }
-    #tabla_productos td:nth-child(4),
-    #tabla_productos th:nth-child(4) {
+    #tabla_productos td:nth-child(9),
+    #tabla_productos th:nth-child(9) {
         padding: 0;
         width: 30px; 
         text-align: center; 
