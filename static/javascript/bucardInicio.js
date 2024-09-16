@@ -73,16 +73,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <td>${item[0]}</td>
                     <td>${item[1]} ${item[2]} ${item[8]}</td>
                     <td>${item[3]}</td>
-                    <td class="ver-mas-cell">
-                        <button class="ver-mas-btn">
-                            <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
-                        </button>
-                    </td>
+                   
                     <td data-label="Tip. Produ">${item[4]}</td>
                     <td data-label="tipo_produccion">${item[5]}</td>
                     <td data-label="cliente">${item[9]}</td>
                     <td data-label="Fecha">${formattedDate}</td>
                     <td data-label="Hojas">${item[7]}</td>
+                     <td class="ver-mas-cell">
+                        <button class="ver-mas-btn">
+                            <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
+                        </button>
+                    </td>
                 `;
             }
 
