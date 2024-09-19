@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <td>${item[0]}</td>
                     <td>${item[1]} ${item[2]} ${item[8]}</td>
                     <td>${item[3]}</td>
-                   
                     <td data-label="Tip. Produ">${item[4]}</td>
                     <td data-label="tipo_produccion">${item[5]}</td>
                     <td data-label="cliente">${item[9]}</td>
@@ -105,9 +104,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <p><strong>Sección:</strong> ${rowData[2]}</p>
                     <p><strong>Tip. Produ:</strong> ${rowData[4]}</p>
                     <p><strong>tipo_produccion:</strong> ${rowData[5]}</p>
-                    <p><strong>Cliente:</strong> ${rowData[6]}</p>
-                    <p><strong>Fecha:</strong> ${rowData[7]}</p>
-                    <p><strong>Hojas:</strong> ${rowData[8]}</p>
+                    <p><strong>Cliente:</strong> ${rowData[9]}</p>
+                    <p><strong>Fecha:</strong> ${rowData[6]}</p>
+                    <p><strong>Hojas:</strong> ${rowData[7]}</p>
                 `;
 
                 modal.style.display = 'block';
