@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <p><strong>Tarjeta:</strong> ${rowData[0]}</p>
                     <p><strong>Nombre de producto:</strong> ${rowData[1]}</p>
                     <p><strong>Sección:</strong> ${rowData[2]}</p>
-                    <p><strong>Tip. Produ:</strong> ${rowData[4]}</p>
-                    <p><strong>tipo_produccion:</strong> ${rowData[5]}</p>
-                    <p><strong>Cliente:</strong> ${rowData[9]}</p>
+                    <p><strong>Tip. Produ:</strong> ${rowData[3]}</p>
+                    <p><strong>tipo_produccion:</strong> ${rowData[4]}</p>
+                    <p><strong>Cliente:</strong> ${rowData[5]}</p>
                     <p><strong>Fecha:</strong> ${rowData[6]}</p>
                     <p><strong>Hojas:</strong> ${rowData[7]}</p>
                 `;

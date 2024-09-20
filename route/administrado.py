@@ -1,6 +1,6 @@
 from flask import flash
 from app import render_template, session, app, logged_in_ips, redirect, url_for
-from conexion import mydb
+from conexion import create_connection, close_connection
 from route.seguridad import login_required
 
 
@@ -8,13 +8,20 @@ from route.seguridad import login_required
 def obtener_sesiones_activas():
     # Obtener todos los usuarios de la base de datos
     try:
-        mydb.connect()
-        cursor = mydb.cursor()
+        connection = create_connection()
+        if connection is None:
+            print("No hay conexión con la base de datos")
+            return None
+        cursor = connection.cursor()
         sql = "SELECT * FROM usuario"
         cursor.execute(sql)
         usuarios = cursor.fetchall()
+    except Exception as e:
+        print(f"Error al consultar usuarios: {e}")
+        return None
+    
     finally:
-        mydb.close()
+        close_connection(connection)
 
     # Construir lista de sesiones activas y estado de cada usuario
     sesiones_activas = []
@@ -67,8 +74,11 @@ def cambiar_estado_usuario(user_id):
 
     # Conectar a la base de datos y cambiar el estado del usuario
     try:
-        mydb.connect()
-        cursor = mydb.cursor()
+        connection = create_connection()
+        if connection is None:
+            print("No hay conexión con la base de datos")
+            return None
+        cursor = connection.cursor()
 
         # Obtener el estado actual del usuario
         cursor.execute("SELECT estado FROM usuario WHERE id = %s", (user_id,))
@@ -77,11 +87,16 @@ def cambiar_estado_usuario(user_id):
         # Cambiar el estado
         nuevo_estado = 'Inactivo' if estado_actual == 'Activo' else 'Activo'
         cursor.execute("UPDATE usuario SET estado = %s WHERE id = %s", (nuevo_estado, user_id))
-        mydb.commit()
+        connection.commit()
 
         flash(f'El estado del usuario ha sido cambiado a {nuevo_estado}', 'success')
+        
+    except Exception as e:
+        print(f"Error al consultar usuarios: {e}")
+        return None
+    
     finally:
-        mydb.close()
+        close_connection(connection)
 
     return redirect(url_for('administrador'))
 

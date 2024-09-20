@@ -3,7 +3,7 @@
 from flask import jsonify, request
 from app import app, session, render_template
 from route.seguridad import login_required
-from conexion import mydb
+from conexion import create_connection, close_connection
 
 
 @app.route('/inicio')
@@ -11,9 +11,12 @@ from conexion import mydb
 def inicio():
     data = []
     try:
-        # Conectar a la base de datos
-        mydb.connect()
-        cursor = mydb.cursor()
+        connection = create_connection()
+        if connection is None:
+            print("No hay conexión con la base de datos")
+            return None
+
+        cursor = connection.cursor()
 
         # Consultar datos de la base de datos
         sql = """
@@ -98,9 +101,10 @@ def inicio():
 
     except Exception as e:
         print(f"Error al obtener los datos de la base de datos: {e}")
+        return None
+    
     finally:
-        cursor.close()
-        mydb.close()
+        close_connection(connection)
 
     # Pasar datos agrupados a la plantilla
     return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=data, dato=datos_agrupados, total_rows=total_rows)
@@ -161,9 +165,11 @@ def filtrar_busqueda():
         query += " LIMIT %s OFFSET %s"
         filters.extend([per_page, offset])
         
-        # Conexión y ejecución de la consulta
-        mydb.connect()
-        cursor = mydb.cursor()
+        connection = create_connection()
+        if connection is None:
+            print("No hay conexión con la base de datos")
+            return None
+        cursor = connection.cursor()
         cursor.execute(query, filters)
         results = cursor.fetchall()
 
@@ -235,12 +241,6 @@ def filtrar_busqueda():
         # Es recomendable no exponer errores detallados en producción
         return jsonify({'error': str(e)}), 500
 
+    
     finally:
-        try:
-            cursor.close()
-        except:
-            pass
-        try:
-            mydb.close()
-        except:
-            pass
+        close_connection(connection)

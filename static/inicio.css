@@ -621,7 +621,7 @@ select option {
     #tabla_productos td:nth-child(8)
      {
         display: table-cell;
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
     #tabla_productos th.extra,
     #tabla_productos td.extra {

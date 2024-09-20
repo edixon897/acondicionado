@@ -4,14 +4,9 @@ import mysql.connector
 import os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+from conexion import create_connection
 
-# Conexión a la base de datos
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="acondicionado"
-)
+
 
 # Nombres de columnas del archivo .prn
 column_names = ['tarjeta', 'tip_prod', 'nombre', 'color', 'calibre', 'seccion', 'tipo_produccion', 'hojas', 'cliente', 'fecha']
@@ -40,7 +35,11 @@ def is_duplicate(cursor, row):
 # Función para insertar datos en la base de datos
 def insert_data(df, batch_size=100):
     try:
-        cursor = mydb.cursor()
+        connection = create_connection()
+        if connection is None:
+            print("No hay conexión con la base de datos")
+            return None
+        cursor = connection.cursor()
         total_rows = len(df)
         print(f"Total de filas a insertar: {total_rows}")
         for start in range(0, total_rows, batch_size):
@@ -58,7 +57,7 @@ def insert_data(df, batch_size=100):
                               `tipo_produccion`, `hojas`, `cliente`, `fecha`)
                               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
                     cursor.execute(sql, value)
-                    mydb.commit()
+                    connection.commit()
                     print(f"Registro insertado con éxito: {value}")
                     time.sleep(1)  # Espera antes de insertar el siguiente registro
                 else:

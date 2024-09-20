@@ -97,9 +97,9 @@
                 <div class="subtitulo">
                     <h2>CARACTERISTICAS</h2>
                 </div>
-                <section class="informacion_producto">
+                <section class="informacion_producto" id="informacion_producto">
                     <div class="primer_info">
-                        <p>Seccion: <span>ACONDICIONADO</span></p>
+                      <!--   <p>Seccion: <span>ACONDICIONADO</span></p>
                         <p>Familia: <span>NOBUCK</span></p>
                         <p>Color: <span>NEGRO</span></p>
                         <p>T: Prod: <span>REPROCESO</span></p>
@@ -125,61 +125,15 @@
                         <p>No. Lote: <span>00212</span></p>
                         <p>Seleccion: <span>03 CUARTAS</span></p>
                         <p>Valor: <span>EJEMPLO</span></p>
-                        <p>Hojas: <span>100</span></p>
+                        <p>Hojas: <span>100</span></p> -->
                     </div>
                 </section>
             </div>
         </div>
     </section>
 
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var posibilidades = [
-                "Manzana",
-                "Melon",
-                "Pepino",
-                "Papaya",
-                "Sandia",
-                "Fresa",
-                "Limon",
-                "Mamey",
-                "Melocoton",
-                "Mandarina",
-                "Naranja",
-                "Guayaba",
-                "Mango"
-            ];
     
-            var buscador = document.getElementById("buscador");
-            var sugerencias = document.getElementById("sugerencias");
-    
-            // Función para mostrar las sugerencias
-            function mostrarSugerencias(event) {
-                var valor = event.target.value.toLowerCase();
-                sugerencias.innerHTML = "";
-    
-                if (valor.length === 0) {
-                    return;
-                }
-    
-                var sugerenciasFiltradas = posibilidades.filter(function(item) {
-                    return item.toLowerCase().includes(valor);
-                });
-    
-                sugerenciasFiltradas.forEach(function(sugerencia) {
-                    var div = document.createElement("div");
-                    div.textContent = sugerencia;
-                    sugerencias.appendChild(div);
-                });
-            }
-    
-            // Evento de entrada en el campo de búsqueda
-            buscador.addEventListener("input", mostrarSugerencias);
-        });
-    </script>
-     -->
-    
-
+    <script src="/static/javascript/bucadorTarjeta.js"></script>
     <script src="/static/javascript/manu.js"></script>
 </body>
 </html>
