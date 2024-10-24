@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (item[0] === null) {
                 if (item[1] !== null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td colspan="9">${item[1]}: ${item[7]}</td>`;
+                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[1]}: ${item[7]}</td>`;
                 } else if (item[2] !== null && item[3] === null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td colspan="9">${item[2]}: ${item[7]}</td>`;
+                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[2]}: ${item[7]}</td>`;
                 } else if (item[3] !== null && item[2] === null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td colspan="9">${item[3]}: ${item[7]}</td>`;
+                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[3]}: ${item[7]}</td>`;
                 }
             } else {
                 let formattedDate = new Date(item[6]).toISOString().split('T')[0];

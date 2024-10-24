@@ -18,7 +18,7 @@ def inicio():
 
         cursor = connection.cursor()
 
-        # Consultar datos de la base de datos
+        
         sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
             FROM recepcion_eco WHERE 20
@@ -27,7 +27,7 @@ def inicio():
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
-            color LIMIT 50;    
+            color;    
         """
 
         cursor.execute(sql)
@@ -43,46 +43,46 @@ def inicio():
         for producto in data:
             tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente = producto
 
-            # Agrupación por sección
+            # Agrupacion por sección
             if seccion != seccion_actual:
                 if seccion_actual is not None:
-                    # Añadir fila de total por sección
+                    #fila de total por sección
                     datos_agrupados.append((None, None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, total_hojas_por_seccion[seccion_actual], None, None))
                 seccion_actual = seccion
                 total_hojas_por_seccion[seccion] = 0
 
             total_hojas_por_seccion[seccion] += hojas
 
-            # Agrupación por color dentro de la sección
+            # Agrupacion por color dentro de la sección
             if color != color_actual:
                 if color_actual is not None:
-                    # Añadir fila de total por color
-                    datos_agrupados.append((None, None, f"Total de hojas color {color_actual}", None, None, None, None, total_hojas_por_color[color_actual], None, None))
+                    #fila de total por color
+                    datos_agrupados.append((None, None, f"Total de hojas {nombre_actual} color {color_actual}", None, None, None, None, total_hojas_por_color[color_actual], None, None))
                 color_actual = color
                 total_hojas_por_color[color] = 0
 
             total_hojas_por_color[color] += hojas
 
-            # Agrupación por nombre dentro de la sección
+            # Agrupacion por nombre dentro de la sección
             if nombre != nombre_actual:
                 if nombre_actual is not None:
-                    # Añadir fila de total por nombre
+                    #fila de total por nombre
                     datos_agrupados.append((None, f"Total de hojas de {nombre_actual}", None, None, None, None, None, total_hojas_por_nombre[nombre_actual], None, None))
                 nombre_actual = nombre
                 total_hojas_por_nombre[nombre] = 0
 
             total_hojas_por_nombre[nombre] += hojas
 
-            # Agrupación por nombre y color
+            # Agrupacion por nombre y color
             clave_nombre_color = (nombre, color)
             if clave_nombre_color not in total_hojas_por_nombre_color:
                 total_hojas_por_nombre_color[clave_nombre_color] = 0
             total_hojas_por_nombre_color[clave_nombre_color] += hojas
 
-            # Añadir el producto al grupo
+           
             datos_agrupados.append(producto)
 
-        # Añadir los últimos totales pendientes
+        # Añadir los ultimos totales pendientes
         if seccion_actual:
             datos_agrupados.append((None, None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, total_hojas_por_seccion[seccion_actual], None, None))
         if color_actual:
@@ -94,7 +94,7 @@ def inicio():
         for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
             datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
 
-        # Obtener la cantidad total de filas
+        #la cantidad total de filas
         sql_count = "SELECT COUNT(*) FROM recepcion_eco"
         cursor.execute(sql_count)
         total_rows = cursor.fetchone()[0]
@@ -106,7 +106,7 @@ def inicio():
     finally:
         close_connection(connection)
 
-    # Pasar datos agrupados a la plantilla
+
     return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=data, dato=datos_agrupados, total_rows=total_rows)
 
 
@@ -132,7 +132,6 @@ def filtrar_busqueda():
         """
         filters = []
 
-        # Aplicar filtros según los campos recibidos en el formulario
         if name:
             query += " AND nombre LIKE %s"
             filters.append(f"%{name}%")
@@ -146,10 +145,9 @@ def filtrar_busqueda():
             query += " AND seccion LIKE %s"
             filters.append(f"%{session}%")
         if tipo_prod:
-            query += " AND tip_prod LIKE %s"
+            query += " AND tipo_produccion LIKE %s"
             filters.append(f"%{tipo_prod}%")
         
-        # Ordenar resultados
         query += """
             ORDER BY 
             FIELD(LEFT(nombre, 1), 'NO', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
@@ -194,27 +192,27 @@ def filtrar_busqueda():
 
             total_hojas_por_seccion[seccion] += hojas
 
-            # Agrupación por color dentro de la sección
+            # Agrupacion por color dentro de la sección
             if color != color_actual:
                 if color_actual is not None:
-                    # Añadir fila de total por color
-                    datos_agrupados.append((None, None, f"Total de hojas color {color_actual}", None, None, None, None, total_hojas_por_color[color_actual], None, None))
+                    #fila de total por color
+                    datos_agrupados.append((None, None, f"Total de hojas {nombre_actual} color {color_actual}", None, None, None, None, total_hojas_por_color[color_actual], None, None))
                 color_actual = color
                 total_hojas_por_color[color] = 0
 
             total_hojas_por_color[color] += hojas
 
-            # Agrupación por nombre dentro de la sección
+            # Agrupacion por nombre dentro de la sección
             if nombre != nombre_actual:
                 if nombre_actual is not None:
-                    # Añadir fila de total por nombre
+                    #fila de total por nombre
                     datos_agrupados.append((None, f"Total de hojas de {nombre_actual}", None, None, None, None, None, total_hojas_por_nombre[nombre_actual], None, None))
                 nombre_actual = nombre
                 total_hojas_por_nombre[nombre] = 0
 
             total_hojas_por_nombre[nombre] += hojas
 
-            # Agrupación por nombre y color
+            # Agrupacion por nombre y color
             clave_nombre_color = (nombre, color)
             if clave_nombre_color not in total_hojas_por_nombre_color:
                 total_hojas_por_nombre_color[clave_nombre_color] = 0
@@ -223,7 +221,7 @@ def filtrar_busqueda():
             # Añadir el producto al grupo
             datos_agrupados.append(producto)
 
-        # Añadir los últimos totales pendientes
+        #los últimos totales pendientes
         if seccion_actual:
             datos_agrupados.append((None, None, None, f"Total de hojas de la sección {seccion_actual}", None, None, None, total_hojas_por_seccion[seccion_actual], None, None))
         if color_actual:
@@ -231,14 +229,13 @@ def filtrar_busqueda():
         if nombre_actual:
             datos_agrupados.append((None, f"Total de hojas de {nombre_actual}", None, None, None, None, None, total_hojas_por_nombre[nombre_actual], None, None))
 
-        # Añadir los totales por nombre y color
-        for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
-            datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
+        # los totales por nombre y color
+        #for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
+         #   datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
 
         return jsonify({'data': datos_agrupados})
 
     except Exception as e:
-        # Es recomendable no exponer errores detallados en producción
         return jsonify({'error': str(e)}), 500
 
     

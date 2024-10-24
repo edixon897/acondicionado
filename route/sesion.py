@@ -1,5 +1,5 @@
 from flask import jsonify
-from app import app, session, flash, redirect, url_for, request,  check_password_hash, render_template, logged_in_ips
+from app import app, session, flash, redirect, url_for, request,  render_template, logged_in_ips
 from route.seguridad import login_required, obtener_direccion_ip
 
 from conexion import create_connection, close_connection
@@ -10,7 +10,7 @@ from conexion import create_connection, close_connection
 @login_required
 def logout():
     if 'username' in session:
-        # Eliminar la entrada del usuario del diccionario de sesiones activas
+        # Elimina la entrada del usuario de sesiones activas
         if session['username'] in logged_in_ips:
             del logged_in_ips[session['username']]
         session.pop('logged_in', None)

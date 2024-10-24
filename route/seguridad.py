@@ -2,14 +2,14 @@ from app import request,functools, session, logged_in_ips, flash, redirect, url_
 
 
 
-# Función para obtener la dirección IP del cliente
+# Funcion para obtener la dirección IP del cliente
 def obtener_direccion_ip():
     if 'X-Forwarded-For' in request.headers:
         return request.headers.getlist('X-Forwarded-For')[0]
     else:
         return request.remote_addr
 
-# Decorador para requerir inicio de sesión
+# Funcion para requerir inicio de sesión
 def login_required(f):
     @functools.wraps(f)
     def wrap(*args, **kwargs):

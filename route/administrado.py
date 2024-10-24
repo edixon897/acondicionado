@@ -4,9 +4,9 @@ from conexion import create_connection, close_connection
 from route.seguridad import login_required
 
 
-# Función para obtener las sesiones activas
+# Funcion para obtener las sesiones activas
 def obtener_sesiones_activas():
-    # Obtener todos los usuarios de la base de datos
+    
     try:
         connection = create_connection()
         if connection is None:
@@ -44,7 +44,7 @@ def obtener_sesiones_activas():
 @app.route('/administrador', methods=['GET'])
 @login_required
 def administrador():
-    # Asegurarse de que el usuario sea administrador para acceder a esta página
+    # Aseguro de que el usuario sea administrador para acceder a esta pagina
     if session.get('rol') != 'administrador':
         flash('Acceso no autorizado', 'danger')
         return redirect(url_for('inicio'))

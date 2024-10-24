@@ -1,5 +1,6 @@
-from app import request, render_template, session, sqlite3, flash, check_password_hash, redirect, url_for, generate_password_hash, app
+from app import request, render_template, session, flash, redirect, url_for, app
 from route.seguridad import login_required
+from conexion import create_connection
 
 
 @app.route('/cambiar_contraseña', methods=['GET', 'POST'])
@@ -15,20 +16,26 @@ def cambiar_contraseña():
             flash('La nueva contraseña y la confirmación no coinciden', 'danger')
             return redirect(url_for('cambiar_contraseña'))
 
-        conn = sqlite3.connect('usuario.db')
-        c = conn.cursor()
-        c.execute('SELECT contrasena FROM users WHERE nombre = ?', (nombre,))
-        user = c.fetchone()
-        conn.close()
+        connection = create_connection()
+        if connection is None:
+            print("No hay conexión con la base de datos")
+            return None
+        cursor = connection.cursor()
+        cursor.execute('SELECT contrasena FROM usuario WHERE nombre = %s AND contrasena = %s',  (nombre, contraseña_actual,))
+        user = cursor.fetchone()
+        cursor.close()
 
-        if user and check_password_hash(user[0], contraseña_actual):
-            nueva_contraseña_hash = generate_password_hash(nueva_contraseña)
+        if user:
 
-            conn = sqlite3.connect('usuario.db')
-            c = conn.cursor()
-            c.execute('UPDATE users SET contrasena = ? WHERE nombre = ?', (nueva_contraseña_hash, nombre))
-            conn.commit()
-            conn.close()
+
+            connection = create_connection()
+            if connection is None:
+                print("No hay conexión con la base de datos")
+                return None
+            cursor = connection.cursor()
+            cursor.execute('UPDATE usuario  SET contrasena = %s WHERE nombre = %s', (nueva_contraseña, nombre))
+            connection.commit()
+            cursor.close()
 
             flash('Contraseña actualizada exitosamente', 'success')
             return redirect(url_for('login'))

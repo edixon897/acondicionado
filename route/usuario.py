@@ -1,4 +1,4 @@
-from app import app, request, flash, redirect, generate_password_hash, session, sqlite3, render_template, url_for
+from app import app, request, flash, redirect, session,  render_template, url_for
 from route.seguridad import login_required
 from conexion import create_connection, close_connection
 

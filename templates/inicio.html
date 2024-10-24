@@ -159,10 +159,10 @@
                     <h5>Tipo producción (Opcional)</h5>
                     <select name="tipo-producto" id="tipo-producto">
                         <option value="">Selec tipo producción</option>
-                        {% set tipos = busqu | map(attribute=4) | select | list %}
-                        {% set unique_tipos = tipos | unique %}
-                        {% for tipo in unique_tipos %}
-                            <option value="{{ tipo }}">{{ tipo }}</option>
+                        {% set tipo_produccion = busqu | map(attribute=5) | select | list %}
+                        {% set unique_tipos = tipo_produccion | unique %}
+                        {% for tipo_produccion in unique_tipos %}
+                            <option value="{{ tipo_produccion }}">{{ tipo_produccion }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -194,12 +194,13 @@
                                     {% if producto[1] is not none %}
                                         <!-- Fila de total de hojas por nombre y color -->
                                         <tr class="total-row">
-                                            <td style="color: rgba(0, 4, 255, 0.651);" colspan="9">{{ producto[1] }}: {{ producto[7] }}</td>
+                                            <td style="color: rgb(0, 4, 255);" colspan="9">{{ producto[1]  }}: {{ producto[7] }}</td>
                                         </tr>
                                     {% elif producto[2] is not none %}
                                         <!-- Fila de total de hojas por color -->
                                         <tr class="total-row">
-                                            <td style="color: rgba(0, 0, 0, 0.651);" colspan="9">{{ producto[2] | capitalize }}: {{ producto[7] }}</td>
+                                            <td style="color: rgba(0, 142, 251, 0.964);" colspan="9">{{ producto[2] }}: {{ producto[7] }}</td>
+                                            
                                         </tr>
                                     {% elif producto[3] is not none %}
                                         <!-- Fila de total de hojas por sección -->

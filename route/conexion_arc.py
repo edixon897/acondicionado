@@ -5,34 +5,30 @@ import os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from conexion import create_connection
+import threading
 
 
 
 # Nombres de columnas del archivo .prn
 column_names = ['tarjeta', 'tip_prod', 'nombre', 'color', 'calibre', 'seccion', 'tipo_produccion', 'hojas', 'cliente', 'fecha']
 
-# Función para limpiar valores NaN, espacios sin datos
+# Funcion para limpiar valores NaN, espacios sin datos
 def clean_data(df):
-    print("Limpiando datos NaN...")
-    df = df.fillna('')  # Se remplaza por para que registre una cadena vacia
-    print("Datos limpiados:")
-    print(df.head())
+
+    df = df.fillna('')  # Se remplaza para que registre una cadena vacia
+    
     return df
 
-# Función para verificar si el registro ya existe en la base de datos
+# Funcion para verificar si el registro ya existe en la base de datos
 def is_duplicate(cursor, row):
     query = """SELECT COUNT(*) FROM `recepcion_eco` WHERE `tarjeta` = %s AND `tip_prod` = %s AND `nombre` = %s 
                AND `color` = %s AND `calibre` = %s AND `seccion` = %s AND `tipo_produccion` = %s AND `hojas` = %s 
                AND `cliente` = %s AND `fecha` = %s"""
     cursor.execute(query, tuple(row))
     count = cursor.fetchone()[0]
-    if count > 0:
-        print(f"Registro duplicado encontrado: {row}")
-    else:
-        print(f"Registro único: {row}")
-    return count > 0
+    
 
-# Función para insertar datos en la base de datos
+# Función para insertar datos 
 def insert_data(df, batch_size=100):
     try:
         connection = create_connection()
@@ -45,7 +41,7 @@ def insert_data(df, batch_size=100):
         for start in range(0, total_rows, batch_size):
             end = start + batch_size
             batch = df.iloc[start:end]
-            print(f"Procesando lote {start // batch_size + 1}:")
+
             values = [
                 (row['tarjeta'], row['tip_prod'], row['nombre'], row['color'], row['calibre'], row['seccion'],
                     row['tipo_produccion'], row['hojas'], row['cliente'], row['fecha'] if row['fecha'] != '' else None)
@@ -59,7 +55,7 @@ def insert_data(df, batch_size=100):
                     cursor.execute(sql, value)
                     connection.commit()
                     print(f"Registro insertado con éxito: {value}")
-                    time.sleep(1)  # Espera antes de insertar el siguiente registro
+                    time.sleep(1)  # Espera 1 segundo antes de insertar el siguiente registro
                 else:
                     print(f"Registro duplicado. Esperando nuevos datos...")
                          
@@ -70,13 +66,12 @@ def insert_data(df, batch_size=100):
     except Exception as e:
         print(f"Error inesperado: {e}")
 
-# Función para leer el archivo y procesar datos que se encuentran en el archivo
+# Funcion para leer el archivo y procesar datos que se encuentran en el archivo
 def process_file(file_path):
     print(f"Procesando el archivo: {file_path}")
     try:
         df = pd.read_csv(file_path, sep=',', header=None, names=column_names, skipinitialspace=True)
-        print("Archivo leído con éxito:")
-        print(df.head())
+        
         df = clean_data(df)
         insert_data(df)
     except Exception as e:
@@ -86,17 +81,15 @@ def process_file(file_path):
 class WatcherHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if event.src_path == file_path:
-            print(f"Archivo modificado detectado: {event.src_path}")
             process_file(event.src_path)
 
-# Ruta del archivo a monitorear
+# Ruta del archivo 
 file_path = r'\\192.168.0.114\D\compartidos\plsaldo.prn'
 
-# Función principal que vigila, verifica y registra continuamente y automaticamente
+# Función principal que vigila, verifica y registra continuamente y automaticamente, los datos del archivo
 def monitor_and_process():
-    # Verificar si el archivo existe antes de iniciar la vigilancia
+    # Verificar si el archivo existe antes de iniciar la vigilancia, es importaten para que no tengamos error al leer un archivo
     if not os.path.exists(file_path):
-        print(f"El archivo {file_path} no existe.")
         return
 
     print(f"Vigilando el archivo: {file_path}")
@@ -107,13 +100,16 @@ def monitor_and_process():
 
     try:
         while True:
-            process_file(file_path)  # Verificar y registrar cada ciclo
-            print("Esperando 10 segundos antes de la siguiente verificación...")
-            time.sleep(10)  # Intervalo de espera antes de la siguiente verificación
+            process_file(file_path)  # Verifica y registrar 
+            print("Esperando 10 minutos antes de la siguiente verificación...")
+            time.sleep(1000)  
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
     print("Vigilancia finalizada.")
 
-# Iniciar la función principal
-monitor_and_process()
+
+# Inicia la ejecución del scheduler en un hilo separado
+scheduler_thread = threading.Thread(target=monitor_and_process)
+scheduler_thread.daemon = True  # Aseguro que el hilo se cierre cuando la aplicación principal termine
+scheduler_thread.start()
