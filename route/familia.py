@@ -15,7 +15,7 @@ def familia():
 def buscar_producto(nombre_producto):
     connection = create_connection()
     if connection is None:
-        print("No hay conexión con la base de datos")
+        
         return None
     try:
         cursor = connection.cursor()
@@ -46,7 +46,7 @@ def buscar_producto(nombre_producto):
         return productos
     
     except Exception as e:
-        print(f"Error al consultar usuarios: {e}")
+        
         return None
     
     finally:

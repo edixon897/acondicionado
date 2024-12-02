@@ -1,7 +1,7 @@
 
 
-from flask import jsonify, request
-from app import app, session, render_template
+
+from app import app, session, render_template, jsonify, request
 from route.seguridad import login_required
 from conexion import create_connection, close_connection
 
@@ -13,7 +13,7 @@ def inicio():
     try:
         connection = create_connection()
         if connection is None:
-            print("No hay conexión con la base de datos")
+            
             return None
 
         cursor = connection.cursor()
@@ -91,8 +91,8 @@ def inicio():
             datos_agrupados.append((None, f"Total de hojas de {nombre_actual}", None, None, None, None, None, total_hojas_por_nombre[nombre_actual], None, None))
 
         # Añadir los totales por nombre y color
-        for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
-            datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
+        #for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
+         #   datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
 
         #la cantidad total de filas
         sql_count = "SELECT COUNT(*) FROM recepcion_eco"
@@ -100,7 +100,7 @@ def inicio():
         total_rows = cursor.fetchone()[0]
 
     except Exception as e:
-        print(f"Error al obtener los datos de la base de datos: {e}")
+        
         return None
     
     finally:
@@ -165,7 +165,7 @@ def filtrar_busqueda():
         
         connection = create_connection()
         if connection is None:
-            print("No hay conexión con la base de datos")
+            
             return None
         cursor = connection.cursor()
         cursor.execute(query, filters)

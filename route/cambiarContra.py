@@ -30,7 +30,7 @@ def cambiar_contraseña():
 
             connection = create_connection()
             if connection is None:
-                print("No hay conexión con la base de datos")
+
                 return None
             cursor = connection.cursor()
             cursor.execute('UPDATE usuario  SET contrasena = %s WHERE nombre = %s', (nueva_contraseña, nombre))

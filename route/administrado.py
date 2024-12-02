@@ -6,39 +6,35 @@ from route.seguridad import login_required
 
 # Funcion para obtener las sesiones activas
 def obtener_sesiones_activas():
-    
     try:
         connection = create_connection()
         if connection is None:
             print("No hay conexión con la base de datos")
             return None
         cursor = connection.cursor()
-        sql = "SELECT * FROM usuario"
-        cursor.execute(sql)
+        cursor.execute("SELECT * FROM usuario")
         usuarios = cursor.fetchall()
     except Exception as e:
-        print(f"Error al consultar usuarios: {e}")
-        return None
-    
+        return None 
     finally:
         close_connection(connection)
 
-    # Construir lista de sesiones activas y estado de cada usuario
     sesiones_activas = []
     for usuario in usuarios:
-        id = usuario[0]
         username = usuario[1]
-        estado_us = usuario[5]
-        estado = 'Conectado' if username in logged_in_ips else 'Desconectado'
+        print('Usuario de sesion: ',username)
+        ip_address = logged_in_ips.get(username, 'No disponible')  # Obtener la IP del diccionario
+        estado = 'Conectado' if username in logged_in_ips else 'Desconectado'  # Estado basado en logged_in_ips
         sesiones_activas.append({
+            'id': usuario[0],
             'username': username,
-            'ip_address': logged_in_ips.get(username, 'No disponible'),
+            'ip_address': ip_address,
             'estado': estado,
-            'id': id,
-            'estado_us': estado_us
+            'estado_us': usuario[5]
         })
-    return sesiones_activas
 
+    return sesiones_activas
+    
 
 # Ruta para la página de administrador
 @app.route('/administrador', methods=['GET'])
@@ -50,6 +46,7 @@ def administrador():
         return redirect(url_for('inicio'))
 
     sesiones_activas = obtener_sesiones_activas()
+
 
     return render_template('administrador.html', sesiones_activas=sesiones_activas, rol = session['rol'])
 
@@ -67,7 +64,7 @@ def actualizar_sesiones_activas():
 @app.route('/cambiar_estado_usuario/<int:user_id>', methods=['POST'])
 @login_required
 def cambiar_estado_usuario(user_id):
-    # Asegurarse de que el usuario sea administrador para realizar cambios
+    # Aseguro de que el usuario sea administrador para realizar cambios
     if session.get('rol') != 'administrador':
         flash('Acceso no autorizado', 'danger')
         return redirect(url_for('inicio'))
@@ -92,7 +89,6 @@ def cambiar_estado_usuario(user_id):
         flash(f'El estado del usuario ha sido cambiado a {nuevo_estado}', 'success')
         
     except Exception as e:
-        print(f"Error al consultar usuarios: {e}")
         return None
     
     finally:

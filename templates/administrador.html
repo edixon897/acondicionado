@@ -98,7 +98,7 @@
                     <tr>
                         <td>{{ sesion.username }}</td>
                         <td>{{ sesion.ip_address }}</td>
-                        <td class="{% if sesion.estado == 'Activo' %}active{% else %}inactive{% endif %}">
+                        <td class="{% if sesion.estado == 'Conectado' %}active{% else %}Desconectado{% endif %}">
                             {{ sesion.estado }}
                         </td>
                         <td>

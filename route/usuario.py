@@ -7,12 +7,12 @@ from conexion import create_connection, close_connection
 def agregarUsuario():
     connection = create_connection()
     if connection is None:
-        print("No hay conexión con la base de datos")
+        
         return None
     try:
         if request.method == 'POST':
-            nombre = request.form['nombre']
-            apellido = request.form['apellido']
+            nombre = request.form['nombre'].capitalize()
+            apellido = request.form['apellido'].capitalize()
             contraseña = request.form['contraseña2']
             repetir_nueva_contraseña = request.form['contraseña3']
 
@@ -32,7 +32,7 @@ def agregarUsuario():
             return redirect(url_for('inicio'))
         
     except Exception as e:
-        print(f"Error al consultar usuarios: {e}")
+       
         return None
     
     finally:

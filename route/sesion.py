@@ -25,12 +25,13 @@ def logout():
 def login():
     connection = create_connection()
     if connection is None:
-        print("No hay conexión con la base de datos")
         return None
     try:
         if request.method == 'POST':
-            nombre = request.form.get('nombre')
+            nombre = request.form.get('nombre').capitalize()
             contraseña = request.form.get('contraseña')
+
+            
 
             
             cursor = connection.cursor()
@@ -47,6 +48,7 @@ def login():
                 session['estado'] = user[3]
 
                 logged_in_ips[nombre] = obtener_direccion_ip()  
+                
 
                 if user[2] == 'administrador':
                     flash('Inicio de sesión exitoso como administrador', 'success')
@@ -60,7 +62,7 @@ def login():
                 return jsonify({"success": False, "error": "Nombre de usuario o contraseña incorrectos."})
             
     except Exception as e:
-        print(f"Error al consultar usuarios: {e}")
+        
         return None
     
     finally:
