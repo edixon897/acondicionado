@@ -23,7 +23,7 @@ section {
 }
 
 #menu-icon {
-    width: 50px; /* Ajusta el tamaño según sea necesario */
+    width: 50px; 
     height: auto; 
 }
 
@@ -88,7 +88,7 @@ section {
 }
 
 .menu-options a:hover {
-    color: #336aff; /* Cambia esto al color que desees para el hover */
+    color: #336aff; 
 }
 
 /* Estilo para pantallas mayores a 768px */
@@ -151,7 +151,7 @@ section {
     }
 }
 
-/* Estilos para la versión móvil */
+/* Estilos para la version movil */
 @media (max-width: 767px) {
     .contenedor {
         flex-wrap: nowrap;
@@ -229,7 +229,7 @@ section {
     }
 }
 
-/* Estilos para la versión de móviles medianos */
+/* Estilos para la version de moviles medianos */
 @media (max-width: 480px) {
     .menu img {
         max-width: 45%;
@@ -251,7 +251,7 @@ section {
     }
 }
 
-/* Estilos para la versión de móviles pequeños */
+/* Estilos para la version de moviles pequeños */
 @media (max-width: 320px) {
     .menu img, .logo-empresa img {
         max-width: 35%;

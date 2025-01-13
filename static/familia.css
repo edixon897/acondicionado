@@ -23,7 +23,7 @@ section {
 }
 
 #menu-icon {
-    width: 50px; /* Ajusta el tamaño según sea necesario */
+    width: 50px; 
     height: auto; 
 }
 
@@ -88,7 +88,7 @@ section {
 }
 
 .menu-options a:hover {
-    color: #336aff; /* Cambia esto al color que desees para el hover */
+    color: #336aff; 
 }
 
 /* Estilo para pantallas mayores a 768px */
@@ -295,22 +295,22 @@ section {
     padding: 10px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center;     /* Centrar verticalmente */
+    justify-content: center; 
+    align-items: center;     
 }
 
 .caja_contenidos {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 85vh; /* Ajustado para que encaje mejor */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2); /* Añadir una sombra extra para resaltar */
+    height: 85vh; 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2); 
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
     box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.1); /* Añadir un borde suave para resaltar */
-    border-radius: 10px; /* Redondear las esquinas */
+    border: 2px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
 }
 
 
@@ -392,7 +392,7 @@ section {
     font-size: 24px;
     color: #401F02;
     margin: 0;
-    margin-top: 20px; /* Añadir margen superior para separar el título */
+    margin-top: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -405,7 +405,7 @@ section {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    justify-content: center; /* Centrar verticalmente el contenido */
+    justify-content: center; 
 }
 
 .informacion_producto p {
@@ -436,7 +436,7 @@ section {
         flex: 1 1 calc(50% - 20px);
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Asegurar que el contenido esté centrado verticalmente */
+        justify-content: center; 
     }
     .tercer_info{
         margin-bottom: 40px;
@@ -447,30 +447,30 @@ section {
 
 
 
-/* Estilos para móviles */
+/* Estilos para moviles */
 @media (max-width: 767px) {
     .informacion_producto {
         width: 82%;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px; /* Ajustar el espacio entre los elementos */
+        gap: 10px; 
         margin: 20px auto;
         margin-left: 50px;
     }
 
     .informacion_producto > div {
-        flex: 1 1 calc(50% - 10px); /* Permitir que dos divs estén uno al lado del otro */
+        flex: 1 1 calc(50% - 10px); 
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centrar verticalmente el contenido */
+        justify-content: center; 
     }
 
     .informacion_producto p {
-        font-size: 12px; /* Reducir el tamaño de fuente en móviles */
+        font-size: 12px; 
     }
 
     .informacion_producto span {
-        font-size: 12px; /* Reducir el tamaño de fuente en móviles */
+        font-size: 12px; 
     }
 }
 

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains('suggestion-item')) {
             buscadorInput.value = event.target.textContent;
             suggestionsBox.style.display = 'none';
-            searchItems(); // Llama a la función de búsqueda que ya tienes definida
+            searchItems(); // Llamo a la funcion de busqueda que ya tienes definida
         }
     });
 

@@ -23,8 +23,8 @@ def obtener_sesiones_activas():
     for usuario in usuarios:
         username = usuario[1]
         print('Usuario de sesion: ',username)
-        ip_address = logged_in_ips.get(username, 'No disponible')  # Obtener la IP del diccionario
-        estado = 'Conectado' if username in logged_in_ips else 'Desconectado'  # Estado basado en logged_in_ips
+        ip_address = logged_in_ips.get(username, 'No disponible')  
+        estado = 'Conectado' if username in logged_in_ips else 'Desconectado'  
         sesiones_activas.append({
             'id': usuario[0],
             'username': username,
@@ -36,7 +36,7 @@ def obtener_sesiones_activas():
     return sesiones_activas
     
 
-# Ruta para la página de administrador
+# Ruta para la pagina de administrador
 @app.route('/administrador', methods=['GET'])
 @login_required
 def administrador():
@@ -69,7 +69,7 @@ def cambiar_estado_usuario(user_id):
         flash('Acceso no autorizado', 'danger')
         return redirect(url_for('inicio'))
 
-    # Conectar a la base de datos y cambiar el estado del usuario
+    
     try:
         connection = create_connection()
         if connection is None:

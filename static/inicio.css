@@ -154,7 +154,7 @@ section {
     }
 }
 
-/* Estilos para la versión móvil */
+/* Estilos para la version movil */
 @media (max-width: 767px) {
     .contenedor {
         flex-wrap: nowrap;
@@ -232,7 +232,7 @@ section {
     }
 }
 
-/* Estilos para la versión de móviles medianos */
+/* Estilos para la version de moviles medianos */
 @media (max-width: 480px) {
     .menu img {
         max-width: 45%;
@@ -254,7 +254,7 @@ section {
     }
 }
 
-/* Estilos para la versión de móviles pequeños */
+/* Estilos para la version de moviles pequeños */
 @media (max-width: 320px) {
     .menu img, .logo-empresa img {
         max-width: 35%;
@@ -292,7 +292,7 @@ section {
 }
 
 
-/* Estilos del contenido de los filtros de búsqueda */
+/* Estilos del contenido de los filtros de busqueda */
 #caja-contenido {
     /* height: 90vh; */
     padding: 5px;
@@ -358,7 +358,7 @@ section {
     margin: 0;
 }
 
-/* Estilos para la versión de escritorio */
+/* Estilos para la version de escritorio */
 @media (min-width: 768px) {
     .filtro {
         display: flex;
@@ -444,12 +444,12 @@ section {
     }
 }
 
-/* Asegurar que los elementos contenedores tengan posición relativa */
+/* elementos contenedores con posicion relativa */
 .filtro .buscador, .filtro .color, .filtro .calibre, .cliente, .sesion, .tipo {
     position: relative;
 }
 
-/* Estilos para móviles */
+/* Estilos para moviles */
 @media (max-width: 767px) {
     .filtro {
         display: flex;
@@ -714,7 +714,7 @@ select option {
     text-decoration: none;
 }
 
-/* Ensure the modal looks good on mobile */
+
 @media screen and (max-width: 600px) {
     .modal-content {
         width: 80%;
@@ -727,7 +727,7 @@ select option {
     }
 }
 
-/* Pagination styles */
+
 
 table {
     width: 100%;

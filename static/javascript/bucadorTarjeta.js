@@ -5,12 +5,12 @@ document.getElementById('buscador').addEventListener('input', function() {
     let informacionProducto = document.getElementById('informacion_producto');
     informacionProducto.innerHTML = '';
 
-    if (query.length < 6) {
-        // Si el input tiene menos de 5 caracteres, no hace la búsqueda y limpia los resultados
+    if (query.length < 7) {
+        // Si el input tiene menos de 7 caracteres, no hace la búsqueda y limpia los resultados
         return;
     }
     
-    // Realiza la solicitud AJAX cuando el query tiene al menos 5 caracteres
+    // Realizo la solicitud AJAX cuando el query tiene al menos 7 caracteres
     fetch(`/buscar?nombre=${query}`)
     .then(response => response.json())
     .then(data => {

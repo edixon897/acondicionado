@@ -87,7 +87,7 @@
                 <div class="titulo">
                     <h1>Agregar Usuario</h1>
                 </div>
-                <form action="/agregarUsuario" method="post">
+                <form id="formUser">
                     <div class="campos">
                         <div class="input-container">
                             <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
@@ -96,20 +96,24 @@
                             <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido">
                         </div>
                         <div class="input-container">
-                            <input type="password" id="contraseña2" name="contraseña2" placeholder="Ingrese su contraseña" oninput="toggleEyeIcon('contraseña2', 'eye2')">
-                            <span id="eye2" class="toggle-password" onclick="togglePassword('contraseña2')" style="display: none;">&#128065;</span>
+                            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" oninput="toggleEyeIcon('contraseña2', 'eye2')">
+                            <span id="eye2" class="toggle-password" onclick="togglePassword('contrasena')" style="display: none;">&#128065;</span>
                         </div>
                         <div class="input-container">
-                            <input type="password" id="contraseña3" name="contraseña3" placeholder="Repetir contraseña" oninput="toggleEyeIcon('contraseña3', 'eye3')">
-                            <span id="eye3" class="toggle-password" onclick="togglePassword('contraseña3')" style="display: none;">&#128065;</span>
+                            <input type="password" id="contrasena2" name="contrasena2" placeholder="Repetir contraseña" oninput="toggleEyeIcon('contraseña3', 'eye3')">
+                            <span id="eye3" class="toggle-password" onclick="togglePassword('contrasena2')" style="display: none;">&#128065;</span>
                         </div>
                     </div>
-                    <button class="boton-ingresar">Guardar usuario</button>
+                    
+                    <button type="submit" class="boton-ingresar">Guardar usuario</button>
+
+                    <div id="mensajei" class="error-mensaje"></div>
                 </form>
+              
             </div>
             
     </section>
-
+    <script src="/static/javascript/usercreate.js"></script>
     <script src="/static/javascript/manu.js"></script>
     <script src="/static/javascript/ojo_contrasena.js"></script>
 </body>

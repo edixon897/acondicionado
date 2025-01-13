@@ -23,7 +23,7 @@ section {
 }
 
 #menu-icon {
-    width: 50px; /* Ajusta el tamaño según sea necesario */
+    width: 50px; 
     height: auto; 
 }
 
@@ -91,7 +91,7 @@ section {
 }
 
 .menu-options a:hover {
-    color: #336aff; /* Cambia esto al color que desees para el hover */
+    color: #336aff; 
 }
 
 /* Estilo para pantallas mayores a 768px */
@@ -154,7 +154,7 @@ section {
     }
 }
 
-/* Estilos para la versión móvil */
+/* Estilos para la version movil */
 @media (max-width: 767px) {
     .contenedor {
         flex-wrap: nowrap;
@@ -232,7 +232,7 @@ section {
     }
 }
 
-/* Estilos para la versión de móviles medianos */
+/* Estilos para la version de moviles medianos */
 @media (max-width: 480px) {
     .menu img {
         max-width: 45%;
@@ -254,7 +254,7 @@ section {
     }
 }
 
-/* Estilos para la versión de móviles pequeños */
+/* Estilos para la version de moviles pequeños */
 @media (max-width: 320px) {
     .menu img, .logo-empresa img {
         max-width: 35%;
@@ -298,29 +298,29 @@ section {
     padding: 10px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center;     /* Centrar verticalmente */
+    justify-content: center; 
+    align-items: center;    
 }
 
 .caja-contenedor {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 85vh; /* Ajustado para que encaje mejor */
+    height: 85vh; 
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2); 
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
     box-sizing: border-box;
-    border: 2px solid #592B03; /* Añadir un borde suave para resaltar */
-    border-radius: 10px; /* Redondear las esquinas */
+    border: 2px solid #592B03; 
+    border-radius: 10px;
 }
 
 .filtro {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin-bottom: 10px; /* Espacio entre los filtros y la tabla */
+    margin-bottom: 10px; 
 }
 
 .filtro .buscador, .filtro .color, .filtro .calibre, .cliente, .sesion, .tipo {
@@ -364,22 +364,22 @@ section {
         display: flex;
         flex-wrap: nowrap;
         gap: 10px;
-        justify-content: space-between; /* Distribuir espacio entre los elementos */
-        align-items: center; /* Alinear verticalmente */
+        justify-content: space-between; 
+        align-items: center; 
     }
 
     .filtro .buscador.buscador-productos {
-        flex: 1.5; /* Reducir el tamaño del buscador de productos */
-        min-width: 250px; /* Ancho mínimo */
-        position: relative; /* Necesario para el posicionamiento de los íconos */
+        flex: 1.5; 
+        min-width: 250px; 
+        position: relative; 
     }
 
     .filtro .buscador input[type="search"] {
-        width: 30%; /* Ocupa todo el ancho disponible */
-        height: 60px; /* Ajustar la altura */
-        font-size: 16px; /* Ajustar el tamaño de la fuente */
-        padding-left: 40px; /* Espacio para el icono */
-        box-sizing: border-box; /* Asegurar que el padding no afecte el tamaño total */
+        width: 30%;
+        height: 60px; 
+        font-size: 16px; 
+        padding-left: 40px; 
+        box-sizing: border-box; 
     }
 
     .filtro .buscador figure {
@@ -396,23 +396,23 @@ section {
     .cliente, 
     .sesion, 
     .tipo {
-        flex: 1; /* Ocupa el mismo espacio para que se alineen */
-        position: relative; /* Necesario para el posicionamiento de los íconos */
-        min-width: 150px; /* Ancho mínimo */
+        flex: 1; 
+        position: relative; 
+        min-width: 150px; 
     }
 
     .filtro .color input[type="search"], 
     .filtro .calibre input[type="search"] {
-        height: 35px; /* Ajustar la altura */
-        padding-left: 35px; /* Espacio para el icono */
-        font-size: 14px; /* Ajustar el tamaño de la fuente */
+        height: 35px; 
+        padding-left: 35px; 
+        font-size: 14px; 
     }
 
     .cliente select, 
     .sesion select, 
     .tipo select {
-        height: 35px; /* Ajustar la altura */
-        font-size: 14px; /* Ajustar el tamaño de la fuente */
+        height: 35px; 
+        font-size: 14px; 
     }
 
     .filtro .color figure, 
@@ -425,8 +425,8 @@ section {
     }
 
     h5 {
-        font-size: 14px; /* Ajustar el tamaño del texto del encabezado */
-        margin-bottom: 5px; /* Reducir el margen inferior */
+        font-size: 14px; 
+        margin-bottom: 5px; 
     }
 
     .cliente, .sesion, .tipo {
@@ -444,12 +444,12 @@ section {
     }
 }
 
-/* Asegurar que los elementos contenedores tengan posición relativa */
+/*  elementos contenedores con posicion relativa */
 .filtro .buscador, .filtro .color, .filtro .calibre, .cliente, .sesion, .tipo {
     position: relative;
 }
 
-/* Estilos para móviles */
+/* Estilos para moviles */
 @media (max-width: 767px) {
     .filtro {
         display: flex;
@@ -465,13 +465,13 @@ section {
 
     .sesion, .cliente {
         flex: 1 1 48%;
-        margin-top: -17px; /* Ajustar el margen superior para acercarlos a los elementos superiores */
+        margin-top: -17px; 
     }
 
     .tipo {
         width: 80%;
-        margin: 10px auto; /* Centrar horizontalmente y margen superior e inferior */
-        max-width: 217px; /* Establecer un ancho máximo */
+        margin: 10px auto; 
+        max-width: 217px;
     }
 
     .filtro .color, .filtro .calibre {
@@ -496,22 +496,22 @@ section {
     }
 
     .filtro select {
-        font-size: 14px; /* Ajustar el tamaño de fuente de las opciones */
-        padding: 10px 5px; /* Ajustar el padding de las opciones */
+        font-size: 14px; 
+        padding: 10px 5px; 
     }
 
     .filtro select option {
-        font-size: 14px; /* Ajustar el tamaño de fuente de las opciones */
-        padding: 5px; /* Ajustar el padding de las opciones */
+        font-size: 14px; 
+        padding: 5px; 
     }
 }
 
 select {
-    max-height: 150px; /* Ajusta la altura máxima del contenedor desplegable */
-    overflow-y: auto;  /* Añade un scroll si hay demasiadas opciones */
+    max-height: 150px; 
+    overflow-y: auto; 
 }
 
-/* Breakpoint intermedio para pantallas más pequeñas */
+/* Breakpoint intermedio para pantallas mas pequeñas */
 @media (max-width: 1200px) and (min-width: 768px) {
     .filtro {
         flex-wrap: wrap;
@@ -550,12 +550,12 @@ table th {
 
 
 
-/* Añadir este estilo para asegurar que las opciones no se agranden en dispositivos móviles */
+/* Añadi este estilo para asegurar que las opciones no se agranden en dispositivos moviles */
 select option {
-    font-size: 14px; /* Ajusta el tamaño de fuente de las opciones */
-    padding: 5px; /* Ajusta el padding de las opciones */
-    background-color: white; /* Asegurar que el fondo sea blanco */
-    color: black; /* Asegurar que el texto sea negro */
+    font-size: 14px; 
+    padding: 5px; 
+    background-color: white; 
+    color: black; 
 }
 
 
@@ -626,16 +626,16 @@ select option {
     }
     #tabla_productos td:nth-child(4),
     #tabla_productos th:nth-child(4) {
-        padding: 0; /* Remove padding to save space */
-        width: 30px; /* Ensure minimal width */
-        text-align: center; /* Center align the icon */
+        padding: 0; 
+        width: 30px; 
+        text-align: center; 
     }
     .ver-mas {
         padding: 0px;
         display: inline-block;
-        width: 20px; /* Adjusted width */
-        height: 20px; /* Ensure the icon has a fixed size */
-        vertical-align: middle; /* Center align vertically */
+        width: 20px; 
+        height: 20px; 
+        vertical-align: middle; 
         cursor: pointer;
     }
     #tabla_productos tbody tr.expanded .extra {
@@ -709,7 +709,7 @@ select option {
     text-decoration: none;
 }
 
-/* Ensure the modal looks good on mobile */
+
 @media screen and (max-width: 600px) {
     .modal-content {
         width: 80%;

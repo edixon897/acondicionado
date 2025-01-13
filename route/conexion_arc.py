@@ -7,7 +7,7 @@ from watchdog.events import FileSystemEventHandler
 from conexion import create_connection
 import threading
 
-# Nombres de columnas del archivo .prn
+# Nombres de columnas del archivo .prn (ESTA BARIABLE ESCRIBE UN ENCABEZADO PARA IDENTIFICAR CADA DATO PERTENECIENTE)
 column_names = ['tarjeta', 'tip_prod', 'nombre', 'color', 'calibre', 'seccion', 'tipo_produccion', 'hojas', 'cliente', 'fecha']
 
 # Función para limpiar valores NaN, espacios sin datos
@@ -94,7 +94,7 @@ class WatcherHandler(FileSystemEventHandler):
 # Ruta del archivo a leer
 file_path = r'\\192.168.0.114\D\compartidos\plsaldo.prn'
 
-# Función principal que vigila y procesa el archivo automáticamente
+# FunciOn principal que vigila y procesa el archivo automAticamente
 def monitor_and_process():
     # Verificar si el archivo existe antes de iniciar la vigilancia
     if not os.path.exists(file_path):

@@ -9,7 +9,7 @@ def obtener_direccion_ip():
     else:
         return request.remote_addr
 
-# Funcion para requerir inicio de sesión
+# Funcion para requerir inicio de sesion
 def login_required(f):
     @functools.wraps(f)
     def wrap(*args, **kwargs):

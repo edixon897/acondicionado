@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (item[0] === null) {
                 if (item[1] !== null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[1]}: ${item[7]}</td>`;
+                    row.innerHTML = `<td style="color: rgba(78, 177, 253, 0.964);" colspan="9">${item[1]}: ${item[7]}</td>`;
+                }  else if (item[3] !== null && item[2] === null) {
+                    row.classList.add('total-row');
+                    row.innerHTML = `<td style="color: rgb(64, 80, 230);" colspan="9">${item[3]}: ${item[7]}</td>`;
                 } else if (item[2] !== null && item[3] === null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[2]}: ${item[7]}</td>`;
-                } else if (item[3] !== null && item[2] === null) {
-                    row.classList.add('total-row');
-                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[3]}: ${item[7]}</td>`;
+                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[2]}: ${item[7]} </td>`;
                 }
             } else {
                 let formattedDate = new Date(item[6]).toISOString().split('T')[0];
@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <td>${item[0]}</td>
                     <td>${item[1]} ${item[2]} ${item[8]}</td>
                     <td>${item[3]}</td>
+                    
                     <td data-label="Tip. Produ">${item[4]}</td>
                     <td data-label="tipo_produccion">${item[5]}</td>
                     <td data-label="cliente">${item[9]}</td>

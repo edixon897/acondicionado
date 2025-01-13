@@ -1,6 +1,5 @@
-/* style.css */
 
-/* Estilo general del cuerpo de la página */
+
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Estilo para la sección principal que contiene el formulario de login */
+/* Estilo para la seccion principal que contiene el formulario de login */
 section {
     display: flex;
     justify-content: center;
@@ -28,18 +27,16 @@ section {
     width: 100%;
     max-width: 350px;
     box-sizing: border-box;
-    overflow: hidden; /* Asegurar que los elementos no se salgan del contenedor */
+    overflow: hidden; 
 }
 
 /* Estilo para el contenedor del logo */
-
-
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Espacio inferior entre el logo y el siguiente elemento */
+    margin-bottom: 20px; 
 }
 
 .logo figure {
@@ -52,16 +49,16 @@ section {
 
 .logo img {
     width: 100%;
-    max-width: 160px; /* Ajustar según sea necesario */
+    max-width: 160px; 
     height: auto;
     margin: 0 auto;
 }
-/* Estilo para el contenedor del título */
+/* Estilo para el contenedor del titulo */
 .titulo {
     margin-bottom: 20px;
 }
 
-/* Estilo para el título */
+/* Estilo para el titulo */
 .titulo h1 {
     font-size: 30px;
     color:#592B03;
@@ -86,7 +83,7 @@ section {
     box-sizing: border-box;
 }
 
-/* Estilo para el botón de ingresar */
+/* Estilo para el boton de ingresar */
 .boton-ingresar {
     width: 50%;
     max-width: 300px;
@@ -100,7 +97,7 @@ section {
     box-sizing: border-box;
 }
 
-/* Estilo para el botón de ingresar al pasar el cursor por encima */
+/* Estilo para el boton de ingresar al pasar el cursor por encima */
 .boton-ingresar:hover {
     background-color: #0056b3;
 }
@@ -110,7 +107,7 @@ p {
     margin: 1em auto 2em;
 }
 
-/* Estilos para pantallas con un ancho máximo de 768px */
+/* Estilos para pantallas con un ancho maximo de 768px */
 @media (max-width: 768px) {
     .titulo h1 {
         font-size: 28px;
@@ -130,12 +127,12 @@ p {
 
     .logo figure {
         width: 100%;
-        max-width: 200px; /* Limitar el ancho máximo del logo para pantallas más pequeñas */
-        transform: scale(1.1); /* Ajustar el tamaño del logo */
+        max-width: 200px; 
+        transform: scale(1.1); 
     }
 }
 
-/* Estilos para pantallas con un ancho máximo de 480px */
+/* Estilos para pantallas con un ancho maximo de 480px */
 @media (max-width: 480px) {
     .titulo h1 {
         font-size: 24px;
@@ -155,7 +152,7 @@ p {
 
     .logo img {
         width: 100%;
-        max-width: 160px; /* Ajustar según sea necesario */
+        max-width: 160px; 
         height: auto;
         margin: 0 auto;
     }

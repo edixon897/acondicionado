@@ -191,27 +191,28 @@
                         <tbody id="datos-tabla">                            
                             {% for producto in dato %}
                                 {% if producto[0] is none %}
-                                    {% if producto[1] is not none %}
-                                        <!-- Fila de total de hojas por nombre y color -->
-                                        <tr class="total-row">
-                                            <td style="color: rgb(0, 4, 255);" colspan="9">{{ producto[1]  }}: {{ producto[7] }}</td>
-                                        </tr>
-                                    {% elif producto[2] is not none %}
+                                    
+                                    {% if producto[2] is not none %}
                                         <!-- Fila de total de hojas por color -->
                                         <tr class="total-row">
-                                            <td style="color: rgba(0, 142, 251, 0.964);" colspan="9">{{ producto[2] }}: {{ producto[7] }}</td>
+                                            <td style="color: rgba(78, 177, 253, 0.964);" colspan="9">{{ producto[2] }}: {{ producto[7] }}</td> <!-- <td style="color: rgba(0, 142, 251, 0.964);">{{ producto[7] }}</td>-->
                                             
+                                        </tr>
+                                    {% elif producto[1] is not none %}
+                                        <!-- Fila de total de hojas por nombre y color -->
+                                        <tr class="total-row">
+                                            <td style="color: rgb(16, 66, 229);" colspan="9">{{ producto[1]  }}: {{ producto[7] }}</td><!--<td  style="color: rgb(0, 4, 255);">{{ producto[7] }}</td>-->
+                                        </tr>
+                                    
+                                    {% elif producto[1] is not none %}  
+                                        <!-- Fila de total de hojas por nombre -->
+                                        <tr class="total-row">
+                                            <td colspan="9">{{ producto[1] }}: {{ producto[7] }}</td> 
                                         </tr>
                                     {% elif producto[3] is not none %}
                                         <!-- Fila de total de hojas por sección -->
                                         <tr class="total-row">
-                                            <td colspan="9">{{ producto[3] }}: {{ producto[7] }}</td>
-                                        </tr>
-                                    {% elif producto[1] is not none %}
-                                        <!-- Fila de total de hojas por nombre -->
-                                        <tr class="total-row">
-                                            <td colspan="9">{{ producto[1] }}: {{ producto[7] }}</td>
-                                        </tr>
+                                            <td colspan="9">{{ producto[3] }}: {{ producto[7] }}</td> 
                                     {% endif %}
                                 {% else %}
                                     <!-- Fila de producto normal -->
