@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-08-2024 a las 21:55:12
+-- Tiempo de generación: 14-01-2025 a las 21:07:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,56 +45,6 @@ CREATE TABLE `recepcion_eco` (
 --
 
 INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
-('3XP02221', 'TERCERAS X PESADO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '0000-00-00', 363, 'PRODUCCION          '),
-('4AP02072', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-10-25', 119, 'PRODUCCION          '),
-('4AP02081', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-11-25', 75, 'PRODUCCION          '),
-('4AP02083', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-11-01', 23, 'PRODUCCION          '),
-('4AP02084', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-11-07', 95, 'PRODUCCION          '),
-('4AP02085', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-11-09', 70, 'PRODUCCION          '),
-('4AP02086', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-11-15', 13, 'PRODUCCION          '),
-('4AP02088', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-12-18', 5, 'PRODUCCION          '),
-('4AP02101', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-09', 175, 'PRODUCCION          '),
-('4AP02105', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-15', 38, 'PRODUCCION          '),
-('4AP02106', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-18', 59, 'PRODUCCION          '),
-('4AP02109', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-09', 132, 'PRODUCCION          '),
-('4AP02112', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-18', 106, 'PRODUCCION          '),
-('4AP02115', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-23', 122, 'PRODUCCION          '),
-('4AP02116', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-31', 85, 'PRODUCCION          '),
-('4AP02117', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-22', 8, 'PRODUCCION          '),
-('4AP02119', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-30', 9, 'PRODUCCION          '),
-('4AP02120', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-01-31', 62, 'PRODUCCION          '),
-('4AP02121', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-02-05', 4, 'PRODUCCION          '),
-('4AP02134', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-02-29', 80, 'PRODUCCION          '),
-('4AP02183', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-06-18', 53, 'PRODUCCION          '),
-('4AP02203', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-06-25', 5, 'PRODUCCION          '),
-('4AP02206', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-02', 155, 'PRODUCCION          '),
-('4AP02208', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-03', 258, 'PRODUCCION          '),
-('4AP02212', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-12', 77, 'PRODUCCION          '),
-('4AP02213', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-11', 9, 'PRODUCCION          '),
-('4AP02214', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-16', 83, 'PRODUCCION          '),
-('4AP02215', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-16', 72, 'PRODUCCION          '),
-('4AP02218', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-07-23', 45, 'PRODUCCION          '),
-('4AP02221', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '0000-00-00', 73, 'PRODUCCION          '),
-('4AP02223', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2024-08-01', 353, 'PRODUCCION          '),
-('4AP02225', 'CUARTAS PESADO                ', 'REBAJADO       ', '', 'CUERO     ', '', '', '0000-00-00', 17, 'PRODUCCION          '),
-('4XL01230', 'CUARTAS X LIVIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2019-04-05', 24, 'PRODUCCION          '),
-('4XL01239', 'CUARTAS X LIVIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2019-04-05', 28, 'PRODUCCION          '),
-('4XL01243', 'CUARTAS X LIVIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2019-04-11', 40, 'PRODUCCION          '),
-('4XL01248', 'CUARTAS X LIVIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2019-06-22', 37, 'PRODUCCION          '),
-('4XL01256', 'CUARTAS X LIVIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2019-05-02', 1, 'PRODUCCION          '),
-('4XM01924', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-25', 64, 'PRODUCCION          '),
-('4XM01929', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-18', 159, 'PRODUCCION          '),
-('4XM01930', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-16', 17, 'PRODUCCION          '),
-('4XM01931', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-19', 93, 'PRODUCCION          '),
-('4XM01934', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-20', 121, 'PRODUCCION          '),
-('4XM01935', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-19', 139, 'PRODUCCION          '),
-('4XM01936', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-20', 86, 'PRODUCCION          '),
-('4XM01939', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-18', 96, 'PRODUCCION          '),
-('4XM01940', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-02-01', 134, 'PRODUCCION          '),
-('4XM01941', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-20', 89, 'PRODUCCION          '),
-('4XM01948', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-02-01', 87, 'PRODUCCION          '),
-('4XM01949', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-01-31', 115, 'PRODUCCION          '),
-('4XM01954', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-02-15', 48, 'PRODUCCION          '),
 ('4XM01957', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-02-17', 43, 'PRODUCCION          '),
 ('4XM01958', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-02-22', 111, 'PRODUCCION          '),
 ('4XM01960', 'CUARTAS X MEDIANO             ', 'REBAJADO       ', '', 'CUERO     ', '', '', '2023-02-21', 48, 'PRODUCCION          '),
@@ -388,8 +338,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK20952', 'SABRINA                       ', 'ACONDICIONADO  ', 'BLANCO                        ', 'CUERO     ', '14-16', '', '2018-12-31', 58, 'REP. ALMACEN        '),
 ('BLK20955', 'BUDAPEST                      ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '16-18', '', '2018-12-31', 31, 'REP. ALMACEN        '),
 ('BLK20966', 'CRUPON LARSON                 ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2018-12-31', 3, 'REPROCESO           '),
-('BLK20967', 'CRUPON MESTRAL                ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2018-12-31', 4, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK20967', 'CRUPON MESTRAL                ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2018-12-31', 4, 'REPROCESO           '),
 ('BLK20970', 'CRUPON VARSOBIA               ', 'ACONDICIONADO  ', 'RANCHO                        ', 'CUERO     ', '18-20', '', '2018-12-31', 3, 'REPROCESO           '),
 ('BLK21114', 'CRUPON THUNDERBALL            ', 'ACONDICIONADO  ', 'BRANDY                        ', 'CUERO     ', '35-38', '', '2018-12-31', 7, 'REP. ALMACEN        '),
 ('BLK21293', 'BRILLANIL                     ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '10-12', '', '2018-12-31', 17, 'REPROCESO           '),
@@ -429,7 +378,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK22679', 'GITANO                        ', 'ACONDICIONADO  ', 'CARAMELO                      ', 'CUERO     ', '14-16', '', '2018-12-31', 5, 'REPROCESO           '),
 ('BLK22772', 'MARBELLA                      ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '11-13', '', '2018-12-31', 18, 'REPROCESO           '),
 ('BLK22776', 'VARIOS                        ', 'ACONDICIONADO  ', 'VARIOS                        ', 'CUERO     ', '12-14', '', '2018-12-31', 1, 'REPROCESO           '),
-('BLK22777', 'VARIOS                        ', 'ACONDICIONADO  ', 'VARIOS                        ', 'CUERO     ', '11-13', '', '2018-12-31', 1, 'REPROCESO           '),
+('BLK22777', 'VARIOS                        ', 'ACONDICIONADO  ', 'VARIOS                        ', 'CUERO     ', '11-13', '', '2018-12-31', 1, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK22778', 'VARIOS                        ', 'ACONDICIONADO  ', 'VARIOS                        ', 'CUERO     ', '14-16', '', '2018-12-31', 1, 'REPROCESO           '),
 ('BLK22788', 'CRAZY                         ', 'ACONDICIONADO  ', 'PARDO                         ', 'CUERO     ', '16-18', '', '2018-12-31', 4, 'REP. ALMACEN        '),
 ('BLK22794', 'BRILLANIL                     ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '10-12', '', '2018-12-31', 30, 'REP. ALMACEN        '),
@@ -686,8 +636,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK29883', 'CROSTA                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2019-12-05', 1, 'REPROCESO           '),
 ('BLK29884', 'CROSTA                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2019-12-05', 1, 'REPROCESO           '),
 ('BLK29911', 'DANTE                         ', 'ACONDICIONADO  ', 'ARENA                         ', 'CUERO     ', '16-18', '', '2019-12-04', 2, 'REP. ALMACEN        '),
-('BLK29915', 'COLEGIAL                      ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2018-12-31', 2, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK29915', 'COLEGIAL                      ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2018-12-31', 2, 'REPROCESO           '),
 ('BLK29916', 'COLEGIAL                      ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '15-17', '', '2018-12-31', 48, 'REP. ALMACEN        '),
 ('BLK29950', 'ROMULO                        ', 'ACONDICIONADO  ', 'ROSSE                         ', 'CUERO     ', '15-17', '', '2018-12-31', 3, 'REP. ALMACEN        '),
 ('BLK29952', 'ROMULO                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '15-17', '', '2018-12-31', 1, 'REP. ALMACEN        '),
@@ -726,7 +675,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK30756', 'ROMULO                        ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '15-17', '', '2018-12-31', 14, 'REPROCESO           '),
 ('BLK30763', 'BRILLANIL                     ', 'ACONDICIONADO  ', 'BLANCO AZULIN                 ', 'CUERO     ', '10-12', '', '2018-12-31', 2, 'REPROCESO           '),
 ('BLK30778', 'BIZON CROST                   ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '20-22', '', '2018-12-31', 14, 'REPROCESO           '),
-('BLK30809', 'DUVER                         ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2019-12-19', 1, 'REPROCESO           '),
+('BLK30809', 'DUVER                         ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2019-12-19', 1, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK30830', 'ROMULO METALIZADO             ', 'ACONDICIONADO  ', 'ORO VIEJO                     ', 'CUERO     ', '15-17', '', '2018-12-31', 20, 'REPROCESO           '),
 ('BLK30831', 'NAPA                          ', 'ACONDICIONADO  ', 'BLANCO AZULIN                 ', 'CUERO     ', '11-13', '', '2018-12-31', 3, 'REPROCESO           '),
 ('BLK30832', 'COLEGIAL                      ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '15-17', '', '2018-12-31', 10, 'REP. ALMACEN        '),
@@ -976,8 +926,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK34235', 'SHERATON                      ', 'ACABADOS       ', 'VERDE OLIVO                   ', 'CUERO     ', '14-16', '', '2018-12-31', 22, 'REP. ALMACEN        '),
 ('BLK34281', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '12-14', '', '2018-12-31', 2, 'REPROCESO           '),
 ('BLK34301', 'NOBUCK                        ', 'ACONDICIONADO  ', 'VERDE MILITAR                 ', 'CUERO     ', '12-14', 'ROJAS JOHN MARIO    ', '2019-12-19', 1, 'REPROCESO           '),
-('BLK34302', 'BOX                           ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', '', '2018-12-31', 1, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK34302', 'BOX                           ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', '', '2018-12-31', 1, 'REPROCESO           '),
 ('BLK34311', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2019-12-19', 6, 'REPROCESO           '),
 ('BLK34314', 'MARACANA                      ', 'ACABADOS       ', 'BEIGE                         ', 'CUERO     ', '15-17', 'ROMULO LTDA         ', '2018-12-31', 4, 'REPROCESO           '),
 ('BLK34324', 'ROMANC                        ', 'ACABADOS       ', 'MIEL COGNAC                   ', 'CUERO     ', '15-17', '', '2018-12-31', 1, 'REPROCESO           '),
@@ -1016,7 +965,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK34779', 'PORCELANATO                   ', 'ACABADOS       ', 'BEIGE CLARO                   ', 'CUERO     ', '10-12', 'VARIOS              ', '2018-12-31', 15, 'REP. ALMACEN        '),
 ('BLK34791', 'NAZARENO                      ', 'ACONDICIONADO  ', 'MIEL                          ', 'CUERO     ', '12-14', '', '2018-12-31', 2, 'REPROCESO           '),
 ('BLK34792', 'NAZARENO                      ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '12-14', 'VARIOS              ', '2018-12-31', 2, 'REPROCESO           '),
-('BLK34794', 'FREEPORT                      ', 'ACONDICIONADO  ', 'COGNAC                        ', 'CUERO     ', '18-20', '', '2018-12-31', 1, 'REPROCESO           '),
+('BLK34794', 'FREEPORT                      ', 'ACONDICIONADO  ', 'COGNAC                        ', 'CUERO     ', '18-20', '', '2018-12-31', 1, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK34796', 'PORCELANATO                   ', 'ACONDICIONADO  ', 'BEIGE CLARO                   ', 'CUERO     ', '10-12', 'VARIOS              ', '2019-12-23', 4, 'REPROCESO           '),
 ('BLK34810', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '16-18', 'VARIOS              ', '2019-12-23', 2, 'REPROCESO           '),
 ('BLK34821', 'ROMULO                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '15-17', 'ROMULO LTDA         ', '2018-12-31', 3, 'REPROCESO           '),
@@ -1253,8 +1203,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK37335', 'NOBUCK                        ', 'ACONDICIONADO  ', 'TABACO                        ', 'CUERO     ', '13-15', 'VARIOS              ', '2018-12-31', 2, 'REPROCESO           '),
 ('BLK37336', 'NOBUCK                        ', 'ACONDICIONADO  ', 'CANELO                        ', 'CUERO     ', '12-14', '', '2018-12-31', 1, 'REPROCESO           '),
 ('BLK37343', 'OTELLO                        ', 'ACONDICIONADO  ', 'CAFE CLARO                    ', 'CUERO     ', '18-20', '', '2018-12-31', 6, 'REP. ALMACEN        '),
-('BLK37354', 'NOBUCK                        ', 'ACABADOS       ', 'AMARILLO RANCHO               ', 'CUERO     ', '12-14', 'OCHOA VILLAMIL      ', '2020-12-16', 1, 'PRODUCCION          ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK37354', 'NOBUCK                        ', 'ACABADOS       ', 'AMARILLO RANCHO               ', 'CUERO     ', '12-14', 'OCHOA VILLAMIL      ', '2020-12-16', 1, 'PRODUCCION          '),
 ('BLK37355', 'FLOTHER NEW                   ', 'ACABADOS       ', 'NOGAL                         ', 'CUERO     ', '12-14', 'VARIOS              ', '2018-12-31', 53, 'PRODUCCION          '),
 ('BLK37365', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GRIS                          ', 'CUERO     ', '14-16', '', '2018-12-31', 2, 'REPROCESO           '),
 ('BLK37366', 'VARIOS                        ', 'ACONDICIONADO  ', 'VARIOS                        ', 'CUERO     ', '', '', '2018-12-31', 114, 'REPROCESO           '),
@@ -1292,7 +1241,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK37509', 'BRILLANIL                     ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '10-12', '', '2020-12-14', 14, 'REP. ALMACEN        '),
 ('BLK37510', 'ANTONY                        ', 'ACONDICIONADO  ', 'CIGARRO                       ', 'CUERO     ', '16-18', '', '2019-12-24', 13, 'REP. ALMACEN        '),
 ('BLK37511', 'ANTONY                        ', 'ACONDICIONADO  ', 'ROJO                          ', 'CUERO     ', '14-16', '', '2019-12-24', 1, 'REP. ALMACEN        '),
-('BLK37512', 'BARY                          ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '14-16', '', '2019-12-24', 2, 'REP. ALMACEN        '),
+('BLK37512', 'BARY                          ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '14-16', '', '2019-12-24', 2, 'REP. ALMACEN        ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK37524', 'TIRRENO                       ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '16-18', 'VARIOS              ', '2019-01-23', 3, 'PRODUCCION          '),
 ('BLK37574', 'NAPA                          ', 'ACONDICIONADO  ', 'BLANCO AZULIN                 ', 'CUERO     ', '11-13', 'VARIOS              ', '2019-12-20', 6, 'REP. ALMACEN        '),
 ('BLK37575', 'OTELLO VENECIA                ', 'ACABADOS       ', 'CASTANO OSCURO                ', 'CUERO     ', '18-20', 'VARIOS              ', '2019-02-08', 4, 'REPROCESO           '),
@@ -1535,8 +1485,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK38807', 'BOX                           ', 'ACONDICIONADO  ', 'VINOUVA                       ', 'CUERO     ', '13-15', 'VARIOS              ', '2020-12-14', 12, 'REP. ALMACEN        '),
 ('BLK38812', 'ROMULO SPORT                  ', 'ACABADOS       ', 'TAUPE                         ', 'CUERO     ', '15-17', 'ROMULO LTDA         ', '2019-07-05', 6, 'PRODUCCION          '),
 ('BLK38822', 'PORCELANATO                   ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2019-12-20', 19, 'REPROCESO           '),
-('BLK38823', 'ROMULO                        ', 'ACONDICIONADO  ', 'COFFE LIGTH                   ', 'CUERO     ', '15-17', 'VARIOS              ', '2019-12-20', 2, 'REP. ALMACEN        ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK38823', 'ROMULO                        ', 'ACONDICIONADO  ', 'COFFE LIGTH                   ', 'CUERO     ', '15-17', 'VARIOS              ', '2019-12-20', 2, 'REP. ALMACEN        '),
 ('BLK38826', 'BRILLANIL                     ', 'ACONDICIONADO  ', 'AZUL INDIGO                   ', 'CUERO     ', '10-12', 'VARIOS              ', '2019-12-20', 42, 'REPROCESO           '),
 ('BLK38827', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NOGAL                         ', 'CUERO     ', '18-20', 'VARIOS              ', '2019-12-05', 1, 'REPROCESO           '),
 ('BLK38828', 'FLOR PORO                     ', 'ACABADOS       ', 'BLANCO                        ', 'CUERO     ', '16-18', 'VARIOS              ', '2019-07-08', 1, 'REPROCESO           '),
@@ -1572,7 +1521,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK39038', 'SHERATON                      ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '18-20', 'VARIOS              ', '2019-07-23', 1, 'REPROCESO           '),
 ('BLK39040', 'NAPA SPORT                    ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2020-12-14', 17, 'REPROCESO           '),
 ('BLK39047', 'SOFTY                         ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2019-07-19', 1, 'REP. ALMACEN        '),
-('BLK39053', 'FREEPORT                      ', 'ACONDICIONADO  ', 'COGNAC                        ', 'CUERO     ', '16-18', 'VARIOS              ', '2019-07-19', 5, 'REPROCESO           '),
+('BLK39053', 'FREEPORT                      ', 'ACONDICIONADO  ', 'COGNAC                        ', 'CUERO     ', '16-18', 'VARIOS              ', '2019-07-19', 5, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK39054', 'NOBUCK                        ', 'ACONDICIONADO  ', 'VERDE IGUANA                  ', 'CUERO     ', '18-20', 'VARIOS              ', '2019-12-20', 1, 'PRODUCCION          '),
 ('BLK39055', 'SAVONE                        ', 'ACABADOS       ', 'CAFE                          ', 'CUERO     ', '13-15', 'VARIOS              ', '2019-07-22', 1, 'PRODUCCION          '),
 ('BLK39056', 'SAVONE                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2019-07-22', 1, 'PRODUCCION          '),
@@ -1810,8 +1760,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK40240', 'FREEPORT                      ', 'ACABADOS       ', 'COGNAC                        ', 'CUERO     ', '14-16', 'VARIOS              ', '2020-01-29', 3, 'REPROCESO           '),
 ('BLK40245', 'SEGURIDAD                     ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', '', '2020-01-20', 2, 'REP. ALMACEN        '),
 ('BLK40254', 'VERONA                        ', 'ACABADOS       ', 'MIEL                          ', 'CUERO     ', '11-13', '', '2020-01-22', 1, 'REP. ALMACEN        '),
-('BLK40272', 'SOFTY                         ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2020-01-28', 3, 'REP. ALMACEN        ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK40272', 'SOFTY                         ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '16-18', '', '2020-01-28', 3, 'REP. ALMACEN        '),
 ('BLK40273', 'SABRINA                       ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2020-01-28', 9, 'REP. ALMACEN        '),
 ('BLK40274', 'FLOR PORO                     ', 'ACABADOS       ', 'BLANCO                        ', 'CUERO     ', '14-16', '', '2020-01-28', 1, 'REP. ALMACEN        '),
 ('BLK40287', 'PORTLAND                      ', 'ACABADOS       ', 'NUEZ                          ', 'CUERO     ', '12-14', 'VARIOS              ', '2020-01-23', 22, 'REP. ALMACEN        '),
@@ -1847,7 +1796,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK40449', 'ROMULO                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2020-02-19', 2, 'REPROCESO           '),
 ('BLK40450', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2020-02-19', 1, 'REPROCESO           '),
 ('BLK40464', 'BUFALO INTEGRAL               ', 'ACABADOS       ', 'ROJO                          ', 'CUERO     ', '25-28', '', '2020-02-24', 2, 'REP. ALMACEN        '),
-('BLK40465', 'ROMULO                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '14-16', '', '2020-02-25', 1, 'REP. ALMACEN        '),
+('BLK40465', 'ROMULO                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '14-16', '', '2020-02-25', 1, 'REP. ALMACEN        ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK40466', 'FREEPORT                      ', 'ACABADOS       ', 'COGNAC                        ', 'CUERO     ', '14-16', '', '2020-02-25', 6, 'REP. ALMACEN        '),
 ('BLK40467', 'SABRINA METALIZADA            ', 'ACABADOS       ', 'DORADO                        ', 'CUERO     ', '14-16', '', '2020-02-25', 2, 'REP. ALMACEN        '),
 ('BLK40468', 'ROMULO                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2020-02-25', 32, 'REP. ALMACEN        '),
@@ -2084,8 +2034,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK41729', 'SHERATON                      ', 'ACABADOS       ', 'COGNAC CLARO                  ', 'CUERO     ', '18-20', 'VARIOS              ', '2021-03-29', 21, 'REP. ALMACEN        '),
 ('BLK41732', 'EVERTON                       ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'VARIOS              ', '2021-04-15', 7, 'REPROCESO           '),
 ('BLK41820', 'PORCELANATO                   ', 'ACABADOS       ', 'NUDE                          ', 'CUERO     ', '10-12', '', '2021-04-16', 6, 'REP. ALMACEN        '),
-('BLK41830', 'SOFTY METALIZADO              ', 'ACABADOS       ', 'ARENA                         ', 'CUERO     ', '13-15', '', '2021-04-07', 4, 'REP. ALMACEN        ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK41830', 'SOFTY METALIZADO              ', 'ACABADOS       ', 'ARENA                         ', 'CUERO     ', '13-15', '', '2021-04-07', 4, 'REP. ALMACEN        '),
 ('BLK41831', 'ROMULO                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '13-15', '', '2021-04-07', 7, 'REP. ALMACEN        '),
 ('BLK41850', 'WALLET - WALT                 ', 'ACABADOS       ', 'FUCSIA                        ', 'CUERO     ', '15-17', 'GONZALEZ MIRIAM     ', '2021-03-30', 2, 'PRODUCCION          '),
 ('BLK41855', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2021-03-30', 4, 'REPROCESO           '),
@@ -2121,7 +2070,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK42090', 'SHERATON                      ', 'ACONDICIONADO  ', 'CARAMELO                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2021-07-08', 32, 'REPROCESO           '),
 ('BLK42099', 'NOBUCK                        ', 'ACONDICIONADO  ', 'ACEITUNA                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2021-07-13', 1, 'REPROCESO           '),
 ('BLK42101', 'ROMULO                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2021-07-16', 5, 'REP. ALMACEN        '),
-('BLK42108', 'TIRRENO                       ', 'ACABADOS       ', 'VINOTINTO                     ', 'CUERO     ', '13-15', 'VARIOS              ', '2021-07-16', 6, 'PRODUCCION          '),
+('BLK42108', 'TIRRENO                       ', 'ACABADOS       ', 'VINOTINTO                     ', 'CUERO     ', '13-15', 'VARIOS              ', '2021-07-16', 6, 'PRODUCCION          ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK42115', 'ROMULO                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2021-07-19', 2, 'REP. ALMACEN        '),
 ('BLK42137', 'BOX                           ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2021-07-29', 2, 'REPROCESO           '),
 ('BLK42185', 'SABRINA                       ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '13-15', '', '2021-08-23', 11, 'REP. ALMACEN        '),
@@ -2356,8 +2306,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK43385', 'BOX RIZZ                      ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2023-03-01', 1, 'REPROCESO           '),
 ('BLK43404', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'ARENA                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-03-31', 3, 'REPROCESO           '),
 ('BLK43466', 'ROMULO                        ', 'ACABADOS       ', 'MANDARINA                     ', 'CUERO     ', '13-15', 'ROMULO LTDA         ', '2022-04-19', 15, 'REP. ALMACEN        '),
-('BLK43467', 'ROMULO C                      ', 'ACABADOS       ', 'ROJO                          ', 'CUERO     ', '13-15', 'ROMULO LTDA         ', '2022-04-19', 1, 'REP. ALMACEN        ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK43467', 'ROMULO C                      ', 'ACABADOS       ', 'ROJO                          ', 'CUERO     ', '13-15', 'ROMULO LTDA         ', '2022-04-19', 1, 'REP. ALMACEN        '),
 ('BLK43468', 'NAPA FLEXO                    ', 'ACABADOS       ', 'MIEL                          ', 'CUERO     ', '13-15', 'VARIOS              ', '2022-04-19', 2, 'REP. ALMACEN        '),
 ('BLK43469', 'SABRINA                       ', 'ACABADOS       ', 'BLANCO                        ', 'CUERO     ', '13-15', 'VARIOS              ', '2022-04-19', 1, 'REP. ALMACEN        '),
 ('BLK43470', 'SOFTY                         ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2022-04-19', 4, 'REP. ALMACEN        '),
@@ -2393,7 +2342,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK43633', 'PORCELANATO                   ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2022-06-11', 2, 'REPROCESO           '),
 ('BLK43635', 'BRILLANIL                     ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2022-06-14', 4, 'REP. ALMACEN        '),
 ('BLK43637', 'NAPA SPORT                    ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2022-06-15', 4, 'REPROCESO           '),
-('BLK43642', 'BRILLANIL                     ', 'ACABADOS       ', 'AZUL INDIGO                   ', 'CUERO     ', '10-12', 'VARIOS              ', '2022-06-23', 3, 'REPROCESO           '),
+('BLK43642', 'BRILLANIL                     ', 'ACABADOS       ', 'AZUL INDIGO                   ', 'CUERO     ', '10-12', 'VARIOS              ', '2022-06-23', 3, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK43643', 'BRILLANIL                     ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2022-06-23', 6, 'REPROCESO           '),
 ('BLK43644', 'ROMULO                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-06-25', 11, 'REPROCESO           '),
 ('BLK43659', 'EDIMBURGO                     ', 'ACABADOS       ', 'ACEITUNA                      ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-05-23', 3, 'PRODUCCION          '),
@@ -2632,8 +2582,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK44445', 'SABRINA AIR                   ', 'ACABADOS       ', 'CAFE METAL                    ', 'CUERO     ', '14-16', '', '2022-10-11', 3, 'REP. ALMACEN        '),
 ('BLK44446', 'SABRINA                       ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2022-10-11', 3, 'REP. ALMACEN        '),
 ('BLK44447', 'ROMULO METALIZADO             ', 'ACABADOS       ', 'CANON DE FUSIL                ', 'CUERO     ', '14-16', '', '2022-10-11', 3, 'REP. ALMACEN        '),
-('BLK44448', 'ROMULO                        ', 'ACABADOS       ', 'CAFE METAL                    ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-11', 2, 'REP. ALMACEN        ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK44448', 'ROMULO                        ', 'ACABADOS       ', 'CAFE METAL                    ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-11', 2, 'REP. ALMACEN        '),
 ('BLK44449', 'ROMULO METALIZADO             ', 'ACABADOS       ', 'BRONCE VIEJO                  ', 'CUERO     ', '14-16', '', '2022-10-11', 1, 'REP. ALMACEN        '),
 ('BLK44450', 'ROMULO                        ', 'ACABADOS       ', 'ROJO                          ', 'CUERO     ', '14-16', '', '2022-10-11', 1, 'REP. ALMACEN        '),
 ('BLK44451', 'ROMULO METALIZADO             ', 'ACABADOS       ', 'ORO VIEJO                     ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-11', 4, 'REP. ALMACEN        '),
@@ -2671,7 +2620,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK44543', 'SABRINA                       ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-24', 4, 'REP. ALMACEN        '),
 ('BLK44544', 'ROMULO                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-24', 1, 'REP. ALMACEN        '),
 ('BLK44545', 'NOBUCK                        ', 'ACABADOS       ', 'CAFE CLARO                    ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-24', 13, 'REP. ALMACEN        '),
-('BLK44546', 'NOBUCK                        ', 'ACABADOS       ', 'CAFE                          ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-24', 1, 'REP. ALMACEN        '),
+('BLK44546', 'NOBUCK                        ', 'ACABADOS       ', 'CAFE                          ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-24', 1, 'REP. ALMACEN        ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK44555', 'SHERATON                      ', 'ACONDICIONADO  ', 'CARAMELO                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2022-10-24', 2, 'REP. ALMACEN        '),
 ('BLK44558', 'SABRINA                       ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2022-10-25', 4, 'REPROCESO           '),
 ('BLK44565', 'HARROW                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', 'CROYDON             ', '2022-10-26', 6, 'PRODUCCION          '),
@@ -2901,8 +2851,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK45355', 'DALLAS                        ', 'ACABADOS       ', 'ARANDANO                      ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-05-26', 4, 'REP. ALMACEN        '),
 ('BLK45356', 'DALLAS                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-05-26', 5, 'REP. ALMACEN        '),
 ('BLK45357', 'DALLAS                        ', 'ACABADOS       ', 'VAINILLA                      ', 'CUERO     ', '12-14', 'VARIOS              ', '2023-05-26', 1, 'REP. ALMACEN        '),
-('BLK45361', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'GRIS                          ', 'CUERO     ', '16-18', 'VARIOS              ', '2023-05-10', 25, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK45361', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'GRIS                          ', 'CUERO     ', '16-18', 'VARIOS              ', '2023-05-10', 25, 'REPROCESO           '),
 ('BLK45369', 'NAPA SPORT                    ', 'ACABADOS       ', 'BLANCO                        ', 'CUERO     ', '12-14', 'VARIOS              ', '2023-05-12', 30, 'PRODUCCION          '),
 ('BLK45373', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2023-05-16', 1, 'REPROCESO           '),
 ('BLK45389', 'NOBUCK                        ', 'ACONDICIONADO  ', 'FUCSIA                        ', 'CUERO     ', '11-13', 'CALLE PEDRO LUIS    ', '2024-01-31', 5, 'PRODUCCION          '),
@@ -2939,7 +2888,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK45490', 'NOBUCK                        ', 'ACONDICIONADO  ', 'CAFE MADURO                   ', 'CUERO     ', '18-20', 'VARIOS              ', '2023-08-13', 3, 'REPROCESO           '),
 ('BLK45501', 'BOX RIZZ                      ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2023-05-26', 1, 'REPROCESO           '),
 ('BLK45502', 'DALLAS                        ', 'ACABADOS       ', 'NUDE                          ', 'CUERO     ', '12-14', 'VARIOS              ', '2023-05-26', 3, 'REP. ALMACEN        '),
-('BLK45503', 'SEGURIDAD                     ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'VARIOS              ', '2023-05-28', 98, 'REP. ALMACEN        '),
+('BLK45503', 'SEGURIDAD                     ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'VARIOS              ', '2023-05-28', 98, 'REP. ALMACEN        ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK45504', 'FLOTHER                       ', 'ACABADOS       ', 'CAFE                          ', 'CUERO     ', '13-15', 'VARIOS              ', '2023-05-30', 27, 'REP. ALMACEN        '),
 ('BLK45505', 'SABRINA                       ', 'ACABADOS       ', 'MIEL                          ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-05-30', 24, 'REP. ALMACEN        '),
 ('BLK45509', 'NOBUCK                        ', 'ACABADOS       ', 'ARENA                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-06-01', 9, 'REP. ALMACEN        '),
@@ -3168,8 +3118,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK46294', 'SABRINA AIR                   ', 'ACABADOS       ', 'CAFE METAL                    ', 'CUERO     ', '14-16', 'VARIOS              ', '2024-01-18', 2, 'REPROCESO           '),
 ('BLK46295', 'SEGURIDAD                     ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-01-18', 18, 'REP. ALMACEN        '),
 ('BLK46296', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-01-19', 14, 'REPROCESO           '),
-('BLK46298', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-01-23', 32, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK46298', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-01-23', 32, 'REPROCESO           '),
 ('BLK46299', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-01-24', 10, 'REPROCESO           '),
 ('BLK46300', 'SEGURIDAD                     ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-01-25', 6, 'REPROCESO           '),
 ('BLK46305', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'MARRON                        ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-11-15', 70, 'REP. ALMACEN        '),
@@ -3206,7 +3155,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK46388', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '18-20', 'ENSAYO              ', '2023-11-27', 6, 'REPROCESO           '),
 ('BLK46391', 'CROSTA                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2023-11-28', 29, 'REPROCESO           '),
 ('BLK46393', 'DALLAS SOFT                   ', 'ACONDICIONADO  ', 'FUCSIA                        ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-11-28', 1, 'REP. ALMACEN        '),
-('BLK46394', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NATURAL                       ', 'CUERO     ', '10-12', '', '2023-12-20', 2, 'REPROCESO           '),
+('BLK46394', 'NOBUCK                        ', 'ACONDICIONADO  ', 'NATURAL                       ', 'CUERO     ', '10-12', '', '2023-12-20', 2, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK46395', 'BOX                           ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'VARIOS              ', '2023-11-28', 4, 'REPROCESO           '),
 ('BLK46396', 'ROMULO                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2023-12-01', 12, 'REP. ALMACEN        '),
 ('BLK46397', 'ROMULO                        ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2023-12-01', 27, 'REP. ALMACEN        '),
@@ -3435,8 +3385,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK46841', 'NOBUCK                        ', 'ACABADOS       ', 'ACEITUNA                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-02-19', 38, 'REP. ALMACEN        '),
 ('BLK46842', 'NOBUCK                        ', 'ACABADOS       ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'KONDOR              ', '2024-02-19', 28, 'REPROCESO           '),
 ('BLK46855', 'SABRINA                       ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-06', 9, 'REPROCESO           '),
-('BLK46861', 'SEGURIDAD                     ', 'ACONDICIONADO  ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'SAGA                ', '2024-03-07', 7, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK46861', 'SEGURIDAD                     ', 'ACONDICIONADO  ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'SAGA                ', '2024-03-07', 7, 'REPROCESO           '),
 ('BLK46863', 'BOX                           ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'ENSAYO              ', '2024-03-08', 1, 'PRODUCCION          '),
 ('BLK46864', 'NOBUCK                        ', 'ACONDICIONADO  ', 'AZUL                          ', 'CUERO     ', '12-14', 'VARIOS              ', '2024-03-08', 2, 'PRODUCCION          '),
 ('BLK46865', 'NOBUCK                        ', 'ACONDICIONADO  ', 'AZUL                          ', 'CUERO     ', '12-14', 'VARIOS              ', '2024-03-08', 2, 'PRODUCCION          '),
@@ -3473,7 +3422,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK46936', 'ROMULO                        ', 'ACABADOS       ', 'CAFE                          ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 11, 'REP. ALMACEN        '),
 ('BLK46937', 'ROMULO                        ', 'ACABADOS       ', 'AZUL                          ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 16, 'REP. ALMACEN        '),
 ('BLK46938', 'SOFTY                         ', 'ACABADOS       ', 'CAFE                          ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 3, 'REP. ALMACEN        '),
-('BLK46939', 'NAPA FLEXO                    ', 'ACABADOS       ', 'MIEL                          ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 4, 'REP. ALMACEN        '),
+('BLK46939', 'NAPA FLEXO                    ', 'ACABADOS       ', 'MIEL                          ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 4, 'REP. ALMACEN        ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK46940', 'ROMULO                        ', 'ACABADOS       ', 'COFFE LIGTH                   ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 1, 'REP. ALMACEN        '),
 ('BLK46941', 'ROMULO                        ', 'ACABADOS       ', 'BEIGE                         ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-03-07', 1, 'REP. ALMACEN        '),
 ('BLK46942', 'NOBUCK                        ', 'ACABADOS       ', 'GENGIBRE                      ', 'CUERO     ', '18-20', '', '2024-03-13', 13, 'REP. ALMACEN        '),
@@ -3702,8 +3652,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK47389', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2024-07-08', 3, 'REPROCESO           '),
 ('BLK47390', 'ROMULO                        ', 'ACONDICIONADO  ', 'MANDARINA                     ', 'CUERO     ', '14-16', 'VARIOS              ', '2024-07-08', 2, 'REPROCESO           '),
 ('BLK47391', 'SEGURIDAD                     ', 'ACABADOS       ', 'CHOCOLATE                     ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-07-08', 40, 'REPROCESO           '),
-('BLK47393', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-07-09', 22, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('BLK47393', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-07-09', 22, 'REPROCESO           '),
 ('BLK47394', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-07-09', 6, 'REPROCESO           '),
 ('BLK47395', 'BOX                           ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2024-07-10', 9, 'REPROCESO           '),
 ('BLK47398', 'OTELLO                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-07-10', 2, 'REPROCESO           '),
@@ -3740,7 +3689,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('BLK47453', 'SOFTY METALIZADO              ', 'ACABADOS       ', 'ARENA                         ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-07-03', 1, 'PROPIEDAD CLIENTE   '),
 ('BLK47454', 'GLOVING                       ', 'ACABADOS       ', 'TAUPE                         ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-07-03', 3, 'PROPIEDAD CLIENTE   '),
 ('BLK47455', 'GLOVING                       ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-07-03', 4, 'PROPIEDAD CLIENTE   '),
-('BLK47456', 'ROMULO                        ', 'ACABADOS       ', 'ALMENDRA                      ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-07-03', 1, 'PROPIEDAD CLIENTE   '),
+('BLK47456', 'ROMULO                        ', 'ACABADOS       ', 'ALMENDRA                      ', 'CUERO     ', '14-16', 'ROMULO LTDA         ', '2024-07-03', 1, 'PROPIEDAD CLIENTE   ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('BLK47460', 'NOBUCK                        ', 'ACABADOS       ', 'CAFE MADURO                   ', 'CUERO     ', '18-20', 'VARIOS              ', '2024-07-15', 12, 'REP. ALMACEN        '),
 ('BLK47463', 'BIZON CROST                   ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '20-22', 'ALVAREZ JORGE       ', '2024-07-22', 8, 'PROPIEDAD CLIENTE   '),
 ('BLK47464', 'BIZON CROST                   ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '20-22', 'ALVAREZ JORGE       ', '2024-07-22', 3, 'PROPIEDAD CLIENTE   '),
@@ -3983,8 +3933,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('UNK12800', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GRIS                          ', 'CUERO     ', '14-16', 'GULLIVER C.A        ', '2018-12-31', 6, 'REPROCESO           '),
 ('UNK12963', 'TORINO                        ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '10-12', '', '2018-12-31', 2, 'REPROCESO           '),
 ('UNK13040', 'CRAZY                         ', 'ACONDICIONADO  ', 'PARDO                         ', 'CUERO     ', '14-16', '', '2018-12-31', 3, 'REPROCESO           '),
-('UNK13078', 'TENERIFE                      ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '16-18', '', '2018-12-31', 2, 'REPROCESO           ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('UNK13078', 'TENERIFE                      ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '16-18', '', '2018-12-31', 2, 'REPROCESO           '),
 ('UNK13344', 'HUDSON                        ', 'ACONDICIONADO  ', 'CAFE OSCURO                   ', 'CUERO     ', '20-22', '', '2018-12-31', 2, 'REPROCESO           '),
 ('UNK13764', 'VARIOS                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '12-14', '', '2018-12-31', 4, 'REPROCESO           '),
 ('UNK14082', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'MOSTAZA                       ', 'CUERO     ', '15-17', '', '2018-12-31', 5, 'REPROCESO           '),
@@ -4025,7 +3974,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('UNK19050', 'BENEVENTO                     ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '11-13', '', '2018-12-31', 34, 'REPROCESO           '),
 ('UNK19071', 'PREENGRASE                    ', 'ACONDICIONADO  ', 'CAFE                          ', 'CUERO     ', '18-20', '', '2018-12-31', 3, 'REPROCESO           '),
 ('UNK19139', 'NOBUCK                        ', 'ACONDICIONADO  ', 'VERDE                         ', 'CUERO     ', '12-14', 'ROJAS JOHN MARIO    ', '2018-12-31', 4, 'REPROCESO           '),
-('UNK19231', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'CARAMELO                      ', 'CUERO     ', '14-16', '', '2018-12-31', 2, 'REPROCESO           '),
+('UNK19231', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'CARAMELO                      ', 'CUERO     ', '14-16', '', '2018-12-31', 2, 'REPROCESO           ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('UNK19298', 'ROMULO                        ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', '', '2018-12-31', 8, 'REPROCESO           '),
 ('UNK19325', 'PULL UP PRADA                 ', 'ACONDICIONADO  ', 'ALMENDRA                      ', 'CUERO     ', '15-17', 'ROMULO LTDA         ', '2018-12-31', 6, 'REPROCESO           '),
 ('UNK19411', 'NOBUCK                        ', 'ACONDICIONADO  ', 'GRIS PLATA                    ', 'CUERO     ', '14-16', 'VARIOS              ', '2018-12-31', 10, 'REPROCESO           '),
@@ -4257,8 +4207,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('UNK26458', 'PREENGRASE                    ', 'ACONDICIONADO  ', 'NEGRO                         ', 'CUERO     ', '14-16', 'A.F.                ', '2024-06-13', 50, 'PRODUCCION          '),
 ('UNK26465', 'ALKAPIEL                      ', 'ACONDICIONADO  ', 'AZUL                          ', 'CUERO     ', '18-20', 'LAGO CARLOS ANDRES  ', '2024-06-18', 37, 'PRODUCCION          '),
 ('UNK26466', 'NOBUCK                        ', 'ACONDICIONADO  ', 'MARRON                        ', 'CUERO     ', '18-20', 'SAGA                ', '2024-06-18', 80, 'PRODUCCION          '),
-('UNK26469', 'NOBUCK                        ', 'ACONDICIONADO  ', 'MARRON                        ', 'CUERO     ', '18-20', 'SAGA                ', '2024-06-20', 80, 'PRODUCCION          ');
-INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
+('UNK26469', 'NOBUCK                        ', 'ACONDICIONADO  ', 'MARRON                        ', 'CUERO     ', '18-20', 'SAGA                ', '2024-06-20', 80, 'PRODUCCION          '),
 ('UNK26470', 'BOX RIZZ                      ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2024-06-24', 62, 'PRODUCCION          '),
 ('UNK26472', 'BOX RIZZ                      ', 'ACABADOS       ', 'NEGRO                         ', 'CUERO     ', '13-15', 'VARIOS              ', '2024-06-24', 68, 'PRODUCCION          '),
 ('UNK26473', 'BOX RIZZ                      ', 'ACABADOS       ', 'CHERRY                        ', 'CUERO     ', '13-15', 'VARIOS              ', '2024-06-24', 74, 'PRODUCCION          '),
@@ -4295,7 +4244,8 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 ('UNK26529', 'PORCELANATO                   ', 'TENIDO         ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2024-07-31', 85, 'PRODUCCION          '),
 ('UNK26530', 'NOBUCK                        ', 'TENIDO         ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'KONDOR              ', '2024-08-01', 65, 'PRODUCCION          '),
 ('UNK26531', 'PORCELANATO                   ', 'TENIDO         ', 'NEGRO                         ', 'CUERO     ', '10-12', 'VARIOS              ', '2024-08-02', 78, 'PRODUCCION          '),
-('UNK26532', 'FLOR PORO                     ', 'TENIDO         ', 'BLANCO                        ', 'CUERO     ', '14-16', 'JHON MARIO          ', '2024-08-02', 80, 'PRODUCCION          '),
+('UNK26532', 'FLOR PORO                     ', 'TENIDO         ', 'BLANCO                        ', 'CUERO     ', '14-16', 'JHON MARIO          ', '2024-08-02', 80, 'PRODUCCION          ');
+INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`, `calibre`, `cliente`, `fecha`, `hojas`, `tipo_produccion`) VALUES
 ('UNK26533', 'FLOR PORO                     ', 'TENIDO         ', 'BLANCO                        ', 'CUERO     ', '14-16', 'JHON MARIO          ', '2024-08-02', 78, 'PRODUCCION          '),
 ('UNK26534', 'NOBUCK                        ', 'REBAJADO       ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'KONDOR              ', '2024-08-06', 80, 'PRODUCCION          '),
 ('UNK26535', 'NOBUCK                        ', 'REBAJADO       ', 'GENGIBRE                      ', 'CUERO     ', '18-20', 'KONDOR              ', '2024-08-06', 80, 'PRODUCCION          '),
@@ -4310,6 +4260,7 @@ INSERT INTO `recepcion_eco` (`tarjeta`, `nombre`, `seccion`, `color`, `tip_prod`
 --
 
 CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(30) DEFAULT NULL,
   `apellido` varchar(30) DEFAULT NULL,
   `contrasena` varchar(50) DEFAULT NULL,
@@ -4321,9 +4272,10 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`nombre`, `apellido`, `contrasena`, `rol`, `estado`) VALUES
-('Edixon', 'Payan', '12345', 'administrador', NULL),
-('Camilo', 'Castaño', '12345', 'administrador', NULL);
+INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `contrasena`, `rol`, `estado`) VALUES
+(1, 'Edixon', 'Payan', 'edixon', 'usuario', 'Activo'),
+(6, 'Camilo', 'Admin', 'Admin', 'usuario', 'Activo'),
+(7, 'Admin', 'Admin ', 'Admin00', 'administrador', 'Activo');
 
 --
 -- Índices para tablas volcadas
@@ -4334,6 +4286,22 @@ INSERT INTO `usuario` (`nombre`, `apellido`, `contrasena`, `rol`, `estado`) VALU
 --
 ALTER TABLE `recepcion_eco`
   ADD PRIMARY KEY (`tarjeta`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
