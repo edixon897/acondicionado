@@ -12,7 +12,7 @@ def agregarUsuario():
         return None
     try:
         if request.method == 'POST':
-            nombre = request.form.get('nombre').capitalize()
+            nombre = request.form.get('nombre_usuario').capitalize()
             apellido = request.form.get('apellido').capitalize()
             contraseña = request.form.get('contrasena')
             repetir_nueva_contraseña = request.form.get('contrasena2')

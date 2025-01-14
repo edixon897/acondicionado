@@ -3,7 +3,7 @@ document.getElementById('formUser').addEventListener('submit', function(event) {
     const contrasena2 = document.getElementById('contrasena').value;
     const contrasena3 = document.getElementById('contrasena2').value;
     const mensaje = document.getElementById('mensajei');
-    const nombre = document.getElementById('nombre').value;
+    const nombre = document.getElementById('nombre_usuario').value;
     const apellido = document.getElementById('apellido').value;
 
     // Validar contraseñas antes de enviar al back end
@@ -36,5 +36,5 @@ document.getElementById('formUser').addEventListener('submit', function(event) {
         }
     };
 
-    xhr.send(`contrasena=${encodeURIComponent(contrasena2)}&contrasena2=${encodeURIComponent(contrasena3)}&nombre=${encodeURIComponent(nombre)}&apellido=${encodeURIComponent(apellido)}`);
+    xhr.send(`contrasena=${encodeURIComponent(contrasena2)}&contrasena2=${encodeURIComponent(contrasena3)}&nombre_usuario=${encodeURIComponent(nombre)}&apellido=${encodeURIComponent(apellido)}`);
 });
