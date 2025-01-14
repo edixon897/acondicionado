@@ -235,7 +235,7 @@
                                     {% if producto[2] is not none %}
                                         <!-- Fila de total de hojas por color -->
                                         <tr class="total-row">
-                                            <td class="colspan-dinamico" colspan="7">
+                                            <td class="colspan-dinamico" colspan="7" style="color: #6fbcef;">
                                                 Total por color: <strong>{{ producto[2] }}</strong>
                                             </td>
                                             <td data-label="Hojas" style="font-weight: bold;">
@@ -245,7 +245,7 @@
                                     {% elif producto[1] is not none %}
                                         <!-- Fila de total de hojas por nombre y color -->
                                         <tr class="total-row">
-                                            <td class="colspan-dinamico" colspan="7">
+                                            <td class="colspan-dinamico" colspan="7" style="color: #105482;">
                                                 Total por nombre: <strong>{{ producto[1] }}</strong>
                                             </td>
                                             <td data-label="Hojas" style="font-weight: bold;">
@@ -255,7 +255,7 @@
                                     {% elif producto[3] is not none %}
                                         <!-- Fila de total por sección -->
                                         <tr class="total-row">
-                                            <td class="colspan-dinamico" colspan="7">
+                                            <td class="colspan-dinamico" colspan="7" style="color: #1f5376;">
                                                 Total por sección: <strong>{{ producto[3] }}</strong>
                                             </td>
                                             <td data-label="Hojas" style="font-weight: bold;">
@@ -319,29 +319,13 @@
 
   <script src="/static/javascript/bucardInicio.js"></script>
   <script src="/static/javascript/menu.js"></script>
-  <script src="/static/javascript/menejo_Tabla.js"></script>
+  
   <script>
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
         document.getElementById('content').style.display = 'block';
     });
-    function ajustarColspan() {
-    const filas = document.querySelectorAll('.colspan-dinamico');
-    const anchoPantalla = window.innerWidth;
-
-    filas.forEach(fila => {
-        if (anchoPantalla <= 768) {
-            fila.setAttribute('colspan', '3'); // Móvil
-        } else {
-                fila.setAttribute('colspan', '7'); // Escritorio
-            }
-        });
-    }
-
-    // Llamar la función al cargar y al redimensionar
-    window.addEventListener('load', ajustarColspan);
-    window.addEventListener('resize', ajustarColspan);
-
+   
 
   </script>
   

@@ -96,10 +96,7 @@ def inicio():
         #for (nombre, color), total_hojas in total_hojas_por_nombre_color.items():
          #   datos_agrupados.append((None, f"Total de hojas de {nombre} color {color}", None, None, None, None, None, total_hojas, None, None))
 
-        #la cantidad total de filas
-        sql_count = "SELECT COUNT(*) FROM recepcion_eco"
-        cursor.execute(sql_count)
-        total_rows = cursor.fetchone()[0]
+
 
     except Exception as e:
         
@@ -109,7 +106,7 @@ def inicio():
         close_connection(connection)
 
 
-    return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=data, dato=datos_agrupados, total_rows=total_rows)
+    return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=data, dato=datos_agrupados)
 
 
 @app.route('/produc_filtrar', methods=['GET'])

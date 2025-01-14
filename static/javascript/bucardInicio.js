@@ -1,3 +1,22 @@
+function ajustarColspan() {
+    const filas = document.querySelectorAll('.colspan-dinamico');
+    const anchoPantalla = window.innerWidth;
+
+    filas.forEach(fila => {
+        if (anchoPantalla <= 768) {
+            fila.setAttribute('colspan', '3'); // Móvil
+        } else {
+            fila.setAttribute('colspan', '7'); // Escritorio
+        }
+    });
+}
+
+// Llamar la función al cargar y al redimensionar
+window.addEventListener('load', ajustarColspan);
+window.addEventListener('resize', ajustarColspan);
+
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     let currentPage = 1;
     let perPage = 10000;
@@ -55,17 +74,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         data.forEach(item => {
             let row = document.createElement('tr');
-
+        
             if (item[0] === null) {
                 if (item[1] !== null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td style="color: rgba(78, 177, 253, 0.964);" colspan="9">${item[1]}: ${item[7]}</td>`;
-                }  else if (item[3] !== null && item[2] === null) {
+                    row.innerHTML = `
+                        <td class="colspan-dinamico" colspan="7" style="color: #105482;">
+                            <strong>${item[1]}</strong>
+                        </td>
+                        <td data-label="Hojas" style="font-weight: bold;">
+                            ${item[7]}
+                        </td>
+                    `;
+                } else if (item[3] !== null && item[2] === null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td style="color: rgb(64, 80, 230);" colspan="9">${item[3]}: ${item[7]}</td>`;
+                    row.innerHTML = `
+                        <td class="colspan-dinamico" colspan="7" style="color: #1f5376;">
+                            <strong>${item[3]}</strong>
+                        </td>
+                        <td data-label="Hojas" style="font-weight: bold;">
+                            ${item[7]}
+                        </td>
+                    `;
                 } else if (item[2] !== null && item[3] === null) {
                     row.classList.add('total-row');
-                    row.innerHTML = `<td style="color: rgb(0, 4, 255);" colspan="9">${item[2]}: ${item[7]} </td>`;
+                    row.innerHTML = `
+                        <td class="colspan-dinamico" colspan="7" style="color: #6fbcef;">
+                            <strong>${item[2]}</strong>
+                        </td>
+                        <td data-label="Hojas" style="font-weight: bold;">
+                            ${item[7]}
+                        </td>
+                    `;
                 }
             } else {
                 let formattedDate = new Date(item[6]).toISOString().split('T')[0];
@@ -73,22 +113,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <td>${item[0]}</td>
                     <td>${item[1]} ${item[2]} ${item[8]}</td>
                     <td>${item[3]}</td>
-                    
                     <td data-label="Tip. Produ">${item[4]}</td>
                     <td data-label="tipo_produccion">${item[5]}</td>
                     <td data-label="cliente">${item[9]}</td>
                     <td data-label="Fecha">${formattedDate}</td>
                     <td data-label="Hojas">${item[7]}</td>
-                     <td class="ver-mas-cell">
+                    <td class="ver-mas-cell">
                         <button class="ver-mas-btn">
                             <img class="ver-mas" src="/static/img/vista.png" alt="Ver más">
                         </button>
                     </td>
                 `;
             }
-
+        
             tableBody.appendChild(row);
         });
+        ajustarColspan();
 
         attachEventListeners();
     }
@@ -109,10 +149,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <p><strong>Fecha:</strong> ${rowData[6]}</p>
                     <p><strong>Hojas:</strong> ${rowData[7]}</p>
                 `;
-
                 modal.style.display = 'block';
+                
             });
         });
+        ajustarColspan();
     }
 
     closeModal.addEventListener('click', () => {
@@ -215,5 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+
+        window.addEventListener('resize', ajustarColspan);
+        
+        
 
 
