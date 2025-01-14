@@ -845,3 +845,17 @@ button{
     
 
 }
+/* Estilo para las filas de totales */
+.total-row {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Alinear el texto del total a la derecha */
+.total-row td:first-child {
+    text-align: right;
+}
+
+
+
