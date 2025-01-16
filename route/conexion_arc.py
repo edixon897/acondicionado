@@ -143,7 +143,7 @@ def insert_data_almacen(df_almacen, batch_size=10000):
 def process_file(file_path):
 
     try:
-        df = pd.read_csv(file_path, sep=',', header=None, names=column_names, skipinitialspace=True)
+        df = pd.read_csv(file_path, sep=';', header=None, names=column_names, skipinitialspace=True)
         df = clean_data(df)
         reset_table()  # LLamo la funcion para eliminar y reacrear la tabla recepcion_eco
         insert_data(df)
@@ -153,7 +153,7 @@ def process_file(file_path):
 def process_file_almacen(file_path_almacen):
 
     try:
-        df_almacen = pd.read_csv(file_path_almacen, sep=',', header=None, names=column_names_alamacen, skipinitialspace=True)
+        df_almacen = pd.read_csv(file_path_almacen, sep=';', header=None, names=column_names_alamacen, skipinitialspace=True)
         df_almacen = clean_data_almacen(df_almacen)
         reset_table_almacen()  # LLamo la funcion para eliminar y reacrear la tabla recepcion_eco
         insert_data_almacen(df_almacen)
@@ -173,15 +173,24 @@ class WatcherHandler(FileSystemEventHandler):
         
 
 # Ruta del archivo a leer
-file_path = r'\\192.168.0.114\D\compartidos\plsaldo.prn'
+file_path = r'\\192.168.0.31\u\planos\web\plsaldop.prn'
 
-file_path_almacen = r'\\192.168.0.114\D\compartidos\plsaldo.prn'
+file_path_almacen = r'\\192.168.0.31\U\planos\web\plsaldost.prn'
 
 # FunciOn principal que vigila y procesa el archivo automAticamente
 def monitor_and_process():
     # Verificar si el archivo existe antes de iniciar la vigilancia
-    if not os.path.exists(file_path) or not os.path.exists(file_path_almacen):
+    if not os.path.exists(file_path_almacen):
+        print('El archivo no existe ', file_path_almacen)
+
         return False
+    if not os.path.exists(file_path):
+        print('El archivo no existe ', file_path)
+
+        return False
+    
+    
+    
 
     event_handler = WatcherHandler()
     observer = Observer()
