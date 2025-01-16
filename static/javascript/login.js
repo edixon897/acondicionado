@@ -3,6 +3,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
 
     const nombre = document.getElementById('nombre').value;
     const contrasena = document.getElementById('contraseña').value;
+    const destino = document.getElementById('destino').value;
     const mensajeDiv = document.getElementById('mensaje');
 
     const xhr = new XMLHttpRequest();
@@ -26,5 +27,5 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
         }
     };
 
-    xhr.send(`nombre=${encodeURIComponent(nombre)}&contraseña=${encodeURIComponent(contrasena)}`);
+    xhr.send(`nombre=${encodeURIComponent(nombre)}&contraseña=${encodeURIComponent(contrasena)}&destino=${encodeURIComponent(destino)}`);
 });

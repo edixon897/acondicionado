@@ -23,20 +23,31 @@
                             </figure>
                             <h3 class="usuario">{{ username | capitalize }}</h3>
                         </div>
-    
-                        <div class="pgn_inicio">
-                            <figure>
-                                <img id="pgn-inicio" src="{{ url_for('static', filename='/img/hogar.png') }}" alt="Home">
-                            </figure>
-                            <a href="{{ url_for('inicio') }}">Inicio</a>
-                        </div>
-    
-                        <div class="Buscar_tarejta">
-                            <figure>
-                                <img id="buscar-tarea" src="{{ url_for('static', filename='img/expediente.png') }}" alt="Search">
-                            </figure>
-                            <a href="{{ url_for('familia') }}">Buscar por tarjeta</a>
-                        </div>
+                        {% if destino == 'almacen' %}
+                            <div class="pgn_inicio">
+                                <figure>
+                                    <img id="pgn-inicio" src="{{ url_for('static', filename='/img/hogar.png') }}" alt="Home">
+                                </figure>
+                                <a href="{{ url_for('inicio_almacen') }}">Almacen</a>
+                            </div>
+
+                        {% endif %}
+                        {% if destino == 'produccion' %}
+                            <div class="pgn_inicio">
+                                <figure>
+                                    <img id="pgn-inicio" src="{{ url_for('static', filename='/img/hogar.png') }}" alt="Home">
+                                </figure>
+                                <a href="{{ url_for('inicio') }}">Inicio</a>
+                            </div>
+
+                        
+                            <div class="Buscar_tarejta">
+                                <figure>
+                                    <img id="buscar-tarea" src="{{ url_for('static', filename='img/expediente.png') }}" alt="Search">
+                                </figure>
+                                <a href="{{ url_for('familia') }}">Buscar por tarjeta</a>
+                            </div>
+                        {% endif %}
     
                         <div class="cambiar_contraseña">
                             <figure>
@@ -71,9 +82,16 @@
                     </div>
                 </div>
             </div>
-            <div class="nombre-soft">
-                <h2 id="nombre">Acondicionado Soft</h2>
-            </div>
+            {% if destino == 'almacen' %}
+                <div class="nombre-soft">
+                    <h2 id="nombre">Almacen Soft</h2>
+                </div>
+            {% endif %}
+            {% if destino == 'produccion' %}
+                <div class="nombre-soft">
+                    <h2 id="nombre">Producción Soft</h2>
+                </div>
+            {% endif %}
             <div class="logo-empresa">
                 <figure id="logo-emp">
                     <img class="imagen-logo" src="{{ url_for('static', filename='img/logoCutipiles.png') }}" alt="Logo de la empresa">

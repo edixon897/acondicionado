@@ -41,5 +41,5 @@ def agregarUsuario():
     finally:
         close_connection(connection)    
 
-    return render_template('agregar_usuario.html', username=session.get('username'), rol=session.get('rol'))
+    return render_template('agregar_usuario.html', username=session.get('username'), rol=session.get('rol'), destino = session.get('destino'), )
 

@@ -8,7 +8,7 @@ from route.seguridad import login_required
 @app.route('/familia')
 @login_required
 def familia():
-    return render_template('familia.html', username=session['username'], rol = session['rol'])
+    return render_template('familia.html', username=session['username'], rol = session['rol'], destino = session['destino'])
 
 
 

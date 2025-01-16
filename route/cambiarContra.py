@@ -42,4 +42,4 @@ def cambiar_contraseña():
         else:
             flash('La contraseña actual es incorrecta', 'danger')
 
-    return render_template('cambiar_contraseña.html', username=session['username'], rol = session['rol'])
+    return render_template('cambiar_contraseña.html', username=session['username'], rol = session['rol'], destino = session['destino'])

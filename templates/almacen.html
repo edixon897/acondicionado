@@ -206,12 +206,7 @@
                 <div class="sesion">
                     <h5>Sección (Opcional)</h5>
                     <select name="seleccion-sesion" id="seleccion-sesion">
-                        <option value="">Seleccionar sesión</option>
-                        {% set sesiones = busqu | map(attribute=3) | select | list %}
-                        {% set unique_sesiones = sesiones | unique %}
-                        {% for sesion in unique_sesiones %}
-                            <option value="{{ sesion }}">{{ sesion }}</option>
-                        {% endfor %}
+                        <option value="">Terminado</option>
                     </select>
                 </div>
 
@@ -336,7 +331,7 @@
 </div>
 
 
-  <script src="/static/javascript/bucardInicio.js"></script>
+  <script src="/static/javascript/buscadorAlmacan.js"></script>
   <script src="/static/javascript/menu.js"></script>
   
   <script>

@@ -30,9 +30,8 @@ def login():
         if request.method == 'POST':
             nombre = request.form.get('nombre').capitalize()
             contraseña = request.form.get('contraseña')
-
+            destino = request.form.get('destino')
             
-
             
             cursor = connection.cursor()
 
@@ -46,18 +45,41 @@ def login():
                 session['username'] = nombre
                 session['rol'] = user[2]
                 session['estado'] = user[3]
+                session['destino'] = destino
 
                 logged_in_ips[nombre] = obtener_direccion_ip()  
                 
 
-                if user[2] == 'administrador':
-                    flash('Inicio de sesión exitoso como administrador', 'success')
-                    return jsonify({"success": True, "message": "Inicio de sesión exitoso como administrador", "redirect_url": url_for('inicio')})
-                elif user[3] == 'Inactivo':
+                if user[2] == 'administrador' and user[3] == 'Activo':
+                    if destino == 'produccion':
+                        flash('Inicio de sesión en Producción exitoso', 'success')
+                        return jsonify({"success": True, "message": "Inicio de sesión en Producción exitoso", "redirect_url": url_for('inicio')})
+                    
+                    elif destino == 'almacen':
+                        flash('Inicio de sesión en Almacén exitoso', 'success')
+                        return jsonify({"success": True, "message": "Inicio de sesión en Almacén exitoso", "redirect_url": url_for('inicio_almacen')})
+                    
+                    else:
+                        return jsonify({"success": False, "error": "Destino inválido."})
+                    
+                elif user[2] == 'usuario' and user[3] == 'Activo':
+
+                    if destino == 'produccion':
+                        flash('Inicio de sesión en Producción exitoso', 'success')
+                        return jsonify({"success": True, "message": "Inicio de sesión en Producción exitoso", "redirect_url": url_for('inicio')})
+                    
+                    elif destino == 'almacen':
+                        print('sesion en almacen')
+                        flash('Inicio de sesión en Almacén exitoso', 'success')
+                        return jsonify({"success": True, "message": "Inicio de sesión en Almacén exitoso", "redirect_url": url_for('inicio_almacen')})
+                    
+                    else:
+                        return jsonify({"success": False, "error": "Destino inválido."})     
+                
+                else:
                     return jsonify({"success": False, "message": "Tu usuario no esta activo, comunicate con aministracion"})
-                else:       
-                    flash('Inicio de sesión exitoso', 'success')
-                    return jsonify({"success": True, "message": "Inicio de sesión exitoso", "redirect_url": url_for('inicio')})
+                    
+                    
             else:
                 return jsonify({"success": False, "error": "Nombre de usuario o contraseña incorrectos."})
             

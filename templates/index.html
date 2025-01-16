@@ -21,6 +21,10 @@
                 <div class="campos">
                     <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
                     <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+                    <select id="destino" name="destino" required>
+                        <option value="produccion" selected>Producción</option>
+                        <option value="almacen">Almacén</option>
+                    </select>
                 </div>
                 <button type="submit" class="boton-ingresar">Ingresar</button>
                 <div id="mensaje" class="error-mensaje"></div>

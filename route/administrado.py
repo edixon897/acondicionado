@@ -48,7 +48,7 @@ def administrador():
     sesiones_activas = obtener_sesiones_activas()
 
 
-    return render_template('administrador.html', sesiones_activas=sesiones_activas, rol = session['rol'])
+    return render_template('administrador.html', sesiones_activas=sesiones_activas, rol = session['rol'], destino = session['destino'])
 
 
 # Ruta para actualizar las sesiones activas

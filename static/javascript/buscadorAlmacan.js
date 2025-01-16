@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         formData.append('page', page);
         formData.append('per_page', perPage);
 
-        let response = await fetch('/filtrar_busqueda', {
+        let response = await fetch('/filtrar_busqueda_almacen', {
             method: 'POST',
             body: formData
         });

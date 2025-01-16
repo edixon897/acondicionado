@@ -3,9 +3,9 @@ from route.seguridad import login_required
 from conexion import create_connection, close_connection
 
 
-@app.route('/inicio')
+@app.route('/inicio_almacen')
 @login_required
-def inicio():
+def inicio_almacen():
     data = []
     try:
         connection = create_connection()
@@ -18,7 +18,7 @@ def inicio():
         
         sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
-            FROM recepcion_eco WHERE 20
+            FROM almacen WHERE 20
             ORDER BY FIELD(LEFT(seccion, 1), 'A',  'R', 'P', 'C', 'M', 'T'),
             seccion,
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
@@ -103,11 +103,11 @@ def inicio():
         close_connection(connection)
 
 
-    return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=data, destino = session['destino'], dato=datos_agrupados)
+    return render_template('almacen.html', username=session['username'], rol=session['rol'], busqu=data, destino = session['destino'], dato=datos_agrupados)
 
 
-@app.route('/produc_filtrar', methods=['GET'])
-def produc_filtrar():
+@app.route('/produc_filtrar_almacen', methods=['GET'])
+def produc_filtrar_almacen():
     data = []
     try:
         connection = create_connection()
@@ -120,7 +120,7 @@ def produc_filtrar():
         
         sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
-            FROM recepcion_eco WHERE 20
+            FROM almacen WHERE 20
             ORDER BY FIELD(LEFT(seccion, 1), 'A',  'R', 'P', 'C', 'M', 'T'),
             seccion,
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
@@ -143,8 +143,8 @@ def produc_filtrar():
 
 
 
-@app.route('/filtrar_busqueda', methods=['POST'])
-def filtrar_busqueda():
+@app.route('/filtrar_busqueda_almacen', methods=['POST'])
+def filtrar_busqueda_almacen():
     try:
         name = request.form.get('name')
         color = request.form.get('color')
@@ -157,7 +157,7 @@ def filtrar_busqueda():
         
         query = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
-            FROM recepcion_eco
+            FROM almacen
             WHERE 1=1
         """
         filters = []

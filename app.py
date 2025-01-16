@@ -19,6 +19,7 @@ from route.usuario import agregarUsuario
 from route.cambiarContra import cambiar_contraseña
 from route.familia import familia
 from route.inicio import inicio
+from route.alamacen import inicio_almacen
 #import route.conexion_arc
 
 
