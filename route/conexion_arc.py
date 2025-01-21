@@ -175,11 +175,12 @@ class WatcherHandler(FileSystemEventHandler):
 # Ruta del archivo a leer
 file_path = r'\\192.168.0.31\u\planos\web\plsaldop.prn'
 
-file_path_almacen = r'\\192.168.0.31\U\planos\web\plsaldost.prn'
+file_path_almacen = r'\\192.168.0.31\u\planos\web\plsaldost.prn'
 
 # FunciOn principal que vigila y procesa el archivo automAticamente
 def monitor_and_process():
     # Verificar si el archivo existe antes de iniciar la vigilancia
+
     if not os.path.exists(file_path_almacen):
         print('El archivo no existe ', file_path_almacen)
 

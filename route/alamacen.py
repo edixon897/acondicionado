@@ -3,10 +3,11 @@ from route.seguridad import login_required
 from conexion import create_connection, close_connection
 
 
-@app.route('/inicio_almacen')
+@app.route('/inicio_almacen', methods=['POST', 'GET'])
 @login_required
 def inicio_almacen():
     data = []
+    busqueda = []
     try:
         connection = create_connection()
         if connection is None:
@@ -14,20 +15,31 @@ def inicio_almacen():
             return None
 
         cursor = connection.cursor()
-
         
+
+        busqueda_filtro = """
+            SELECT DISTINCT nombre, color,  tipo_produccion, cliente
+            FROM almacen 
+        """
+
+        cursor.execute(busqueda_filtro)
+        busqueda = cursor.fetchall()
+
         sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
-            FROM almacen WHERE 20
+            FROM almacen WHERE 1
             ORDER BY FIELD(LEFT(seccion, 1), 'A',  'R', 'P', 'C', 'M', 'T'),
             seccion,
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
             color
-            
+            LIMIT 200;
         """
 
+        
+        
+        
         cursor.execute(sql)
         data = cursor.fetchall()
 
@@ -103,7 +115,7 @@ def inicio_almacen():
         close_connection(connection)
 
 
-    return render_template('almacen.html', username=session['username'], rol=session['rol'], busqu=data, destino = session['destino'], dato=datos_agrupados)
+    return render_template('almacen.html', username=session['username'], rol=session['rol'], busqu=busqueda, destino = session['destino'], dato=datos_agrupados)
 
 
 @app.route('/produc_filtrar_almacen', methods=['GET'])
@@ -119,7 +131,7 @@ def produc_filtrar_almacen():
 
         
         sql = """
-            SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
+            SELECT DISTINCT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
             FROM almacen WHERE 20
             ORDER BY FIELD(LEFT(seccion, 1), 'A',  'R', 'P', 'C', 'M', 'T'),
             seccion,
@@ -127,7 +139,7 @@ def produc_filtrar_almacen():
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
             color
-            LIMIT 100;
+            
         """
 
         cursor.execute(sql)
@@ -272,3 +284,5 @@ def filtrar_busqueda_almacen():
     
     finally:
         close_connection(connection)
+
+

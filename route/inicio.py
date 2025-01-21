@@ -7,6 +7,7 @@ from conexion import create_connection, close_connection
 @login_required
 def inicio():
     data = []
+    busqueda = []
     try:
         connection = create_connection()
         if connection is None:
@@ -15,17 +16,24 @@ def inicio():
 
         cursor = connection.cursor()
 
+        busqueda_filtro = """
+            SELECT DISTINCT nombre, color,  tipo_produccion, cliente, seccion
+            FROM recepcion_eco
+        """
+        
+        cursor.execute(busqueda_filtro)
+        busqueda = cursor.fetchall()
         
         sql = """
             SELECT tarjeta, nombre, color, seccion, tip_prod, tipo_produccion, fecha, hojas, calibre, cliente
-            FROM recepcion_eco WHERE 20
+            FROM recepcion_eco WHERE 1=1
             ORDER BY FIELD(LEFT(seccion, 1), 'A',  'R', 'P', 'C', 'M', 'T'),
             seccion,
             FIELD(LEFT(nombre, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'),
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
             color
-            
+            LIMIT 200;
         """
 
         cursor.execute(sql)
@@ -103,7 +111,7 @@ def inicio():
         close_connection(connection)
 
 
-    return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=data, destino = session['destino'], dato=datos_agrupados)
+    return render_template('inicio.html', username=session['username'], rol=session['rol'], busqu=busqueda, destino = session['destino'], dato=datos_agrupados)
 
 
 @app.route('/produc_filtrar', methods=['GET'])
@@ -127,7 +135,7 @@ def produc_filtrar():
             nombre,
             FIELD(LEFT(color, 1), 'N', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'A', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ),
             color
-            LIMIT 100;
+            
         """
 
         cursor.execute(sql)

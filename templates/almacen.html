@@ -166,7 +166,7 @@
                     </figure>
                     <input type="search" name="buscador" id="buscador" placeholder="Ingresar nombre del producto" autocomplete="off">
                     <div id="suggestions" class="suggestions">
-                        {% set productos = busqu | map(attribute=1) | select | list %}
+                        {% set productos = busqu | map(attribute=0) | select | list %}
                         {% set unique_producto = productos | unique %}
                         {% for producto in unique_producto %}
                             <div class="suggestion-item">{{ producto }}</div>
@@ -182,7 +182,7 @@
                     </figure>
                     <input type="search" name="buscador-color" id="buscador-color" placeholder="Ingrese el color">
                     <div id="suggestion" class="suggestion">
-                        {% set colores = busqu | map(attribute=2) | select | list %}
+                        {% set colores = busqu | map(attribute=1) | select | list %}
                         {% set unique_color = colores | unique %}
                         {% for color in unique_color %}  
                                 <div class="suggestion-itemm">{{ color }}</div>
@@ -195,7 +195,7 @@
                     <h5>Cliente (Opcional)</h5>
                     <select name="seleccion-cliente" id="seleccion-cliente">
                         <option value="">Seleccionar cliente</option>
-                        {% set clientes = busqu | map(attribute=9) | select | list %}
+                        {% set clientes = busqu | map(attribute=3) | select | list %}
                         {% set unique_clientes = clientes | unique %}
                         {% for cliente in unique_clientes %}
                             <option value="{{ cliente }}">{{ cliente }}</option>
@@ -214,7 +214,7 @@
                     <h5>Tipo producción (Opcional)</h5>
                     <select name="tipo-producto" id="tipo-producto">
                         <option value="">Selec tipo producción</option>
-                        {% set tipo_produccion = busqu | map(attribute=5) | select | list %}
+                        {% set tipo_produccion = busqu | map(attribute=2) | select | list %}
                         {% set unique_tipos = tipo_produccion | unique %}
                         {% for tipo_produccion in unique_tipos %}
                             <option value="{{ tipo_produccion }}">{{ tipo_produccion }}</option>

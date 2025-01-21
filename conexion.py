@@ -7,9 +7,9 @@ def create_connection():
     connection = None
     try:
         connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="",
+            host="192.168.0.31",
+            user="curti",
+            password="Curti2025",
             database="acondicionado"
         )
         if connection.is_connected():
